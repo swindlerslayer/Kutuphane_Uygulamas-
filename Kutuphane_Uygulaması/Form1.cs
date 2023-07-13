@@ -16,18 +16,12 @@ using DevExpress.XtraEditors.Repository;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.Json.Nodes;
+using Kutuphane_Uygulaması.Data;
+using DevExpress.XtraEditors;
 
 namespace Kutuphane_Uygulaması
 {
-
-    class DbRemember
-    {
-
-        public string KullaniciAdi { get; set; } = string.Empty;
-        public string Sifre { get; set; } = string.Empty;
-        public bool Checkbox { get; set; }
-    }
-    public partial class Form1 : Form
+    public partial class Form1 : XtraForm
     {
         public Form1()
         {
@@ -126,50 +120,9 @@ namespace Kutuphane_Uygulaması
             string json = File.ReadAllText(@"C:\Users\deret\OneDrive\Masaüstü\KullaniciBilgileri.json");
             var veri = JsonSerializer.Deserialize<DbRemember>(json, options);
 
-
-
-
-
             textEdit1.Text = veri.KullaniciAdi;
             textEdit2.Text = veri.Sifre;
             checkEdit1.Checked = veri.Checkbox;
-
-
-
-            //string text = File.ReadAllText(@"C:\Users\deret\OneDrive\Masaüstü\KullaniciBilgileri.json");
-            //var remember = JsonSerializer.Deserialize<DbRemember>(text);
-
-            //Console.WriteLine($"First name: {remember.KullaniciAdi}");
-            //Console.WriteLine($"Last name: {remember.Sifre}");
-            //Console.WriteLine($"Job title: {remember.Checkbox}");
-
-            //string dosyaYolu = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "KullaniciBilgileri.json");
-
-            //if (File.Exists(dosyaYolu))
-            //{
-
-            //    string fileName = "WeatherForecast.json";
-            //    string jsonString = File.ReadAllText(fileName);
-            //    jsonData weatherForecast = JsonSerializer.Deserialize<WeatherForecast>(jsonString)!;
-
-
-            //    if (kullaniciAdiNode != null && sifreNode != null && checboxNode != null)
-            //    {
-
-            //        if (checboxNode.InnerText == "True")
-            //        {
-            //            string kullaniciAdi = kullaniciAdiNode.InnerText;
-            //            string sifre = sifreNode.InnerText;
-
-            //            textEdit1.Text = kullaniciAdi;
-            //            textEdit2.Text = sifre;
-            //        }
-            //        else
-            //        {
-
-            //        }
-            //    }
-            //}
         }
     }
 }
