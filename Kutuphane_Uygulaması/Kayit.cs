@@ -17,7 +17,7 @@ namespace Kutuphane_Uygulaması
         public Kayit()
         {
             InitializeComponent();
-
+            this.StartPosition = FormStartPosition.CenterScreen;
             textEdit2.Properties.PasswordChar = '*';
         }
 
@@ -45,15 +45,21 @@ namespace Kutuphane_Uygulaması
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-
+            
             string Kadi, Ksifre, SifreliKsifre;
             Kadi = textEdit1.Text;
             Ksifre = textEdit2.Text;
             SifreliKsifre = SHA256Hash(Ksifre);
+            //if kullanıcı adına bağlı bir ID var ise Kullanıcı adı kullanılıyor döndür 
+
 
             Kullanici kullanici = new Kullanici();
             kullanici.KullaniciAdi = Kadi;
             kullanici.Parola = SifreliKsifre;
+            bool kontrol = DbKullanici.KK(kullanici);
+            if(kontrol != true)
+            {
+
             bool kaydedildi = DbKullanici.EkleDuzenle(kullanici);
             if (kaydedildi)
             {
@@ -61,9 +67,14 @@ namespace Kutuphane_Uygulaması
             }
             else
             {
-                MessageBox.Show("Kullanıcı kaydedilirken bir hata oluştu");
+                MessageBox.Show("Kullanıcı Zaten Kayıtlı");
             }
 
+            }
+            else
+            {
+                MessageBox.Show("Kullanıcı Zaten Kayıtlı");
+            }
         }
 
         private void label1_Click_1(object sender, EventArgs e)

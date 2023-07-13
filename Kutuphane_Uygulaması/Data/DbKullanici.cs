@@ -17,23 +17,26 @@ namespace Kutuphane_Uygulaması.Data
                 {
                     if (k.ID == 0)
                     {
+                        
+
                         k.KayitTarihi = DateTime.Now;
                         k.KayitYapan = k.KullaniciAdi;                        
                         db.Kullanici.Add(k);
                         db.SaveChanges();
+                        return true;
                     }
                     else
                     {
-                        var kullanici = db.Kullanici.FirstOrDefault(x => x.ID == k.ID);
+                        return false;
+                        //var kullanici = db.Kullanici.FirstOrDefault(x => x.ID == k.ID);
 
-                        kullanici.KullaniciAdi = k.KullaniciAdi;
-                        kullanici.Parola = k.Parola;
-                        kullanici.DegisiklikTarihi = DateTime.Now;
-                        kullanici.DegisiklikYapan = k.KullaniciAdi;
-                        db.SaveChanges();
+                        //kullanici.KullaniciAdi = k.KullaniciAdi;
+                        //kullanici.Parola = k.Parola;
+                        //kullanici.DegisiklikTarihi = DateTime.Now;
+                        //kullanici.DegisiklikYapan = k.KullaniciAdi;
+                        //db.SaveChanges();
                     }
                 }
-                return true;
             }
             catch (Exception ex)
             {
@@ -41,6 +44,21 @@ namespace Kutuphane_Uygulaması.Data
             }
         }
 
+        public static bool KK(Kullanici kntrl)
+        {
+            using(KutuphaneEntities2 db = new KutuphaneEntities2())
+            { 
 
+                var kullanici = db.Kullanici.FirstOrDefault(x => x.KullaniciAdi == kntrl.KullaniciAdi);
+                if(kullanici != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
     }
 }

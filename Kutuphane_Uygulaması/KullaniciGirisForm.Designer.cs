@@ -39,6 +39,7 @@ namespace Kutuphane_Uygulaması
             this.yayınEviEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kitapTürüEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.LookUpYazar = new DevExpress.XtraEditors.SearchLookUpEdit();
@@ -71,8 +72,10 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.kutuphaneDataSet = new Kutuphane_Uygulaması.KutuphaneDataSet();
             this.kitapTuruTableAdapter = new Kutuphane_Uygulaması.KutuphaneDataSetTableAdapters.KitapTuruTableAdapter();
+            this.öğrenciKitapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -99,6 +102,7 @@ namespace Kutuphane_Uygulaması
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kutuphaneDataSet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,7 +131,8 @@ namespace Kutuphane_Uygulaması
             this.kitapToolStripMenuItem,
             this.yazarEkleToolStripMenuItem,
             this.yayınEviEkleToolStripMenuItem,
-            this.kitapTürüEkleToolStripMenuItem});
+            this.kitapTürüEkleToolStripMenuItem,
+            this.öğrenciKitapToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1059, 28);
@@ -165,9 +170,11 @@ namespace Kutuphane_Uygulaması
             this.kitapTürüEkleToolStripMenuItem.Name = "kitapTürüEkleToolStripMenuItem";
             this.kitapTürüEkleToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
             this.kitapTürüEkleToolStripMenuItem.Text = "Kitap Türü Ekle";
+            this.kitapTürüEkleToolStripMenuItem.Click += new System.EventHandler(this.kitapTürüEkleToolStripMenuItem_Click);
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.button3);
             this.layoutControl1.Controls.Add(this.button2);
             this.layoutControl1.Controls.Add(this.button1);
             this.layoutControl1.Controls.Add(this.LookUpYazar);
@@ -184,6 +191,16 @@ namespace Kutuphane_Uygulaması
             this.layoutControl1.Size = new System.Drawing.Size(1059, 468);
             this.layoutControl1.TabIndex = 20;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(16, 246);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(931, 25);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Sil";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -324,10 +341,10 @@ namespace Kutuphane_Uygulaması
             // gridControl1
             // 
             this.gridControl1.DataSource = this.entityKitapBindingSource;
-            this.gridControl1.Location = new System.Drawing.Point(16, 246);
+            this.gridControl1.Location = new System.Drawing.Point(16, 277);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1027, 206);
+            this.gridControl1.Size = new System.Drawing.Size(1027, 175);
             this.gridControl1.TabIndex = 9;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -346,6 +363,8 @@ namespace Kutuphane_Uygulaması
             this.colYazarID});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // colID
             // 
@@ -390,7 +409,8 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem3,
             this.layoutControlItem4,
             this.layoutControlItem8,
-            this.layoutControlItem9});
+            this.layoutControlItem9,
+            this.layoutControlItem10});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
@@ -402,15 +422,15 @@ namespace Kutuphane_Uygulaması
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(937, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(96, 230);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(96, 261);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.gridControl1;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 230);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 261);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(1033, 212);
+            this.layoutControlItem7.Size = new System.Drawing.Size(1033, 181);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -487,6 +507,15 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.button3;
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 230);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(937, 31);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem10.TextVisible = false;
+            // 
             // kutuphaneDataSet
             // 
             this.kutuphaneDataSet.DataSetName = "KutuphaneDataSet";
@@ -495,6 +524,12 @@ namespace Kutuphane_Uygulaması
             // kitapTuruTableAdapter
             // 
             this.kitapTuruTableAdapter.ClearBeforeFill = true;
+            // 
+            // öğrenciKitapToolStripMenuItem
+            // 
+            this.öğrenciKitapToolStripMenuItem.Name = "öğrenciKitapToolStripMenuItem";
+            this.öğrenciKitapToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
+            this.öğrenciKitapToolStripMenuItem.Text = "Öğrenci - Kitap";
             // 
             // KullaniciGirisForm
             // 
@@ -537,6 +572,7 @@ namespace Kutuphane_Uygulaması
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kutuphaneDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -587,5 +623,8 @@ namespace Kutuphane_Uygulaması
         private System.Windows.Forms.ToolStripMenuItem yazarEkleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yayınEviEkleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kitapTürüEkleToolStripMenuItem;
+        private System.Windows.Forms.Button button3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private System.Windows.Forms.ToolStripMenuItem öğrenciKitapToolStripMenuItem;
     }
 }

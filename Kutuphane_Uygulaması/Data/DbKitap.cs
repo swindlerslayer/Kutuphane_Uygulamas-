@@ -30,15 +30,13 @@ namespace Kutuphane_Uygulaması.Data
             {
                 using (KutuphaneEntities2 db = new KutuphaneEntities2())
                 {
-
                     if (k.ID == 0)
                     {
                         k.KayitTarihi = DateTime.Now;
                         db.Kitap.Add(k);
                         db.SaveChanges();
+                        return true;
                     }
-
-
                     else
                     {
                         var kitap = db.Kitap.FirstOrDefault(x => x.ID == k.ID);
@@ -51,13 +49,42 @@ namespace Kutuphane_Uygulaması.Data
                         kitap.DegisiklikTarihi = DateTime.Now;
 
                         db.SaveChanges();
+                        return false;
                     }
                 }
-                return true;
+                
             }
             catch (Exception ex)
             {
                 return false;
+            }
+        }
+        public static bool sil(Kitap y)
+        {
+            using (KutuphaneEntities2 db = new KutuphaneEntities2())
+            {
+                
+                        var kitap = db.Kitap.FirstOrDefault(x => x.ID == y.ID);
+                        db.Kitap.Remove(kitap);
+                        db.SaveChanges();
+                        return true;                   
+                
+                
+            }
+        }
+        public static Kitap KitapGetir(int id)
+        {
+            using (KutuphaneEntities2 db=new KutuphaneEntities2())
+            {
+                var data = db.Kitap.FirstOrDefault(x => x.ID == id);
+                if (data!=null)
+                {
+                    return data;
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
     }
