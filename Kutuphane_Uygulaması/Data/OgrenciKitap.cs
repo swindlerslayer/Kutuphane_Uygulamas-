@@ -7,6 +7,22 @@ namespace Kutuphane_Uygulaması.Data
 {
     public class OgrenciKitap
     {
+
+        public static KitapOgrenci kitapogrencigetir(int id)
+        {
+            using (KutuphaneEntities2 db = new KutuphaneEntities2())
+            {
+                var data = db.KitapOgrenci.FirstOrDefault(x => x.ID == id);
+                if (data != null)
+                {
+                    return data;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
         public static bool EkleDuzenle(KitapOgrenci k)
         {
             try
@@ -67,6 +83,7 @@ namespace Kutuphane_Uygulaması.Data
                
                 var kitapOgrenciListesi = dbContext.KitapOgrenci.Select(ko => new OKViewModel
                 {
+                    ID = ko.ID,
                     Adi = ko.Kitap.Adi,
                     AdiSoyadi = ko.Ogrenci.AdiSoyadi,
                     OkulNo = ko.Ogrenci.OkulNo,
@@ -76,7 +93,7 @@ namespace Kutuphane_Uygulaması.Data
                     
                     
                 }).ToList();
-
+               
                 return kitapOgrenciListesi;
             }
         }
@@ -91,13 +108,14 @@ namespace Kutuphane_Uygulaması.Data
 
     public class OKViewModel
     {
-        //6 adet kolon Ogrenci AdiSoyadi, OkulNo  Kitap Adi, YayinEvi KitapOgrenci AlisTarihi, TeslimTarihi
+        public int? ID { get; set; }
+
         public string AdiSoyadi { get; set; }
         public int? OkulNo { get; set; }
         public string Adi { get; set; }
         public string YayinEviAdi { get; set; }
         public DateTime? AlisTarihi { get; set; }
-        public DateTime? TeslimTarihi { get; set; }
+        public Nullable<DateTime> TeslimTarihi { get; set; }
 
     }
 

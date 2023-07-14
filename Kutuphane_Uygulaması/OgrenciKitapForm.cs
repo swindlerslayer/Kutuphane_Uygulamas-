@@ -28,8 +28,7 @@ namespace Kutuphane_Uygulaması
             this.userID = kullaniciID;
             ogrenciKitap = new OgrenciKitap();
             dbogrenci = new DbOgrenci();
-            okgrid = new OKgrid(); // okgrid değişkenine örnek atanıyor
-
+            okgrid = new OKgrid();
         }
 
         private void OgrenciKitapForm_Load(object sender, EventArgs e)
@@ -44,7 +43,13 @@ namespace Kutuphane_Uygulaması
         }
 
         private void Teslimetme_Click(object sender, EventArgs e)
-        {
+        {if(searchLookUpEdit1.EditValue == null)
+            {
+                MessageBox.Show("Malesef Girdiğiniz Değerler Boş");
+            }
+            else
+            {
+
             KitapOgrenci kitapo = new KitapOgrenci();
             kitapo.OgrenciID = ((int)searchLookUpEdit1.EditValue);
             kitapo.KitapID = (int)searchLookUpEdit2.EditValue;
@@ -66,17 +71,76 @@ namespace Kutuphane_Uygulaması
 
 
 
-           
+            }
+
         }
 
         private void Teslimalma_Click(object sender, EventArgs e)
         {
+            if (searchLookUpEdit1.EditValue == null)
+            {
+                MessageBox.Show("Malesef Girdiğiniz Değerler Boş");
+            }
+            else
+            {
+
+                KitapOgrenci kitapo = new KitapOgrenci();
+                kitapo.OgrenciID = ((int)searchLookUpEdit1.EditValue);
+                kitapo.KitapID = (int)searchLookUpEdit2.EditValue;
+                kitapo.AlisTarihi = dateEdit1.DateTime;
+                kitapo.TeslimTarihi = dateEdit2.DateTime;
+                kitapo.KullanıcıID = Int32.Parse(label1.Text);
+
+                bool kaydedildi = OgrenciKitap.EkleDuzenle(kitapo);
+                if (kaydedildi)
+                {
+                    MessageBox.Show("Kitap başarıyla güncellendi");
+                    gridControl1.DataSource = okgrid.GetGridDoldur();
+
+                }
+                else
+                {
+                    MessageBox.Show("Kitap güncellenirken bir hata oluştu");
+                }
+
+
+
+            }
+
 
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
         {
 
+
+            int? _id = (int?)gridView1.GetFocusedRowCellValue("ID");
+
+            if (_id != null)
+            {
+                var data = OgrenciKitap.kitapogrencigetir((int)_id);
+                if (data != null)
+                {
+                    label6.Text = data.ID.ToString();
+                    searchLookUpEdit1.EditValue = data.OgrenciID;
+                    searchLookUpEdit2.EditValue = data.KitapID;
+                    dateEdit1.DateTime = (DateTime)data.AlisTarihi;
+
+                    if (data.TeslimTarihi == null)
+                    {
+
+                        dateEdit2.EditValue = null; 
+
+                    }
+                    else
+                    {
+                        dateEdit2.DateTime = (DateTime)data.TeslimTarihi;
+                    }
+                 
+
+                    //dateEdit2.DateTime = (DateTime)data.TeslimTarihi;
+                }
+            }
         }
 
         private void searchLookUpEdit3_EditValueChanged(object sender, EventArgs e)

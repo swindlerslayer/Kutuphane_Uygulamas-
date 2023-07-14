@@ -122,7 +122,6 @@ namespace Kutuphane_Uygulaması
 
 
             int? _id = (int?)gridView1.GetFocusedRowCellValue("ID");
-            //object deneme13 = gridView1.GetFocusedRowCellValue("YazarAdi");
 
             if (_id != null)
             {
@@ -139,16 +138,7 @@ namespace Kutuphane_Uygulaması
 
 
                 }
-
-                //LookUpYazar.Properties.DisplayMember = deneme13.ToString();
-
             }
-            //if (deneme13 != null)
-            //{
-
-            //    LookUpYazar.EditValue = deneme13;
-            //}
-
         }
         private void yazarEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -49,8 +49,11 @@ namespace Kutuphane_Uygulaması
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.label6 = new System.Windows.Forms.Label();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
@@ -136,7 +139,7 @@ namespace Kutuphane_Uygulaması
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(307, -1);
+            this.gridControl1.Location = new System.Drawing.Point(305, -2);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(588, 506);
@@ -148,6 +151,7 @@ namespace Kutuphane_Uygulaması
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn9,
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
@@ -162,7 +166,7 @@ namespace Kutuphane_Uygulaması
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Adı Soyadı";
-            this.gridColumn1.FieldName = "OgrenciID";
+            this.gridColumn1.FieldName = "AdiSoyadi";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
@@ -246,15 +250,32 @@ namespace Kutuphane_Uygulaması
             // searchLookUpEdit1View
             // 
             this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn7});
+            this.gridColumn7,
+            this.gridColumn8});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "AdıSoyadı";
+            this.gridColumn7.FieldName = "AdiSoyadi";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 0;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Okul No";
+            this.gridColumn8.FieldName = "OkulNo";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 1;
+            // 
             // searchLookUpEdit1
             // 
-            this.searchLookUpEdit1.Location = new System.Drawing.Point(92, 126);
+            this.searchLookUpEdit1.Location = new System.Drawing.Point(92, 125);
             this.searchLookUpEdit1.Name = "searchLookUpEdit1";
             this.searchLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -265,19 +286,29 @@ namespace Kutuphane_Uygulaması
             this.searchLookUpEdit1.Size = new System.Drawing.Size(191, 22);
             this.searchLookUpEdit1.TabIndex = 7;
             // 
-            // gridColumn7
+            // label6
             // 
-            this.gridColumn7.Caption = "AdıSoyadı";
-            this.gridColumn7.FieldName = "AdiSoyadi";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 0;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(100, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 17);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "label6";
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "ID";
+            this.gridColumn9.FieldName = "ID";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 0;
             // 
             // OgrenciKitapForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 493);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -333,5 +364,8 @@ namespace Kutuphane_Uygulaması
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private System.Windows.Forms.Label label6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
     }
 }
