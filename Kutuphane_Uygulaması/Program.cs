@@ -16,7 +16,7 @@ namespace Kutuphane_Uygulaması
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new OgrenciKitapForm("deneme"));
+            Application.Run(new OgrenciKitapForm(8));
         }
     }
 }

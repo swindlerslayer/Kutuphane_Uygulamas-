@@ -20,8 +20,8 @@ namespace Kutuphane_Uygulaması
 
         private DbOgrenci dbogrenci;
 
-        string userID;
-        public OgrenciKitapForm(string kullaniciID)
+        int userID;
+        public OgrenciKitapForm(int kullaniciID)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -40,12 +40,33 @@ namespace Kutuphane_Uygulaması
             searchLookUpEdit2.Properties.DataSource = kitapListesi;
             gridControl1.DataSource = okgrid.GetGridDoldur();
 
-            label1.Text = userID;
+            label1.Text = userID.ToString();
         }
 
         private void Teslimetme_Click(object sender, EventArgs e)
         {
+            KitapOgrenci kitapo = new KitapOgrenci();
+            kitapo.OgrenciID = ((int)searchLookUpEdit1.EditValue);
+            kitapo.KitapID = (int)searchLookUpEdit2.EditValue;
+            kitapo.AlisTarihi = dateEdit1.DateTime;
+            kitapo.TeslimTarihi = dateEdit2.DateTime;
+            kitapo.KullanıcıID = Int32.Parse(label1.Text);
 
+            bool kaydedildi = OgrenciKitap.EkleDuzenle(kitapo);
+            if (kaydedildi)
+            {
+                MessageBox.Show("Kitap başarıyla kaydedildi");
+                gridControl1.DataSource = okgrid.GetGridDoldur();
+
+            }
+            else
+            {
+                MessageBox.Show("Kitap kaydedilirken bir hata oluştu");
+            }
+
+
+
+           
         }
 
         private void Teslimalma_Click(object sender, EventArgs e)

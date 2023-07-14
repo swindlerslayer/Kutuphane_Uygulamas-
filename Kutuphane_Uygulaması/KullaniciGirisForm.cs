@@ -176,8 +176,8 @@ namespace Kutuphane_Uygulaması
         }
         private void öğrenciKitapToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string kullaniciid = kullaniciAdi;
-            OgrenciKitapForm form = new OgrenciKitapForm(kullaniciid);
+            int id = Int32.Parse(label1.Text);
+            OgrenciKitapForm form = new OgrenciKitapForm(id);
             form.Show();
         }
     }

@@ -15,6 +15,7 @@ namespace Kutuphane_Uygulaması.Data
             {
                 var ogrencilistesi = dbContext.Ogrenci.Select(k => new OgrenciViewModel
                 {
+                    ID=k.ID,
                     AdiSoyadi = k.AdiSoyadi,
                     OkulNo = k.OkulNo
                 }).ToList();
@@ -26,6 +27,7 @@ namespace Kutuphane_Uygulaması.Data
 
     public class OgrenciViewModel
     {
+        public int ID { get; set; }
         public string AdiSoyadi { get; set; }
         public int? OkulNo { get; set; }
     }
