@@ -59,7 +59,6 @@ namespace Kutuphane_Uygulaması
             bool kontrol = DbKullanici.KK(kullanici);
             if(kontrol != true)
             {
-
             bool kaydedildi = DbKullanici.EkleDuzenle(kullanici);
             if (kaydedildi)
             {

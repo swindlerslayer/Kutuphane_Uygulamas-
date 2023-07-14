@@ -44,10 +44,10 @@ namespace Kutuphane_Uygulaması
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(261, -6);
+            this.gridControl1.Location = new System.Drawing.Point(261, -2);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(491, 200);
+            this.gridControl1.Size = new System.Drawing.Size(491, 209);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -60,6 +60,7 @@ namespace Kutuphane_Uygulaması
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
             // 
@@ -87,27 +88,27 @@ namespace Kutuphane_Uygulaması
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(28, 51);
+            this.simpleButton1.Location = new System.Drawing.Point(12, 51);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(217, 44);
+            this.simpleButton1.Size = new System.Drawing.Size(233, 44);
             this.simpleButton1.TabIndex = 3;
             this.simpleButton1.Text = "Yazar Ekle ";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(28, 101);
+            this.simpleButton2.Location = new System.Drawing.Point(12, 101);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(217, 44);
+            this.simpleButton2.Size = new System.Drawing.Size(233, 44);
             this.simpleButton2.TabIndex = 4;
             this.simpleButton2.Text = "Yazar Güncelle";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton3
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(28, 151);
+            this.simpleButton3.Location = new System.Drawing.Point(12, 151);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(217, 44);
+            this.simpleButton3.Size = new System.Drawing.Size(233, 44);
             this.simpleButton3.TabIndex = 5;
             this.simpleButton3.Text = "Yazar Sil";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);

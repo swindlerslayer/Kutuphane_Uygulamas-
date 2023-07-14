@@ -44,7 +44,7 @@ namespace Kutuphane_Uygulaması
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(117, 13);
+            this.textEdit1.Location = new System.Drawing.Point(117, 22);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(130, 22);
             this.textEdit1.TabIndex = 0;
@@ -52,7 +52,7 @@ namespace Kutuphane_Uygulaması
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 16);
+            this.label1.Location = new System.Drawing.Point(9, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 17);
             this.label1.TabIndex = 1;
@@ -60,7 +60,7 @@ namespace Kutuphane_Uygulaması
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(12, 44);
+            this.simpleButton1.Location = new System.Drawing.Point(12, 59);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(235, 46);
             this.simpleButton1.TabIndex = 2;
@@ -69,10 +69,10 @@ namespace Kutuphane_Uygulaması
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(263, -6);
+            this.gridControl1.Location = new System.Drawing.Point(262, -6);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(491, 200);
+            this.gridControl1.Size = new System.Drawing.Size(491, 228);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -85,6 +85,7 @@ namespace Kutuphane_Uygulaması
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
             // 
@@ -96,7 +97,7 @@ namespace Kutuphane_Uygulaması
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(12, 96);
+            this.simpleButton2.Location = new System.Drawing.Point(12, 111);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(235, 46);
             this.simpleButton2.TabIndex = 4;
@@ -105,7 +106,7 @@ namespace Kutuphane_Uygulaması
             // 
             // simpleButton3
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(12, 148);
+            this.simpleButton3.Location = new System.Drawing.Point(12, 163);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(235, 46);
             this.simpleButton3.TabIndex = 5;
@@ -116,7 +117,7 @@ namespace Kutuphane_Uygulaması
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 196);
+            this.ClientSize = new System.Drawing.Size(748, 221);
             this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.gridControl1);

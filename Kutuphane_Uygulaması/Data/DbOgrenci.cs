@@ -6,7 +6,27 @@ using System.Threading.Tasks;
 
 namespace Kutuphane_Uygulaması.Data
 {
-    class DbOgrenci
+    public class DbOgrenci
     {
+
+        public List<OgrenciViewModel> GetOgrenciListesi()
+        {
+            using (var dbContext = new KutuphaneEntities2())
+            {
+                var ogrencilistesi = dbContext.Ogrenci.Select(k => new OgrenciViewModel
+                {
+                    AdiSoyadi = k.AdiSoyadi,
+                    OkulNo = k.OkulNo
+                }).ToList();
+
+                return ogrencilistesi;
+            }
+        }
+    }
+
+    public class OgrenciViewModel
+    {
+        public string AdiSoyadi { get; set; }
+        public int? OkulNo { get; set; }
     }
 }

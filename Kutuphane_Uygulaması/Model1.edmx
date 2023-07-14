@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="KutuphaneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="KutuphaneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Kitap">
           <Key>
             <PropertyRef Name="ID" />
@@ -31,7 +31,6 @@
           <Property Name="AlisTarihi" Type="datetime" />
           <Property Name="TeslimTarihi" Type="datetime" />
           <Property Name="KullanıcıID" Type="int" />
-          <Property Name="KayitYapan" Type="nvarchar" MaxLength="50" />
           <Property Name="KayitTarihi" Type="datetime" />
           <Property Name="DegisiklikYapan" Type="nvarchar" MaxLength="50" />
           <Property Name="DegisiklikTarihi" Type="datetime" />
@@ -64,11 +63,14 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="AdiSoyadi" Type="nvarchar" MaxLength="50" />
-          <Property Name="KayitYapan" Type="nvarchar" MaxLength="50" />
+          <Property Name="AdiSoyadi" Type="nvarchar(max)" />
+          <Property Name="KayitYapan" Type="nvarchar(max)" />
           <Property Name="KayitTarihi" Type="datetime" />
-          <Property Name="DegisiklikYapan" Type="nvarchar" MaxLength="50" />
+          <Property Name="DegisiklikYapan" Type="nvarchar(max)" />
           <Property Name="DegisiklikTarihi" Type="datetime" />
+          <Property Name="Sinif" Type="nvarchar(max)" />
+          <Property Name="OkulNo" Type="int" />
+          <Property Name="Bölüm" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -208,7 +210,8 @@
             <End Role="KitapOgrenci" EntitySet="KitapOgrenci" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="KutuphaneModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -242,7 +245,6 @@
           <Property Name="AlisTarihi" Type="DateTime" Precision="3" />
           <Property Name="TeslimTarihi" Type="DateTime" Precision="3" />
           <Property Name="KullanıcıID" Type="Int32" />
-          <Property Name="KayitYapan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="KayitTarihi" Type="DateTime" Precision="3" />
           <Property Name="DegisiklikYapan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DegisiklikTarihi" Type="DateTime" Precision="3" />
@@ -280,11 +282,14 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AdiSoyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="KayitYapan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AdiSoyadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KayitYapan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="KayitTarihi" Type="DateTime" Precision="3" />
-          <Property Name="DegisiklikYapan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DegisiklikYapan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DegisiklikTarihi" Type="DateTime" Precision="3" />
+          <Property Name="Sinif" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OkulNo" Type="Int32" />
+          <Property Name="Bölüm" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="KitapOgrenci" Relationship="Self.FK_KitapOgrenci_Ogrenci" FromRole="Ogrenci" ToRole="KitapOgrenci" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -459,7 +464,6 @@
                 <ScalarProperty Name="AlisTarihi" ColumnName="AlisTarihi" />
                 <ScalarProperty Name="TeslimTarihi" ColumnName="TeslimTarihi" />
                 <ScalarProperty Name="KullanıcıID" ColumnName="KullanıcıID" />
-                <ScalarProperty Name="KayitYapan" ColumnName="KayitYapan" />
                 <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
                 <ScalarProperty Name="DegisiklikYapan" ColumnName="DegisiklikYapan" />
                 <ScalarProperty Name="DegisiklikTarihi" ColumnName="DegisiklikTarihi" />
@@ -500,6 +504,9 @@
                 <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
                 <ScalarProperty Name="DegisiklikYapan" ColumnName="DegisiklikYapan" />
                 <ScalarProperty Name="DegisiklikTarihi" ColumnName="DegisiklikTarihi" />
+                <ScalarProperty Name="Sinif" ColumnName="Sinif" />
+                <ScalarProperty Name="OkulNo" ColumnName="OkulNo" />
+                <ScalarProperty Name="Bölüm" ColumnName="Bölüm" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -24,11 +24,11 @@ namespace Kutuphane_Uygulaması
             lookKitapTuru.Properties.DataSource = DbKitapTuru.ListeyeEkle();
             LookUpYayinEvi.Properties.DataSource = DbYayinEvi.ListeyeEkle();
             LookUpYazar.Properties.DataSource = DbYazar.ListeyeEkle();
+            gridControl1.DataSource = DbKitap.ListeyeEkle();
 
 
 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -55,7 +55,6 @@ namespace Kutuphane_Uygulaması
                 MessageBox.Show("Kitap kaydedilirken bir hata oluştu");
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -86,7 +85,6 @@ namespace Kutuphane_Uygulaması
 
             }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
 
@@ -168,7 +166,6 @@ namespace Kutuphane_Uygulaması
             KitapTurEkleForm GrsForm = new KitapTurEkleForm();
             GrsForm.Show();
         }
-
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
 
@@ -176,6 +173,12 @@ namespace Kutuphane_Uygulaması
             GridGuncelle form = new GridGuncelle(id);
             form.Show();
 
+        }
+        private void öğrenciKitapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string kullaniciid = kullaniciAdi;
+            OgrenciKitapForm form = new OgrenciKitapForm(kullaniciid);
+            form.Show();
         }
     }
 }

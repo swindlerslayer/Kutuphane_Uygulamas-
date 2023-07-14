@@ -26,6 +26,9 @@ namespace Kutuphane_Uygulaması
         public Nullable<System.DateTime> KayitTarihi { get; set; }
         public string DegisiklikYapan { get; set; }
         public Nullable<System.DateTime> DegisiklikTarihi { get; set; }
+        public string Sinif { get; set; }
+        public Nullable<int> OkulNo { get; set; }
+        public string Bölüm { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KitapOgrenci> KitapOgrenci { get; set; }

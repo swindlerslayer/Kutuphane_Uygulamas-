@@ -20,7 +20,6 @@ namespace Kutuphane_Uygulaması
         public Nullable<System.DateTime> AlisTarihi { get; set; }
         public Nullable<System.DateTime> TeslimTarihi { get; set; }
         public Nullable<int> KullanıcıID { get; set; }
-        public string KayitYapan { get; set; }
         public Nullable<System.DateTime> KayitTarihi { get; set; }
         public string DegisiklikYapan { get; set; }
         public Nullable<System.DateTime> DegisiklikTarihi { get; set; }

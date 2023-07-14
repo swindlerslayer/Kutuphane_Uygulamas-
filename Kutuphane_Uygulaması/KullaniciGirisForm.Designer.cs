@@ -38,6 +38,7 @@ namespace Kutuphane_Uygulaması
             this.yazarEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yayınEviEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kitapTürüEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.öğrenciKitapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -75,7 +76,6 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.kutuphaneDataSet = new Kutuphane_Uygulaması.KutuphaneDataSet();
             this.kitapTuruTableAdapter = new Kutuphane_Uygulaması.KutuphaneDataSetTableAdapters.KitapTuruTableAdapter();
-            this.öğrenciKitapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -171,6 +171,13 @@ namespace Kutuphane_Uygulaması
             this.kitapTürüEkleToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
             this.kitapTürüEkleToolStripMenuItem.Text = "Kitap Türü Ekle";
             this.kitapTürüEkleToolStripMenuItem.Click += new System.EventHandler(this.kitapTürüEkleToolStripMenuItem_Click);
+            // 
+            // öğrenciKitapToolStripMenuItem
+            // 
+            this.öğrenciKitapToolStripMenuItem.Name = "öğrenciKitapToolStripMenuItem";
+            this.öğrenciKitapToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
+            this.öğrenciKitapToolStripMenuItem.Text = "Öğrenci - Kitap";
+            this.öğrenciKitapToolStripMenuItem.Click += new System.EventHandler(this.öğrenciKitapToolStripMenuItem_Click);
             // 
             // layoutControl1
             // 
@@ -364,6 +371,7 @@ namespace Kutuphane_Uygulaması
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // colID
@@ -524,12 +532,6 @@ namespace Kutuphane_Uygulaması
             // kitapTuruTableAdapter
             // 
             this.kitapTuruTableAdapter.ClearBeforeFill = true;
-            // 
-            // öğrenciKitapToolStripMenuItem
-            // 
-            this.öğrenciKitapToolStripMenuItem.Name = "öğrenciKitapToolStripMenuItem";
-            this.öğrenciKitapToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
-            this.öğrenciKitapToolStripMenuItem.Text = "Öğrenci - Kitap";
             // 
             // KullaniciGirisForm
             // 
