@@ -18,11 +18,13 @@ using System.Text.Json.Serialization;
 using System.Text.Json.Nodes;
 using Kutuphane_Uygulaması.Data;
 using DevExpress.XtraEditors;
+using static Kutuphane_Uygulaması.Data.Degiskenler;
 
 namespace Kutuphane_Uygulaması
 {
     public partial class Form1 : XtraForm
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -84,6 +86,7 @@ namespace Kutuphane_Uygulaması
                 return false;
             }
         }
+        
         private void simpleButton1_Click(object sender, EventArgs e)
         {           
              
@@ -91,13 +94,15 @@ namespace Kutuphane_Uygulaması
             Kadi = textEdit1.Text;
             Ksifre = textEdit2.Text;
             sifreliKsifre = SHA256Hash(Ksifre);
-            using (KutuphaneEntities2 context = new KutuphaneEntities2())
+            using (KutuphaneEntities2 db = new KutuphaneEntities2())
             {
-                var kullanici = context.Kullanici.FirstOrDefault(k => k.KullaniciAdi == Kadi && k.Parola == sifreliKsifre);
+
+                var kullanici = db.Kullanici.FirstOrDefault(k => k.KullaniciAdi == Kadi && k.Parola == sifreliKsifre);
 
                 if (kullanici != null)
                 {
-                    KullaniciGirisForm GrsForm = new KullaniciGirisForm(Kadi);
+                    EntityKullanici kullanici1 = new EntityKullanici();
+                    KullaniciGirisForm GrsForm = new KullaniciGirisForm(kullanici);
                     GrsForm.Show();
                     this.Hide();
                 }
@@ -117,12 +122,19 @@ namespace Kutuphane_Uygulaması
         private void Form1_Load(object sender, EventArgs e)
         {
             var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            string filename = @"C:\Users\deret\OneDrive\Masaüstü\KullaniciBilgileri.json";
+            if (File.Exists(filename))
+            {
+
             string json = File.ReadAllText(@"C:\Users\deret\OneDrive\Masaüstü\KullaniciBilgileri.json");
             var veri = JsonSerializer.Deserialize<DbRemember>(json, options);
 
             textEdit1.Text = veri.KullaniciAdi;
             textEdit2.Text = veri.Sifre;
             checkEdit1.Checked = veri.Checkbox;
+
+            }
+
         }
     }
 }

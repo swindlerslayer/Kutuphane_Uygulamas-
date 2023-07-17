@@ -22,6 +22,15 @@ namespace Kutuphane_Uygulaması.Data
             public string YazarAdi { get; set; }
             public int? YazarID { get; set; }
         }
+
+        public class EntityKullanici
+        {
+            public int ID { get; set; }
+            public string KullaniciAdi { get; set; }
+            public string Parola { get; set; }
+
+
+        }
     }
     
 }

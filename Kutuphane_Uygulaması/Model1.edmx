@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="KutuphaneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="KutuphaneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Kitap">
           <Key>
             <PropertyRef Name="ID" />
@@ -34,6 +34,7 @@
           <Property Name="KayitTarihi" Type="datetime" />
           <Property Name="DegisiklikYapan" Type="nvarchar" MaxLength="50" />
           <Property Name="DegisiklikTarihi" Type="datetime" />
+          <Property Name="TeslimDurumu" Type="bit" />
         </EntityType>
         <EntityType Name="KitapTuru">
           <Key>
@@ -210,8 +211,7 @@
             <End Role="KitapOgrenci" EntitySet="KitapOgrenci" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="KutuphaneModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -251,6 +251,7 @@
           <NavigationProperty Name="Kitap" Relationship="Self.FK_KitapOgrenci_Kitap" FromRole="KitapOgrenci" ToRole="Kitap" />
           <NavigationProperty Name="Kullanici" Relationship="Self.FK_KitapOgrenci_Kullanici" FromRole="KitapOgrenci" ToRole="Kullanici" />
           <NavigationProperty Name="Ogrenci" Relationship="Self.FK_KitapOgrenci_Ogrenci" FromRole="KitapOgrenci" ToRole="Ogrenci" />
+          <Property Name="TeslimDurumu" Type="String" />
         </EntityType>
         <EntityType Name="KitapTuru">
           <Key>
@@ -458,6 +459,7 @@
           <EntitySetMapping Name="KitapOgrenci">
             <EntityTypeMapping TypeName="KutuphaneModel.KitapOgrenci">
               <MappingFragment StoreEntitySet="KitapOgrenci">
+                <ScalarProperty Name="TeslimDurumu" ColumnName="TeslimDurumu" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="OgrenciID" ColumnName="OgrenciID" />
                 <ScalarProperty Name="KitapID" ColumnName="KitapID" />

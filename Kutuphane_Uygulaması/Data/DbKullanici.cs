@@ -4,13 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using static Kutuphane_Uygulaması.Data.Degiskenler;
+
 namespace Kutuphane_Uygulaması.Data
 {
     public static class DbKullanici
     {
 
+
+        //public static object ListeyeEkle()
+        //{
+        //    using (KutuphaneEntities2 db = new KutuphaneEntities2())
+        //    {
+        //        var kullanici = db.Kullanici.Select(x => new EntityKullanici
+        //        {
+        //            ID = x.ID,
+        //            KullaniciAdi = x.KullaniciAdi,
+        //            Parola = x.Parola,
+        //        }).ToList();
+        //        return kullanici;
+        //    }
+        //}
         public static bool EkleDuzenle(Kullanici k)
-        {
+            {
             try
             {
                 using (KutuphaneEntities2 db = new KutuphaneEntities2())

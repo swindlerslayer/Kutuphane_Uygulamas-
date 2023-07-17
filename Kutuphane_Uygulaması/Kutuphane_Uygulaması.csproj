@@ -166,11 +166,6 @@
     <Compile Include="KullaniciGirisForm.Designer.cs">
       <DependentUpon>KullaniciGirisForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="KutuphaneDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>KutuphaneDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -252,17 +247,6 @@
     <EmbeddedResource Include="YazarEkleForm.resx">
       <DependentUpon>YazarEkleForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="KutuphaneDataSet.xsc">
-      <DependentUpon>KutuphaneDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="KutuphaneDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>KutuphaneDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="KutuphaneDataSet.xss">
-      <DependentUpon>KutuphaneDataSet.xsd</DependentUpon>
-    </None>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>

@@ -45,7 +45,8 @@ namespace Kutuphane_Uygulaması.Data
                         kitapogrenci.DegisiklikTarihi = DateTime.Now;
                         kitapogrenci.DegisiklikYapan = k.DegisiklikYapan;
                         kitapogrenci.KullanıcıID = k.KullanıcıID;
-                    
+                        kitapogrenci.TeslimTarihi = k.TeslimTarihi;
+                        kitapogrenci.TeslimDurumu = k.TeslimDurumu;
 
                         db.SaveChanges();
                         return false;
@@ -89,11 +90,13 @@ namespace Kutuphane_Uygulaması.Data
                     OkulNo = ko.Ogrenci.OkulNo,
                     YayinEviAdi = ko.Kitap.YayinEvi.Adi,
                     AlisTarihi = ko.AlisTarihi,
-                    TeslimTarihi = ko.TeslimTarihi
-                    
-                    
+                    TeslimTarihi = ko.TeslimTarihi,
+                    TeslimDurumu = ko.TeslimDurumu == true
+                    ? true
+                    : false
+
                 }).ToList();
-               
+
                 return kitapOgrenciListesi;
             }
         }
@@ -116,6 +119,7 @@ namespace Kutuphane_Uygulaması.Data
         public string YayinEviAdi { get; set; }
         public DateTime? AlisTarihi { get; set; }
         public Nullable<DateTime> TeslimTarihi { get; set; }
+        public bool TeslimDurumu { get; set; }
 
     }
 

@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using static Kutuphane_Uygulaması.Data.Degiskenler;
 
 
 namespace Kutuphane_Uygulaması
@@ -9,13 +10,12 @@ namespace Kutuphane_Uygulaması
     public partial class KullaniciGirisForm : Form
     {
 
-        private string kullaniciAdi;
 
-
-        public KullaniciGirisForm(string kullaniciAdi)
+        public KullaniciGirisForm(Kullanici kullanici)
         {
             InitializeComponent();
-            this.kullaniciAdi = kullaniciAdi;
+            
+            label2.Text = kullanici.ID.ToString();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
         private void KullaniciGirisForm_Load(object sender, EventArgs e)
@@ -166,8 +166,9 @@ namespace Kutuphane_Uygulaması
         }
         private void öğrenciKitapToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int id = Int32.Parse(label1.Text);
-            OgrenciKitapForm form = new OgrenciKitapForm(id);
+
+            string kad = label2.Text;
+            OgrenciKitapForm form = new OgrenciKitapForm(kad);
             form.Show();
         }
     }
