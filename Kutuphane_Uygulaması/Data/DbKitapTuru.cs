@@ -19,6 +19,7 @@ namespace Kutuphane_Uygulaması.Data
                 if (y.ID == 0)
                 {
                     y.KayitTarihi = DateTime.Now;
+                    
                     db.KitapTuru.Add(y);
                     db.SaveChanges();
                     return true;
@@ -28,7 +29,7 @@ namespace Kutuphane_Uygulaması.Data
                     var kitapturu = db.KitapTuru.FirstOrDefault(x => x.ID == y.ID);
 
                     kitapturu.Adi = y.Adi;
-
+                    
                     db.SaveChanges();
                     return false;
                 }
@@ -77,7 +78,7 @@ namespace Kutuphane_Uygulaması.Data
             }
         }
 
-        public static bool KTK(KitapTuru kntrl)
+        public static bool KTKontrol(KitapTuru kntrl)
         {
             using (KutuphaneEntities2 db = new KutuphaneEntities2())
             {

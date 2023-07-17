@@ -14,11 +14,13 @@ namespace Kutuphane_Uygulaması
 {
     public partial class YazarEkleForm : Form
     {
-        public YazarEkleForm()
+        private string kullaniciiD;
+
+        public YazarEkleForm(string KullaniciID)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-
+            this.kullaniciiD = KullaniciID;
             gridControl1.DataSource = DbYazar.ListeyeEkle();
 
         }
@@ -30,6 +32,9 @@ namespace Kutuphane_Uygulaması
             yazaradi = textEdit1.Text;
             Yazar yazar = new Yazar();
             yazar.AdiSoyadi = yazaradi;
+            yazar.KayitTarihi = DateTime.Now;
+            yazar.KayitYapan = kullaniciiD;
+
             bool kontrol = DbYazar.YK(yazar);
             if(kontrol != true)
             {
@@ -61,6 +66,9 @@ namespace Kutuphane_Uygulaması
                 string yeniAdi = textEdit1.Text;
 
                 selectedyazar.AdiSoyadi = yeniAdi;
+
+                selectedyazar.KayitTarihi = DateTime.Now;
+                selectedyazar.KayitYapan = kullaniciiD;
 
                 bool kaydedildi = DbYazar.EkleDuzenle(selectedyazar);
                 if (kaydedildi)

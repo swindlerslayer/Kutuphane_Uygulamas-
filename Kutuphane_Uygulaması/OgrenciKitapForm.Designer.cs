@@ -176,6 +176,7 @@ namespace Kutuphane_Uygulaması
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsFilter.AllowMultiSelectInCheckedFilterPopup = false;
+            this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn9

@@ -14,15 +14,22 @@ namespace Kutuphane_Uygulaması
 {
     public partial class KitapTurEkleForm : Form
     {
-        public KitapTurEkleForm()
+
+        private string kullaniciiD;
+
+        public KitapTurEkleForm(string KullaniciID)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-
+            this.kullaniciiD = KullaniciID;
             gridControl1.DataSource = DbKitapTuru.ListeyeEkle();
 
         }
 
+        private void KitapTurEkleForm_Load(object sender, EventArgs e)
+        {
+
+        }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
 
@@ -30,7 +37,10 @@ namespace Kutuphane_Uygulaması
             kitapturadi = textEdit1.Text;
             KitapTuru kitapTuru = new KitapTuru();
             kitapTuru.Adi = kitapturadi;
-            bool kontrol = DbKitapTuru.KTK(kitapTuru);
+            kitapTuru.KayitYapan = kullaniciiD;
+            kitapTuru.KayitTarihi = DateTime.Now;
+
+            bool kontrol = DbKitapTuru.KTKontrol(kitapTuru);
             if (kontrol != true)
             {
 
@@ -63,6 +73,9 @@ namespace Kutuphane_Uygulaması
                 string yeniAdi = textEdit1.Text;
 
                 selectedkitapturu.Adi = yeniAdi;
+                selectedkitapturu.DegisiklikYapan = kullaniciiD;
+                selectedkitapturu.DegisiklikTarihi = DateTime.Now;
+
 
                 bool kaydedildi = DbKitapTuru.EkleDuzenle(selectedkitapturu);
                 if (kaydedildi)
@@ -113,5 +126,6 @@ namespace Kutuphane_Uygulaması
                 textEdit1.Text = deneme12.ToString();
             }
         }
+
     }
 }

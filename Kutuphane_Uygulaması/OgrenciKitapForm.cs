@@ -52,7 +52,7 @@ namespace Kutuphane_Uygulaması
                 kitapo.KitapID = (int)searchLookUpEdit2.EditValue;
                 kitapo.AlisTarihi = dateEdit1.DateTime;
                 kitapo.KullanıcıID = Int32.Parse(label1.Text);
-                kitapo.TeslimDurumu = 0;
+                kitapo.TeslimDurumu = false;
                 
 
                 bool kaydedildi = OgrenciKitap.EkleDuzenle(kitapo);
@@ -84,7 +84,7 @@ namespace Kutuphane_Uygulaması
                 kitapo.AlisTarihi = dateEdit1.DateTime;
                 kitapo.TeslimTarihi = dateEdit2.DateTime;
                 kitapo.KullanıcıID = Int32.Parse(label1.Text);
-                kitapo.TeslimDurumu = 1;
+                kitapo.TeslimDurumu = true;
                 bool kaydedildi = OgrenciKitap.EkleDuzenle(kitapo);
                 if (kaydedildi)
                 {

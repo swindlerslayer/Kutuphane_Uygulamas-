@@ -7,11 +7,12 @@ namespace Kutuphane_Uygulaması
 {
     public partial class YayineviEkleForm : Form
     {
-        public YayineviEkleForm()
+        private string kullaniciid;
+        public YayineviEkleForm(string KullaniciID)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-
+            this.kullaniciid = KullaniciID;
         }
 
         private void YayineviEkleForm_Load(object sender, EventArgs e)
@@ -26,6 +27,8 @@ namespace Kutuphane_Uygulaması
             yayineviadi = textEdit1.Text;
             YayinEvi yadi = new YayinEvi();
             yadi.Adi = yayineviadi;
+            yadi.KayitYapan = kullaniciid;
+            yadi.KayitTarihi = DateTime.Now;
             bool kontrol = DbYayinEvi.YK(yadi);
             if (kontrol != true)
             {
@@ -56,6 +59,9 @@ namespace Kutuphane_Uygulaması
                 string yeniAdi = textEdit1.Text;
 
                 selectedYayinEvi.Adi = yeniAdi;
+
+                selectedYayinEvi.KayitYapan = kullaniciid;
+                selectedYayinEvi.KayitTarihi = DateTime.Now;
 
                 bool kaydedildi = DbYayinEvi.EkleDuzenle(selectedYayinEvi);
                 if (kaydedildi)

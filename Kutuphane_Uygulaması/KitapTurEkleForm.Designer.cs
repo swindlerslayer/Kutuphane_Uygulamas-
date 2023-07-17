@@ -126,6 +126,7 @@ namespace Kutuphane_Uygulaması
             this.Controls.Add(this.gridControl1);
             this.Name = "KitapTurEkleForm";
             this.Text = "KitapTurEkleForm";
+            this.Load += new System.EventHandler(this.KitapTurEkleForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();

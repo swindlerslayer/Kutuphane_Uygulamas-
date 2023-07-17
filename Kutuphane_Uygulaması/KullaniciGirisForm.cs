@@ -142,18 +142,23 @@ namespace Kutuphane_Uygulaması
         }
         private void yazarEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string kad = label2.Text;
 
-            YazarEkleForm GrsForm = new YazarEkleForm();
+            YazarEkleForm GrsForm = new YazarEkleForm(kad);
             GrsForm.Show();
         }
         private void yayınEviEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            YayineviEkleForm GrsForm = new YayineviEkleForm();
+            string kad = label2.Text;
+
+            YayineviEkleForm GrsForm = new YayineviEkleForm(kad);
             GrsForm.Show();
         }
         private void kitapTürüEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            KitapTurEkleForm GrsForm = new KitapTurEkleForm();
+            string kad = label2.Text;
+
+            KitapTurEkleForm GrsForm = new KitapTurEkleForm(kad);
             GrsForm.Show();
         }
         private void gridView1_DoubleClick(object sender, EventArgs e)

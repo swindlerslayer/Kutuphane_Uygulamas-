@@ -23,7 +23,7 @@ namespace Kutuphane_Uygulaması
         public Nullable<System.DateTime> KayitTarihi { get; set; }
         public string DegisiklikYapan { get; set; }
         public Nullable<System.DateTime> DegisiklikTarihi { get; set; }
-        public byte TeslimDurumu { get; set; }
+        public Nullable<bool> TeslimDurumu { get; set; }
     
         public virtual Kitap Kitap { get; set; }
         public virtual Kullanici Kullanici { get; set; }
