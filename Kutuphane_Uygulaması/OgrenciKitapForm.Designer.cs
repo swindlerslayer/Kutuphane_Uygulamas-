@@ -56,6 +56,7 @@ namespace Kutuphane_Uygulaması
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.label6 = new System.Windows.Forms.Label();
+            this.VeriSilme = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
@@ -82,7 +83,7 @@ namespace Kutuphane_Uygulaması
             // dateEdit1
             // 
             this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(133, 207);
+            this.dateEdit1.Location = new System.Drawing.Point(137, 150);
             this.dateEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateEdit1.Name = "dateEdit1";
             this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -95,7 +96,7 @@ namespace Kutuphane_Uygulaması
             // dateEdit2
             // 
             this.dateEdit2.EditValue = null;
-            this.dateEdit2.Location = new System.Drawing.Point(133, 246);
+            this.dateEdit2.Location = new System.Drawing.Point(137, 189);
             this.dateEdit2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateEdit2.Name = "dateEdit2";
             this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -107,7 +108,7 @@ namespace Kutuphane_Uygulaması
             // 
             // searchLookUpEdit2
             // 
-            this.searchLookUpEdit2.Location = new System.Drawing.Point(92, 165);
+            this.searchLookUpEdit2.Location = new System.Drawing.Point(96, 108);
             this.searchLookUpEdit2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchLookUpEdit2.Name = "searchLookUpEdit2";
             this.searchLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -128,7 +129,7 @@ namespace Kutuphane_Uygulaması
             // 
             // Teslimetme
             // 
-            this.Teslimetme.Location = new System.Drawing.Point(85, 314);
+            this.Teslimetme.Location = new System.Drawing.Point(89, 257);
             this.Teslimetme.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Teslimetme.Name = "Teslimetme";
             this.Teslimetme.Size = new System.Drawing.Size(123, 47);
@@ -138,7 +139,7 @@ namespace Kutuphane_Uygulaması
             // 
             // Teslimalma
             // 
-            this.Teslimalma.Location = new System.Drawing.Point(85, 393);
+            this.Teslimalma.Location = new System.Drawing.Point(89, 336);
             this.Teslimalma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Teslimalma.Name = "Teslimalma";
             this.Teslimalma.Size = new System.Drawing.Size(123, 47);
@@ -252,7 +253,7 @@ namespace Kutuphane_Uygulaması
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 128);
+            this.label2.Location = new System.Drawing.Point(12, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 13;
@@ -261,7 +262,7 @@ namespace Kutuphane_Uygulaması
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 167);
+            this.label3.Location = new System.Drawing.Point(11, 110);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 17);
             this.label3.TabIndex = 14;
@@ -270,7 +271,7 @@ namespace Kutuphane_Uygulaması
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 210);
+            this.label4.Location = new System.Drawing.Point(13, 153);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 17);
             this.label4.TabIndex = 15;
@@ -279,7 +280,7 @@ namespace Kutuphane_Uygulaması
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 249);
+            this.label5.Location = new System.Drawing.Point(13, 192);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 17);
             this.label5.TabIndex = 16;
@@ -313,7 +314,7 @@ namespace Kutuphane_Uygulaması
             // 
             // searchLookUpEdit1
             // 
-            this.searchLookUpEdit1.Location = new System.Drawing.Point(92, 126);
+            this.searchLookUpEdit1.Location = new System.Drawing.Point(96, 69);
             this.searchLookUpEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchLookUpEdit1.Name = "searchLookUpEdit1";
             this.searchLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -335,11 +336,22 @@ namespace Kutuphane_Uygulaması
             this.label6.Text = "label6";
             this.label6.Visible = false;
             // 
+            // VeriSilme
+            // 
+            this.VeriSilme.Location = new System.Drawing.Point(89, 410);
+            this.VeriSilme.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.VeriSilme.Name = "VeriSilme";
+            this.VeriSilme.Size = new System.Drawing.Size(123, 47);
+            this.VeriSilme.TabIndex = 18;
+            this.VeriSilme.Text = "Veri Silme";
+            this.VeriSilme.Click += new System.EventHandler(this.VeriSilme_Click);
+            // 
             // OgrenciKitapForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 494);
+            this.Controls.Add(this.VeriSilme);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -403,5 +415,6 @@ namespace Kutuphane_Uygulaması
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private DevExpress.XtraEditors.SimpleButton VeriSilme;
     }
 }

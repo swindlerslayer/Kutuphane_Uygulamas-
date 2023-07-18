@@ -23,6 +23,17 @@ namespace Kutuphane_Uygulaması.Data
                 }
             }
         }
+        public static bool sil(KitapOgrenci y)
+        {
+            using(KutuphaneEntities2 db = new KutuphaneEntities2())
+            {
+
+                var kitapogrenci= db.KitapOgrenci.FirstOrDefault(x => x.ID == y.ID);
+                db.KitapOgrenci.Remove(kitapogrenci);
+                db.SaveChanges();
+                return true;
+            }
+        }
         public static bool EkleDuzenle(KitapOgrenci k)
         {
             try

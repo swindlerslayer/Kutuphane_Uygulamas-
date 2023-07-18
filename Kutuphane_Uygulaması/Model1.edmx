@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="KutuphaneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="KutuphaneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Kitap">
           <Key>
             <PropertyRef Name="ID" />
@@ -20,6 +20,7 @@
           <Property Name="KayitTarihi" Type="datetime" />
           <Property Name="DegisiklikYapan" Type="nvarchar" MaxLength="50" />
           <Property Name="DegisiklikTarihi" Type="datetime" />
+          <Property Name="Resim" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="KitapOgrenci">
           <Key>
@@ -211,8 +212,7 @@
             <End Role="KitapOgrenci" EntitySet="KitapOgrenci" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="KutuphaneModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -235,6 +235,7 @@
           <NavigationProperty Name="YayinEvi" Relationship="Self.FK_Kitap_YayinEvi" FromRole="Kitap" ToRole="YayinEvi" />
           <NavigationProperty Name="Yazar" Relationship="Self.FK_Kitap_Yazar" FromRole="Kitap" ToRole="Yazar" />
           <NavigationProperty Name="KitapOgrenci" Relationship="Self.FK_KitapOgrenci_Kitap" FromRole="Kitap" ToRole="KitapOgrenci" />
+          <Property Name="Resim" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="KitapOgrenci">
           <Key>
@@ -443,6 +444,7 @@
           <EntitySetMapping Name="Kitap">
             <EntityTypeMapping TypeName="KutuphaneModel.Kitap">
               <MappingFragment StoreEntitySet="Kitap">
+                <ScalarProperty Name="Resim" ColumnName="Resim" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Adi" ColumnName="Adi" />
                 <ScalarProperty Name="SayfaSayisi" ColumnName="SayfaSayisi" />

@@ -137,5 +137,24 @@ namespace Kutuphane_Uygulaması
         {
 
         }
+
+        private void VeriSilme_Click(object sender, EventArgs e)
+        {
+
+            if (gridView1.GetFocusedRow() is KitapOgrenci selectedkitapogrenci)
+            {
+                string silinecek = searchLookUpEdit1.EditValue.ToString();
+                selectedkitapogrenci.ID =Int32.Parse( silinecek);
+                bool kaydedildi = OgrenciKitap.sil(selectedkitapogrenci);
+                if (kaydedildi)
+                {
+                    MessageBox.Show("Kitap türü başarıyla Silindi");
+                }
+                else
+                {
+                    MessageBox.Show("Kitap türü Silinemedi");
+                }
+            }
+        }
     }
 }

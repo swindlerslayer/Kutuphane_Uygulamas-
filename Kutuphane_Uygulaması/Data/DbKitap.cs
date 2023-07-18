@@ -20,14 +20,13 @@ namespace Kutuphane_Uygulaması.Data
                     Adi = x.Adi,
                     YazarID = x.YazarID,
                     YazarAdi = x.Yazar.AdiSoyadi,
+                    Resim = x.Resim
                 }).ToList();
                 return kitaplar;
             }
         }
         public static bool EkleDuzenle(Kitap k)
         {
-            try
-            {
                 using (KutuphaneEntities2 db = new KutuphaneEntities2())
                 {
                     if (k.ID == 0)
@@ -41,34 +40,97 @@ namespace Kutuphane_Uygulaması.Data
                     {
                         var kitap = db.Kitap.FirstOrDefault(x => x.ID == k.ID);
 
-                        kitap.Adi = k.Adi;
-                        kitap.SayfaSayisi = k.SayfaSayisi;
-                        kitap.DegisiklikTarihi = DateTime.Now;
-                        kitap.DegisiklikYapan = k.DegisiklikYapan;
-                        kitap.Barkod = k.Barkod;
-                        kitap.DegisiklikTarihi = DateTime.Now;
+                    kitap.Adi = k.Adi;
+                    kitap.SayfaSayisi = k.SayfaSayisi;
+                    kitap.DegisiklikTarihi = DateTime.Now;
+                    kitap.DegisiklikYapan = k.DegisiklikYapan;
+                    kitap.Barkod = k.Barkod;
+                    kitap.YazarID = k.YazarID; // Güncellenen YazarID
+                    kitap.YayinEviID = k.YayinEviID; // Güncellenen YayinEviID
+                    kitap.Resim = k.Resim;
 
-                        db.SaveChanges();
+                  
+                    db.SaveChanges();
                         return false;
                     }
                 }
                 
-            }
-            catch (Exception ex)
+            
+            
+        }
+
+        public static bool KitapKontrolKontrol(Kitap kntrl)
+        {
+            using (KutuphaneEntities2 db = new KutuphaneEntities2())
             {
-                return false;
+
+                var kitap = db.Kitap.FirstOrDefault(x => x.Adi == kntrl.Adi);
+                if (kitap != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
+        }
+
+        public static bool resimsil(Kitap y)
+        {
+            using (KutuphaneEntities2 db = new KutuphaneEntities2())
+            {
+
+                if (y.ID == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    var kitap = db.Kitap.FirstOrDefault(x => x.ID == y.ID);
+                    if (kitap != null)
+                    {
+                        kitap.Resim = null;
+                        db.SaveChanges();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
+
+
+
+            }
+
         }
         public static bool sil(Kitap y)
         {
             using (KutuphaneEntities2 db = new KutuphaneEntities2())
             {
-                
+
+
+                var kitapturkontrol = db.Kitap.FirstOrDefault(x => x.KitapTurID == y.ID);
+                if (kitapturkontrol != null)
+                {
+                    return false;
+                }
+                else
+                {
+                    if (y.ID == 0)
+                    {
+                        return false;
+                    }
+                    else
+                    {
                         var kitap = db.Kitap.FirstOrDefault(x => x.ID == y.ID);
                         db.Kitap.Remove(kitap);
                         db.SaveChanges();
-                        return true;                   
-                
+                        return true;
+                    }
+                }           
                 
             }
         }

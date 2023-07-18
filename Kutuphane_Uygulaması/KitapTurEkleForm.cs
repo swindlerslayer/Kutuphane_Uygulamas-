@@ -59,55 +59,41 @@ namespace Kutuphane_Uygulaması
             else
             {
                 MessageBox.Show("Bu isim halihazırda kayıtlı");
-
             }
 
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-
-
             if (gridView1.GetFocusedRow() is KitapTuru selectedkitapturu)
             {
                 string yeniAdi = textEdit1.Text;
-
                 selectedkitapturu.Adi = yeniAdi;
                 selectedkitapturu.DegisiklikYapan = kullaniciiD;
                 selectedkitapturu.DegisiklikTarihi = DateTime.Now;
-
-
                 bool kaydedildi = DbKitapTuru.EkleDuzenle(selectedkitapturu);
                 if (kaydedildi)
                 {
                     MessageBox.Show("????");
-
                     gridControl1.DataSource = DbKitapTuru.ListeyeEkle();
                 }
                 else
                 {
                     MessageBox.Show("Kitap Türü Başarıyla Güncellendi");
                     gridControl1.DataSource = DbKitapTuru.ListeyeEkle();
-
                 }
             }
-
         }
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-
-
             if (gridView1.GetFocusedRow() is KitapTuru selectedkitapturu)
             {
                 string silinecek = textEdit1.Text;
-
                 selectedkitapturu.Adi = silinecek;
-
                 bool kaydedildi = DbKitapTuru.sil(selectedkitapturu);
                 if (kaydedildi)
                 {
                     MessageBox.Show("Kitap türü başarıyla Silindi");
-
                     gridControl1.DataSource = DbKitapTuru.ListeyeEkle();
                 }
                 else

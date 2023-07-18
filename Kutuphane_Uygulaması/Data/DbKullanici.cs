@@ -12,19 +12,7 @@ namespace Kutuphane_Uygulaması.Data
     {
 
 
-        //public static object ListeyeEkle()
-        //{
-        //    using (KutuphaneEntities2 db = new KutuphaneEntities2())
-        //    {
-        //        var kullanici = db.Kullanici.Select(x => new EntityKullanici
-        //        {
-        //            ID = x.ID,
-        //            KullaniciAdi = x.KullaniciAdi,
-        //            Parola = x.Parola,
-        //        }).ToList();
-        //        return kullanici;
-        //    }
-        //}
+   
         public static bool EkleDuzenle(Kullanici k)
             {
             try
@@ -44,13 +32,6 @@ namespace Kutuphane_Uygulaması.Data
                     else
                     {
                         return false;
-                        //var kullanici = db.Kullanici.FirstOrDefault(x => x.ID == k.ID);
-
-                        //kullanici.KullaniciAdi = k.KullaniciAdi;
-                        //kullanici.Parola = k.Parola;
-                        //kullanici.DegisiklikTarihi = DateTime.Now;
-                        //kullanici.DegisiklikYapan = k.KullaniciAdi;
-                        //db.SaveChanges();
                     }
                 }
             }

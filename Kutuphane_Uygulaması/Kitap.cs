@@ -31,6 +31,7 @@ namespace Kutuphane_Uygulaması
         public Nullable<System.DateTime> KayitTarihi { get; set; }
         public string DegisiklikYapan { get; set; }
         public Nullable<System.DateTime> DegisiklikTarihi { get; set; }
+        public byte[] Resim { get; set; }
     
         public virtual KitapTuru KitapTuru { get; set; }
         public virtual YayinEvi YayinEvi { get; set; }

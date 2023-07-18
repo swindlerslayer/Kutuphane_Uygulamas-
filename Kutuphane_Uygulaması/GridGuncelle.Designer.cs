@@ -29,7 +29,6 @@ namespace Kutuphane_Uygulaması
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -39,11 +38,6 @@ namespace Kutuphane_Uygulaması
             this.searchLookUpEdit3 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
@@ -54,6 +48,7 @@ namespace Kutuphane_Uygulaması
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).BeginInit();
@@ -66,15 +61,6 @@ namespace Kutuphane_Uygulaması
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(702, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "adı";
             // 
             // searchLookUpEdit1
             // 
@@ -163,51 +149,6 @@ namespace Kutuphane_Uygulaması
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 0;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(702, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "sayfa sayısı";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(702, 62);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "kitap türü";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(702, 90);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 17);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "yayınevi";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(702, 118);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 17);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "yazar";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(702, 146);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 17);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "barkod";
-            // 
             // textEdit1
             // 
             this.textEdit1.Location = new System.Drawing.Point(12, 5);
@@ -287,6 +228,16 @@ namespace Kutuphane_Uygulaması
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 419);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "adı";
+            this.label1.Visible = false;
+            // 
             // GridGuncelle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -297,11 +248,6 @@ namespace Kutuphane_Uygulaması
             this.Controls.Add(this.textEdit3);
             this.Controls.Add(this.textEdit2);
             this.Controls.Add(this.textEdit1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.searchLookUpEdit3);
             this.Controls.Add(this.searchLookUpEdit2);
             this.Controls.Add(this.searchLookUpEdit1);
@@ -326,19 +272,12 @@ namespace Kutuphane_Uygulaması
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit1;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraEditors.TextEdit textEdit3;
@@ -352,5 +291,6 @@ namespace Kutuphane_Uygulaması
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private System.Windows.Forms.Label label1;
     }
 }

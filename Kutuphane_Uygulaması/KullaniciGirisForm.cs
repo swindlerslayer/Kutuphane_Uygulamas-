@@ -1,5 +1,9 @@
-﻿using Kutuphane_Uygulaması.Data;
+﻿using DevExpress.XtraPrinting.Native;
+using Kutuphane_Uygulaması.Data;
 using System;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using static Kutuphane_Uygulaması.Data.Degiskenler;
@@ -10,6 +14,7 @@ namespace Kutuphane_Uygulaması
     public partial class KullaniciGirisForm : Form
     {
 
+        private string selectedImagePath; // Seçilen resmin yolunu tutmak için değişken
 
         public KullaniciGirisForm(Kullanici kullanici)
         {
@@ -25,6 +30,7 @@ namespace Kutuphane_Uygulaması
             LookUpYayinEvi.Properties.DataSource = DbYayinEvi.ListeyeEkle();
             LookUpYazar.Properties.DataSource = DbYazar.ListeyeEkle();
             gridControl1.DataSource = DbKitap.ListeyeEkle();
+           
 
 
 
@@ -42,6 +48,9 @@ namespace Kutuphane_Uygulaması
             kitap.YayinEviID = (int)LookUpYayinEvi.EditValue;
             kitap.SayfaSayisi = Int32.Parse(ss);
             kitap.Barkod = Int32.Parse(barkod);
+            kitap.Resim = imageToByteArray();
+            
+
 
             bool kaydedildi = DbKitap.EkleDuzenle(kitap);
             if (kaydedildi)
@@ -61,8 +70,7 @@ namespace Kutuphane_Uygulaması
             int silinecek = Int32.Parse(label1.Text);
             string ss = textEdit2.Text;
             string barkod = textEdit3.Text;
-            Kitap selectedKitap = new Kitap(); // selectedKitap değişkenine yeni bir Kitap nesnesi oluşturulmalıdır
-
+            Kitap selectedKitap = new Kitap();
             selectedKitap.KayitYapan = label1.Text;
             selectedKitap.Adi = textEdit1.Text;
             selectedKitap.KitapTurID = (int)lookKitapTuru.EditValue;
@@ -71,6 +79,8 @@ namespace Kutuphane_Uygulaması
             selectedKitap.SayfaSayisi = Int32.Parse(ss);
             selectedKitap.Barkod = Int32.Parse(barkod);
             selectedKitap.ID = silinecek;
+            selectedKitap.Resim = imageToByteArray();
+
             bool güncellendi = DbKitap.EkleDuzenle(selectedKitap);
             if (güncellendi)
             {
@@ -89,20 +99,21 @@ namespace Kutuphane_Uygulaması
         {
 
             int silinecek = Int32.Parse(label1.Text);
-            Kitap selectedKitap = new Kitap(); // selectedKitap değişkenine yeni bir Kitap nesnesi oluşturulmalıdır
+            Kitap selectedKitap = new Kitap();
             selectedKitap.ID = silinecek;
 
 
             bool kaydedildi = DbKitap.sil(selectedKitap);
             if (kaydedildi)
             {
-                MessageBox.Show("Yayınevi başarıyla Silindi");
+                MessageBox.Show("Kitap başarıyla Silindi");
 
                 gridControl1.DataSource = DbKitap.ListeyeEkle();
             }
             else
             {
-                MessageBox.Show("Yayinevi Silinemedi");
+                
+                MessageBox.Show("Kitap bir öğrenci kaydında gözüküyor!!!");
                 gridControl1.DataSource = DbKitap.ListeyeEkle();
 
 
@@ -114,6 +125,9 @@ namespace Kutuphane_Uygulaması
 
             entityKitapBindingSource.DataSource = DbKitap.ListeyeEkle();
             gridControl1.DataSource = DbKitap.ListeyeEkle();
+
+            LookUpYayinEvi.Properties.DataSource = DbYayinEvi.ListeyeEkle();
+            LookUpYazar.Properties.DataSource = DbYazar.ListeyeEkle();
 
 
         }
@@ -135,6 +149,20 @@ namespace Kutuphane_Uygulaması
                     LookUpYazar.EditValue = data.YazarID;
                     textEdit3.Text = data.Barkod.ToString();
                     label1.Text = data.ID.ToString();
+
+                    if (data.Resim != null && data.Resim.Length > 0)
+                    {
+                        using (MemoryStream ms = new MemoryStream(data.Resim))
+                        {
+                            pictureEdit1.Image = Image.FromStream(ms);
+
+                            pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+                        }
+                    }
+                    else
+                    {
+                        pictureEdit1.Image = null;
+                    }
 
 
                 }
@@ -175,6 +203,55 @@ namespace Kutuphane_Uygulaması
             string kad = label2.Text;
             OgrenciKitapForm form = new OgrenciKitapForm(kad);
             form.Show();
+        }
+
+        public byte[] imageToByteArray()
+        {
+            MemoryStream ms = new MemoryStream();
+            Image imageIn = pictureEdit1.Image;
+            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+            return ms.ToArray();
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Resim Dosyaları|*.jpg;*.jpeg;*.png";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                selectedImagePath = openFileDialog.FileName;
+
+                // Resmi PictureEdit kontrolüne getirme ve sığdırma
+                Image originalImage = Image.FromFile(selectedImagePath);
+                pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+                pictureEdit1.Image = originalImage;
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+
+            int silinecek = Int32.Parse(label1.Text);
+            Kitap selectedKitap = new Kitap();
+            selectedKitap.ID = silinecek;
+
+
+            bool kaydedildi = DbKitap.resimsil(selectedKitap);
+            if (kaydedildi)
+            {
+                MessageBox.Show("Resim başarıyla Silindi");
+
+                gridControl1.DataSource = DbKitap.ListeyeEkle();
+            }
+            else
+            {
+
+                MessageBox.Show("Resim Silinemedi");
+                gridControl1.DataSource = DbKitap.ListeyeEkle();
+
+
+            }
+
         }
     }
 }
