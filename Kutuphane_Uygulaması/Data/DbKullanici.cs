@@ -12,19 +12,19 @@ namespace Kutuphane_Uygulaması.Data
     {
 
 
-   
+
         public static bool EkleDuzenle(Kullanici k)
-            {
+        {
             try
             {
                 using (KutuphaneEntities2 db = new KutuphaneEntities2())
                 {
                     if (k.ID == 0)
                     {
-                        
+
 
                         k.KayitTarihi = DateTime.Now;
-                        k.KayitYapan = k.KullaniciAdi;                        
+                        k.KayitYapan = k.KullaniciAdi;
                         db.Kullanici.Add(k);
                         db.SaveChanges();
                         return true;
@@ -43,11 +43,11 @@ namespace Kutuphane_Uygulaması.Data
 
         public static bool KK(Kullanici kntrl)
         {
-            using(KutuphaneEntities2 db = new KutuphaneEntities2())
-            { 
+            using (KutuphaneEntities2 db = new KutuphaneEntities2())
+            {
 
                 var kullanici = db.Kullanici.FirstOrDefault(x => x.KullaniciAdi == kntrl.KullaniciAdi);
-                if(kullanici != null)
+                if (kullanici != null)
                 {
                     return true;
                 }
@@ -56,6 +56,11 @@ namespace Kutuphane_Uygulaması.Data
                     return false;
                 }
             }
+        }
+        public static Kullanici KullaniciControl(string kullaniciAdi, string parola, bool loginMi)
+        {
+            var data = URL.Kullanici.KullaniciKontrol.Get<Kullanici>($"?kullaniciAdi={kullaniciAdi}&parola={parola}", kullaniciAdi: kullaniciAdi, parola: parola);
+            return data;
         }
     }
 }

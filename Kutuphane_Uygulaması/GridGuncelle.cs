@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kutuphane_Uygulaması.Data;
+using static Kutuphane_Uygulaması.Data.Degiskenler;
 
 namespace Kutuphane_Uygulaması
 {
@@ -51,7 +52,7 @@ namespace Kutuphane_Uygulaması
             int silinecek = Int32.Parse(label1.Text);
             string ss = textEdit2.Text;
             string barkod = textEdit3.Text;
-            Kitap selectedKitap = new Kitap(); // selectedKitap değişkenine yeni bir Kitap nesnesi oluşturulmalıdır
+            EntityFullKitap selectedKitap = new EntityFullKitap(); // selectedKitap değişkenine yeni bir Kitap nesnesi oluşturulmalıdır
 
             selectedKitap.KayitYapan = label1.Text;
             selectedKitap.Adi = textEdit1.Text;

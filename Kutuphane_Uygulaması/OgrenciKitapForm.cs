@@ -14,14 +14,14 @@ namespace Kutuphane_Uygulaması
 
         private DbOgrenci dbogrenci;
 
-        string kullaniciiD;
+        int kullaniciiD;
 
-        public OgrenciKitapForm(string kullaniciID)
+        public OgrenciKitapForm(int kullaniciID)
         {          
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.kullaniciiD = kullaniciID;
-            int ID = Int32.Parse(kullaniciiD);
+            int ID = kullaniciiD;
 
             ogrenciKitap = new OgrenciKitap();
             dbogrenci = new DbOgrenci();
@@ -35,7 +35,7 @@ namespace Kutuphane_Uygulaması
             searchLookUpEdit1.Properties.DataSource = ogrenciListesi;
             searchLookUpEdit2.Properties.DataSource = kitapListesi;
             gridControl1.DataSource = okgrid.GetGridDoldur();
-            label1.Text = kullaniciiD.ToString();
+          //  label1.Text = kullaniciiD;
 
         }
 
@@ -47,11 +47,12 @@ namespace Kutuphane_Uygulaması
             }
             else
             {
+
                 KitapOgrenci kitapo = new KitapOgrenci();
                 kitapo.OgrenciID = ((int)searchLookUpEdit1.EditValue);
                 kitapo.KitapID = (int)searchLookUpEdit2.EditValue;
                 kitapo.AlisTarihi = dateEdit1.DateTime;
-                kitapo.KullanıcıID = Int32.Parse(label1.Text);
+                kitapo.KullanıcıID = kullaniciiD;
                 kitapo.TeslimDurumu = false;
                 
 
@@ -83,7 +84,7 @@ namespace Kutuphane_Uygulaması
                 kitapo.KitapID = (int)searchLookUpEdit2.EditValue;
                 kitapo.AlisTarihi = dateEdit1.DateTime;
                 kitapo.TeslimTarihi = dateEdit2.DateTime;
-                kitapo.KullanıcıID = Int32.Parse(label1.Text);
+                kitapo.KullanıcıID = kullaniciiD;
                 kitapo.TeslimDurumu = true;
                 bool kaydedildi = OgrenciKitap.EkleDuzenle(kitapo);
                 if (kaydedildi)

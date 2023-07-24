@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net.Http;
+using System.Text.Json;
 using static Kutuphane_Uygulaması.Data.Degiskenler;
 
 namespace Kutuphane_Uygulaması.Data
@@ -12,51 +10,27 @@ namespace Kutuphane_Uygulaması.Data
     {
         public static object ListeyeEkle()
         {
-            using (KutuphaneEntities2 db = new KutuphaneEntities2())
-            {
-                var kitaplar = db.Kitap.Select(x => new EntityKitap
-                {
-                    ID = x.ID,
-                    Adi = x.Adi,
-                    YazarID = x.YazarID,
-                    YazarAdi = x.Yazar.AdiSoyadi,
-                    Resim = x.Resim
-                }).ToList();
-                return kitaplar;
-            }
+            var res = URL.Kitap.KitapGetirListeyeEkle.Get<List<EntityKitap>>(urlEk: $"");
+            return res;
         }
-        public static bool EkleDuzenle(Kitap k)
+
+
+        public static bool EkleDuzenle(EntityFullKitap k)
         {
-                using (KutuphaneEntities2 db = new KutuphaneEntities2())
-                {
-                    if (k.ID == 0)
-                    {
-                        k.KayitTarihi = DateTime.Now;
-                        db.Kitap.Add(k);
-                        db.SaveChanges();
-                        return true;
-                    }
-                    else
-                    {
-                        var kitap = db.Kitap.FirstOrDefault(x => x.ID == k.ID);
-
-                    kitap.Adi = k.Adi;
-                    kitap.SayfaSayisi = k.SayfaSayisi;
-                    kitap.DegisiklikTarihi = DateTime.Now;
-                    kitap.DegisiklikYapan = k.DegisiklikYapan;
-                    kitap.Barkod = k.Barkod;
-                    kitap.YazarID = k.YazarID; // Güncellenen YazarID
-                    kitap.YayinEviID = k.YayinEviID; // Güncellenen YayinEviID
-                    kitap.Resim = k.Resim;
-
-                  
-                    db.SaveChanges();
-                        return false;
-                    }
-                }
-                
-            
-            
+            if (k != null)
+            {
+                string strJson = JsonSerializer.Serialize(k);
+                //Json verimizi stringContent'e çeviriyoruz 
+                StringContent stringwrap = new StringContent(strJson);
+                //Daha fazla veri vermek veya application şeklini değiştirmek istersek alttaki kodu da kullanabiliriz.
+                //HttpContent httpContent = new StringContent(strJson, System.Text.Encoding.UTF8, "application/json");
+                var res = URL.Kitap.KitapEkleDuzenle.Post<EntityFullKitap>(Body: stringwrap);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public static bool KitapKontrolKontrol(Kitap kntrl)
@@ -76,78 +50,25 @@ namespace Kutuphane_Uygulaması.Data
             }
         }
 
-        public static bool resimsil(Kitap y)
+        public static bool Resimsil(int id)
         {
-            using (KutuphaneEntities2 db = new KutuphaneEntities2())
-            {
 
-                if (y.ID == 0)
-                {
-                    return false;
-                }
-                else
-                {
-                    var kitap = db.Kitap.FirstOrDefault(x => x.ID == y.ID);
-                    if (kitap != null)
-                    {
-                        kitap.Resim = null;
-                        db.SaveChanges();
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-
-
-
-
-            }
+            var res = URL.Kitap.KitapResimSil.Get<Kitap>(urlEk: $"?ID={id}");
+            return true;
 
         }
-        public static bool sil(Kitap y)
+
+        public static bool sil(int id)
         {
-            using (KutuphaneEntities2 db = new KutuphaneEntities2())
-            {
+            var res = URL.Kitap.KitapSil.Get<Kitap>(urlEk: $"?ID={id}");
+            return true;
 
-
-                var kitapturkontrol = db.Kitap.FirstOrDefault(x => x.KitapTurID == y.ID);
-                if (kitapturkontrol != null)
-                {
-                    return false;
-                }
-                else
-                {
-                    if (y.ID == 0)
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        var kitap = db.Kitap.FirstOrDefault(x => x.ID == y.ID);
-                        db.Kitap.Remove(kitap);
-                        db.SaveChanges();
-                        return true;
-                    }
-                }           
-                
-            }
         }
+
         public static Kitap KitapGetir(int id)
         {
-            using (KutuphaneEntities2 db=new KutuphaneEntities2())
-            {
-                var data = db.Kitap.FirstOrDefault(x => x.ID == id);
-                if (data!=null)
-                {
-                    return data;
-                }
-                else
-                {
-                    return null;
-                }
-            }
+            var res = URL.Kitap.KitalGetirTekDetayli.Get<Kitap>(urlEk: $"?ID={id}");
+            return res;
         }
     }
 }

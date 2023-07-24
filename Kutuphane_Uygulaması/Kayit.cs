@@ -26,18 +26,22 @@ namespace Kutuphane_Uygulaması
         }
 
 
-        string SHA256Hash(string text)
+        string hash = "slkjgdngı0243582ej";
+        public string Encrypt(string sifre)
         {
-            string source = text;
-            using (SHA256 sha1Hash = SHA256.Create())
+            byte[] data = UTF8Encoding.UTF8.GetBytes(sifre);
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
             {
-                byte[] sourceBytes = Encoding.UTF8.GetBytes(source);
-                byte[] hashBytes = sha1Hash.ComputeHash(sourceBytes);
-                string hash = BitConverter.ToString(hashBytes).Replace("-", String.Empty);
-                return (hash);
+                byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+                using (TripleDESCryptoServiceProvider tripDes = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 })
+                {
+                    ICryptoTransform transform = tripDes.CreateEncryptor();
+                    byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
+                    return Convert.ToBase64String(results, 0, results.Length);
+                }
             }
         }
-        
+
         private void Kayit_Load(object sender, EventArgs e)
         {
 
@@ -49,7 +53,7 @@ namespace Kutuphane_Uygulaması
             string Kadi, Ksifre, SifreliKsifre;
             Kadi = textEdit1.Text;
             Ksifre = textEdit2.Text;
-            SifreliKsifre = SHA256Hash(Ksifre);
+            SifreliKsifre = Encrypt(Ksifre);
             //if kullanıcı adına bağlı bir ID var ise Kullanıcı adı kullanılıyor döndür 
 
 

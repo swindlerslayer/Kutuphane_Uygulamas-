@@ -32,17 +32,7 @@ namespace Kutuphane_Uygulaması
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        string SHA256Hash(string text)
-        {
-            string source = text;
-            using (SHA256 sha1Hash = SHA256.Create())
-            {
-                byte[] sourceBytes = Encoding.UTF8.GetBytes(source);
-                byte[] hashBytes = sha1Hash.ComputeHash(sourceBytes);
-                string hash = BitConverter.ToString(hashBytes).Replace("-", String.Empty);
-                return (hash);
-            }
-        }
+   
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Kayit KytForm = new Kayit();
@@ -93,25 +83,13 @@ namespace Kutuphane_Uygulaması
             string Kadi, Ksifre, sifreliKsifre;
             Kadi = textEdit1.Text;
             Ksifre = textEdit2.Text;
-            sifreliKsifre = SHA256Hash(Ksifre);
-            using (KutuphaneEntities2 db = new KutuphaneEntities2())
-            {
 
-                var kullanici = db.Kullanici.FirstOrDefault(k => k.KullaniciAdi == Kadi && k.Parola == sifreliKsifre);
 
-                if (kullanici != null)
-                {
-                    EntityKullanici kullanici1 = new EntityKullanici();
-                    KullaniciGirisForm GrsForm = new KullaniciGirisForm(kullanici);
-                    GrsForm.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Geçersiz kullanıcı adı veya parola");
-                }
-               
-            }
+            var res = DbKullanici.KullaniciControl(Kadi, Ksifre, true);
+            KullaniciGirisForm GrsForm = new KullaniciGirisForm(res);
+            StaticDegiskenler.Kullanici = res;
+            GrsForm.Show();
+            this.Hide();           
 
 
             bool hatirla = checkEdit1.Checked;

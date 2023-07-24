@@ -1,10 +1,7 @@
-﻿using DevExpress.XtraPrinting.Native;
-using Kutuphane_Uygulaması.Data;
+﻿using Kutuphane_Uygulaması.Data;
 using System;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 using static Kutuphane_Uygulaması.Data.Degiskenler;
 
@@ -19,8 +16,8 @@ namespace Kutuphane_Uygulaması
         public KullaniciGirisForm(Kullanici kullanici)
         {
             InitializeComponent();
-            
-            label2.Text = kullanici.ID.ToString();
+
+            label2.Text = kullanici.ToString();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
         private void KullaniciGirisForm_Load(object sender, EventArgs e)
@@ -30,18 +27,19 @@ namespace Kutuphane_Uygulaması
             LookUpYayinEvi.Properties.DataSource = DbYayinEvi.ListeyeEkle();
             LookUpYazar.Properties.DataSource = DbYazar.ListeyeEkle();
             gridControl1.DataSource = DbKitap.ListeyeEkle();
-           
+
 
 
 
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void Kaydet_Click(object sender, EventArgs e)
         {
-
+            label1.Text = "0";
             string ss = textEdit2.Text;
             string barkod = textEdit3.Text;
-            Kitap kitap = new Kitap();
-            kitap.KayitYapan = label1.Text;
+            EntityFullKitap kitap = new EntityFullKitap();
+            kitap.ID = Int32.Parse(label1.Text);
+            kitap.KayitYapan = StaticDegiskenler.Kullanici.KullaniciAdi;
             kitap.Adi = textEdit1.Text;
             kitap.KitapTurID = (int)lookKitapTuru.EditValue;
             kitap.YazarID = (int)LookUpYazar.EditValue;
@@ -49,7 +47,7 @@ namespace Kutuphane_Uygulaması
             kitap.SayfaSayisi = Int32.Parse(ss);
             kitap.Barkod = Int32.Parse(barkod);
             kitap.Resim = imageToByteArray();
-            
+
 
 
             bool kaydedildi = DbKitap.EkleDuzenle(kitap);
@@ -57,20 +55,19 @@ namespace Kutuphane_Uygulaması
             {
                 MessageBox.Show("Kitap başarıyla kaydedildi");
                 gridControl1.DataSource = DbKitap.ListeyeEkle();
-
             }
             else
             {
                 MessageBox.Show("Kitap kaydedilirken bir hata oluştu");
             }
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void Guncelle_Click(object sender, EventArgs e)
         {
 
             int silinecek = Int32.Parse(label1.Text);
             string ss = textEdit2.Text;
             string barkod = textEdit3.Text;
-            Kitap selectedKitap = new Kitap();
+            EntityFullKitap selectedKitap = new EntityFullKitap();
             selectedKitap.KayitYapan = label1.Text;
             selectedKitap.Adi = textEdit1.Text;
             selectedKitap.KitapTurID = (int)lookKitapTuru.EditValue;
@@ -84,36 +81,33 @@ namespace Kutuphane_Uygulaması
             bool güncellendi = DbKitap.EkleDuzenle(selectedKitap);
             if (güncellendi)
             {
-                MessageBox.Show("????");
+                MessageBox.Show("Kitap Başarıyla Güncellendi");
 
                 gridControl1.DataSource = DbKitap.ListeyeEkle();
             }
             else
             {
-                MessageBox.Show("Kitap Başarıyla Güncellendi");
+
+                MessageBox.Show("Kitap Güncellenirken Bir Hata Oluştu");
                 gridControl1.DataSource = DbKitap.ListeyeEkle();
 
             }
         }
-        private void button3_Click(object sender, EventArgs e)
+        private void Sil_Click(object sender, EventArgs e)
         {
-
-            int silinecek = Int32.Parse(label1.Text);
-            Kitap selectedKitap = new Kitap();
-            selectedKitap.ID = silinecek;
-
-
-            bool kaydedildi = DbKitap.sil(selectedKitap);
-            if (kaydedildi)
+            int _id = Int32.Parse(label1.Text);
+            if (_id != null)
             {
-                MessageBox.Show("Kitap başarıyla Silindi");
+                var data = DbKitap.sil((int)_id);
+                if (data == true)
+                {
+                    MessageBox.Show("Kitap başarıyla Silindi");
+                }
+                else
+                {
+                    MessageBox.Show("Kitap Silinemedi");
 
-                gridControl1.DataSource = DbKitap.ListeyeEkle();
-            }
-            else
-            {
-                
-                MessageBox.Show("Kitap bir öğrenci kaydında gözüküyor!!!");
+                }
                 gridControl1.DataSource = DbKitap.ListeyeEkle();
 
 
@@ -133,10 +127,7 @@ namespace Kutuphane_Uygulaması
         }
         private void gridControl1_Click(object sender, EventArgs e)
         {
-
-
             int? _id = (int?)gridView1.GetFocusedRowCellValue("ID");
-
             if (_id != null)
             {
                 var data = DbKitap.KitapGetir((int)_id);
@@ -149,13 +140,11 @@ namespace Kutuphane_Uygulaması
                     LookUpYazar.EditValue = data.YazarID;
                     textEdit3.Text = data.Barkod.ToString();
                     label1.Text = data.ID.ToString();
-
                     if (data.Resim != null && data.Resim.Length > 0)
                     {
                         using (MemoryStream ms = new MemoryStream(data.Resim))
                         {
                             pictureEdit1.Image = Image.FromStream(ms);
-
                             pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
                         }
                     }
@@ -163,8 +152,6 @@ namespace Kutuphane_Uygulaması
                     {
                         pictureEdit1.Image = null;
                     }
-
-
                 }
             }
         }
@@ -200,19 +187,26 @@ namespace Kutuphane_Uygulaması
         private void öğrenciKitapToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            string kad = label2.Text;
+            int kad = 0;
+            kad = StaticDegiskenler.Kullanici.ID;
             OgrenciKitapForm form = new OgrenciKitapForm(kad);
             form.Show();
         }
-
         public byte[] imageToByteArray()
         {
-            MemoryStream ms = new MemoryStream();
-            Image imageIn = pictureEdit1.Image;
-            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
-            return ms.ToArray();
+            if (pictureEdit1.Image == null)
+            {
+                return null;
+            }
+            else
+            {
+                MemoryStream ms = new MemoryStream();
+                Image imageIn = pictureEdit1.Image;
+                imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+                return ms.ToArray();
+            }
         }
-        private void button4_Click(object sender, EventArgs e)
+        private void ResimYukle_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Resim Dosyaları|*.jpg;*.jpeg;*.png";
@@ -226,32 +220,40 @@ namespace Kutuphane_Uygulaması
                 pictureEdit1.Image = originalImage;
             }
         }
-
-        private void button5_Click(object sender, EventArgs e)
+        private void ResimSil_Click(object sender, EventArgs e)
         {
-
-
-            int silinecek = Int32.Parse(label1.Text);
-            Kitap selectedKitap = new Kitap();
-            selectedKitap.ID = silinecek;
-
-
-            bool kaydedildi = DbKitap.resimsil(selectedKitap);
-            if (kaydedildi)
+            if (pictureEdit1.Image == null)
             {
-                MessageBox.Show("Resim başarıyla Silindi");
 
-                gridControl1.DataSource = DbKitap.ListeyeEkle();
+                MessageBox.Show("Bu Alanda Bir Resim Yok");
             }
             else
             {
+                int _id = Int32.Parse(label1.Text);
+                if (_id != null)
+                {
+                    var data = DbKitap.Resimsil((int)_id);
+                    if (data == true)
+                    {
+                        MessageBox.Show("Resim başarıyla Silindi");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Resim Silinemedi");
 
-                MessageBox.Show("Resim Silinemedi");
-                gridControl1.DataSource = DbKitap.ListeyeEkle();
-
-
+                    }
+                    gridControl1.DataSource = DbKitap.ListeyeEkle();
+                }
             }
+
+
+        }
+        private void bisiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            bisiToolStripMenuItem.Text = StaticDegiskenler.Kullanici.ID.ToString();
 
         }
     }
 }
+
