@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,8 +20,6 @@ namespace Kutuphane_Uygulaması
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-
-
             this.acilankisi = acilankisi;
             int _id = Convert.ToInt32(acilankisi);
             // veya int _id = int.Parse(acilankisi.ToString());
@@ -34,10 +33,12 @@ namespace Kutuphane_Uygulaması
                 searchLookUpEdit3.EditValue = data.YazarID;
                 textEdit3.Text = data.Barkod.ToString();
                 label1.Text = data.ID.ToString();
-
-
+                using (MemoryStream ms = new MemoryStream(data.Resim))
+                {
+                    pictureEdit1.Image = Image.FromStream(ms);
+                    pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+                }
             }
-
         }
 
         private void GridGuncelle_Load(object sender, EventArgs e)
@@ -66,13 +67,10 @@ namespace Kutuphane_Uygulaması
             if (güncellendi)
             {
                 MessageBox.Show("????");
-
-                gridControl1.DataSource = DbKitap.ListeyeEkle();
             }
             else
             {
                 MessageBox.Show("Kitap Başarıyla Güncellendi");
-                gridControl1.DataSource = DbKitap.ListeyeEkle();
 
             }
         }

@@ -7,15 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Security.Cryptography;
-using System.Xml;
-using System.Xml.Serialization;
 using System.IO;
-using System.Configuration;
-using DevExpress.XtraEditors.Repository;
 using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Text.Json.Nodes;
 using Kutuphane_Uygulaması.Data;
 using DevExpress.XtraEditors;
 using static Kutuphane_Uygulaması.Data.Degiskenler;
@@ -24,14 +17,12 @@ namespace Kutuphane_Uygulaması
 {
     public partial class Form1 : XtraForm
     {
-
         public Form1()
         {
             InitializeComponent();
             textEdit2.Properties.PasswordChar = '*';
             this.StartPosition = FormStartPosition.CenterScreen;
         }
-
    
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -75,27 +66,24 @@ namespace Kutuphane_Uygulaması
 
                 return false;
             }
-        }
-        
+        }        
         private void simpleButton1_Click(object sender, EventArgs e)
-        {           
-             
-            string Kadi, Ksifre, sifreliKsifre;
+        {            
+            string Kadi, Ksifre;
             Kadi = textEdit1.Text;
             Ksifre = textEdit2.Text;
 
-
             var res = DbKullanici.KullaniciControl(Kadi, Ksifre, true);
             KullaniciGirisForm GrsForm = new KullaniciGirisForm(res);
-            StaticDegiskenler.Kullanici = res;
+
+
+            StaticDegiskenler.kullanici = res;
+
             GrsForm.Show();
-            this.Hide();           
+            this.Hide();
 
-
-            bool hatirla = checkEdit1.Checked;
- 
+            bool hatirla = checkEdit1.Checked; 
             KullaniciHatirla(hatirla);
-
         }
         private void Form1_Load(object sender, EventArgs e)
         {

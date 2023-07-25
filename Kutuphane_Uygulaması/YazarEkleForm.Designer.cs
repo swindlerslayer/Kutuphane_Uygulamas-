@@ -31,12 +31,14 @@ namespace Kutuphane_Uygulaması
         {
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.YazarEkleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.YazarGuncelleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.YazarSilButton = new DevExpress.XtraEditors.SimpleButton();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
@@ -56,11 +58,21 @@ namespace Kutuphane_Uygulaması
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn2,
             this.gridColumn1});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "ID";
+            this.gridColumn2.FieldName = "ID";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            this.gridColumn2.Width = 28;
             // 
             // gridColumn1
             // 
@@ -68,7 +80,8 @@ namespace Kutuphane_Uygulaması
             this.gridColumn1.FieldName = "AdiSoyadi";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.Width = 784;
             // 
             // textEdit1
             // 
@@ -86,41 +99,52 @@ namespace Kutuphane_Uygulaması
             this.label1.TabIndex = 2;
             this.label1.Text = "Yazar İsmi";
             // 
-            // simpleButton1
+            // YazarEkleButton
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(12, 51);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(233, 44);
-            this.simpleButton1.TabIndex = 3;
-            this.simpleButton1.Text = "Yazar Ekle ";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.YazarEkleButton.Location = new System.Drawing.Point(12, 51);
+            this.YazarEkleButton.Name = "YazarEkleButton";
+            this.YazarEkleButton.Size = new System.Drawing.Size(233, 44);
+            this.YazarEkleButton.TabIndex = 3;
+            this.YazarEkleButton.Text = "Yazar Ekle ";
+            this.YazarEkleButton.Click += new System.EventHandler(this.YazarEkleButton_Click);
             // 
-            // simpleButton2
+            // YazarGuncelleButton
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(12, 101);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(233, 44);
-            this.simpleButton2.TabIndex = 4;
-            this.simpleButton2.Text = "Yazar Güncelle";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.YazarGuncelleButton.Location = new System.Drawing.Point(12, 101);
+            this.YazarGuncelleButton.Name = "YazarGuncelleButton";
+            this.YazarGuncelleButton.Size = new System.Drawing.Size(233, 44);
+            this.YazarGuncelleButton.TabIndex = 4;
+            this.YazarGuncelleButton.Text = "Yazar Güncelle";
+            this.YazarGuncelleButton.Click += new System.EventHandler(this.YazarGuncelleButton_Click);
             // 
-            // simpleButton3
+            // YazarSilButton
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(12, 151);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(233, 44);
-            this.simpleButton3.TabIndex = 5;
-            this.simpleButton3.Text = "Yazar Sil";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            this.YazarSilButton.Location = new System.Drawing.Point(12, 151);
+            this.YazarSilButton.Name = "YazarSilButton";
+            this.YazarSilButton.Size = new System.Drawing.Size(233, 44);
+            this.YazarSilButton.TabIndex = 5;
+            this.YazarSilButton.Text = "Yazar Sil";
+            this.YazarSilButton.Click += new System.EventHandler(this.YazarSilButton_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(209, 190);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "label2";
+            this.label2.Visible = false;
             // 
             // YazarEkleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 196);
-            this.Controls.Add(this.simpleButton3);
-            this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.YazarSilButton);
+            this.Controls.Add(this.YazarGuncelleButton);
+            this.Controls.Add(this.YazarEkleButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.gridControl1);
@@ -141,9 +165,11 @@ namespace Kutuphane_Uygulaması
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton YazarEkleButton;
+        private DevExpress.XtraEditors.SimpleButton YazarGuncelleButton;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton YazarSilButton;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private System.Windows.Forms.Label label2;
     }
 }

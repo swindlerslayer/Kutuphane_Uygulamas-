@@ -12,14 +12,16 @@ namespace Kutuphane_Uygulaması
     {
 
         private string selectedImagePath; // Seçilen resmin yolunu tutmak için değişken
-
-        public KullaniciGirisForm(Kullanici kullanici)
+        private byte[] resim;
+        public KullaniciGirisForm(EntityKullanici kullanici)
         {
             InitializeComponent();
 
-            label2.Text = kullanici.ToString();
+            label2.Text = kullanici.KullaniciAdi.ToString();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
+      
+        
         private void KullaniciGirisForm_Load(object sender, EventArgs e)
         {
 
@@ -39,14 +41,15 @@ namespace Kutuphane_Uygulaması
             string barkod = textEdit3.Text;
             EntityFullKitap kitap = new EntityFullKitap();
             kitap.ID = Int32.Parse(label1.Text);
-            kitap.KayitYapan = StaticDegiskenler.Kullanici.KullaniciAdi;
+            kitap.KayitYapan = StaticDegiskenler.kullanici.KullaniciAdi;
+            kitap.KayitTarihi = DateTime.Now;
             kitap.Adi = textEdit1.Text;
             kitap.KitapTurID = (int)lookKitapTuru.EditValue;
             kitap.YazarID = (int)LookUpYazar.EditValue;
             kitap.YayinEviID = (int)LookUpYayinEvi.EditValue;
             kitap.SayfaSayisi = Int32.Parse(ss);
             kitap.Barkod = Int32.Parse(barkod);
-            kitap.Resim = imageToByteArray();
+            kitap.Resim = imgToByteConverter();
 
 
 
@@ -70,14 +73,15 @@ namespace Kutuphane_Uygulaması
             EntityFullKitap selectedKitap = new EntityFullKitap();
             selectedKitap.KayitYapan = label1.Text;
             selectedKitap.Adi = textEdit1.Text;
+            selectedKitap.DegisiklikTarihi = DateTime.Now;
+            selectedKitap.DegisiklikYapan = label2.Text;
             selectedKitap.KitapTurID = (int)lookKitapTuru.EditValue;
             selectedKitap.YazarID = (int)LookUpYazar.EditValue;
             selectedKitap.YayinEviID = (int)LookUpYayinEvi.EditValue;
             selectedKitap.SayfaSayisi = Int32.Parse(ss);
             selectedKitap.Barkod = Int32.Parse(barkod);
             selectedKitap.ID = silinecek;
-            selectedKitap.Resim = imageToByteArray();
-
+            selectedKitap.Resim = imgToByteConverter();
             bool güncellendi = DbKitap.EkleDuzenle(selectedKitap);
             if (güncellendi)
             {
@@ -140,25 +144,25 @@ namespace Kutuphane_Uygulaması
                     LookUpYazar.EditValue = data.YazarID;
                     textEdit3.Text = data.Barkod.ToString();
                     label1.Text = data.ID.ToString();
-                    if (data.Resim != null && data.Resim.Length > 0)
-                    {
-                        using (MemoryStream ms = new MemoryStream(data.Resim))
-                        {
-                            pictureEdit1.Image = Image.FromStream(ms);
-                            pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-                        }
-                    }
-                    else
-                    {
-                        pictureEdit1.Image = null;
-                    }
+
+                 pictureEdit1.EditValue =  data.Resim;
+                    pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+                    //if (data.Resim != null && data.Resim.Length > 0)
+                    //{
+                    //    using (MemoryStream ms = new MemoryStream(data.Resim))
+                    //    {
+                    //        pictureEdit1.Image = Image.FromStream(ms);
+                    //        pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+                    //    } 
+                    //}
+
                 }
             }
         }
         private void yazarEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string kad = label2.Text;
-
+            
             YazarEkleForm GrsForm = new YazarEkleForm(kad);
             GrsForm.Show();
         }
@@ -186,26 +190,37 @@ namespace Kutuphane_Uygulaması
         }
         private void öğrenciKitapToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             int kad = 0;
-            kad = StaticDegiskenler.Kullanici.ID;
+            kad = StaticDegiskenler.kullanici.ID;
             OgrenciKitapForm form = new OgrenciKitapForm(kad);
             form.Show();
         }
-        public byte[] imageToByteArray()
+        public byte[] imgToByteConverter()
         {
-            if (pictureEdit1.Image == null)
-            {
-                return null;
-            }
-            else
-            {
-                MemoryStream ms = new MemoryStream();
-                Image imageIn = pictureEdit1.Image;
-                imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
-                return ms.ToArray();
-            }
+            Image inImg = pictureEdit1.Image;
+            //Image inImg = pictureEdit1.Image;
+            ImageConverter imgCon = new ImageConverter();
+            return (byte[])imgCon.ConvertTo(inImg, typeof(byte[]));
         }
+
+        //public byte[] imageToByteArray()
+        //{
+        //    if (pictureEdit1.Image == null)
+        //    {
+        //        return null;
+        //    }
+        //    else
+        //    {
+        //        using (var ms = new MemoryStream())
+        //        {
+        //            Image imageIn = pictureEdit1.Image;
+
+        //            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+        //            return ms.ToArray();
+        //        }
+        //    }
+        //}
+
         private void ResimYukle_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -213,7 +228,6 @@ namespace Kutuphane_Uygulaması
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 selectedImagePath = openFileDialog.FileName;
-
                 // Resmi PictureEdit kontrolüne getirme ve sığdırma
                 Image originalImage = Image.FromFile(selectedImagePath);
                 pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
@@ -236,6 +250,8 @@ namespace Kutuphane_Uygulaması
                     if (data == true)
                     {
                         MessageBox.Show("Resim başarıyla Silindi");
+
+                        pictureEdit1.Image = null;
                     }
                     else
                     {
@@ -251,8 +267,12 @@ namespace Kutuphane_Uygulaması
         private void bisiToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            bisiToolStripMenuItem.Text = StaticDegiskenler.Kullanici.ID.ToString();
+            bisiToolStripMenuItem.Text = StaticDegiskenler.kullanici.ID.ToString();
 
+        }
+        private void KullaniciGirisForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

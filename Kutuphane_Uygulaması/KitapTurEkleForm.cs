@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kutuphane_Uygulaması.Data;
+using static Kutuphane_Uygulaması.Data.Degiskenler;
+
 
 
 namespace Kutuphane_Uygulaması
@@ -35,7 +37,7 @@ namespace Kutuphane_Uygulaması
 
             string kitapturadi;
             kitapturadi = textEdit1.Text;
-            KitapTuru kitapTuru = new KitapTuru();
+            EntityFullKitapTuru kitapTuru = new EntityFullKitapTuru();
             kitapTuru.Adi = kitapturadi;
             kitapTuru.KayitYapan = kullaniciiD;
             kitapTuru.KayitTarihi = DateTime.Now;
@@ -47,12 +49,12 @@ namespace Kutuphane_Uygulaması
                 bool kaydedildi = DbKitapTuru.EkleDuzenle(kitapTuru);
                 if (kaydedildi)
                 {
-                    MessageBox.Show("Yazar başarıyla kaydedildi");
+                    MessageBox.Show("Kitap Türü başarıyla kaydedildi");
                     gridControl1.DataSource = DbKitapTuru.ListeyeEkle();
                 }
                 else
                 {
-                    MessageBox.Show("Yazar kaydedilirken bir hata oluştu");
+                    MessageBox.Show("Kitap Türü kaydedilirken bir hata oluştu");
                 }
 
             }
@@ -65,35 +67,41 @@ namespace Kutuphane_Uygulaması
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRow() is KitapTuru selectedkitapturu)
+
+            string kitapturuadi, kitapturuid;
+            kitapturuadi = textEdit1.Text;
+            kitapturuid = label2.Text;
+            EntityFullKitapTuru kitapturu = new EntityFullKitapTuru();
+            kitapturu.Adi = kitapturuadi;
+            kitapturu.ID = Int32.Parse(kitapturuid);
+            kitapturu.KayitTarihi = DateTime.Now;
+            kitapturu.KayitYapan = kullaniciiD;
+
+
+            bool kaydedildi = DbKitapTuru.EkleDuzenle(kitapturu);
+            if (kaydedildi)
             {
-                string yeniAdi = textEdit1.Text;
-                selectedkitapturu.Adi = yeniAdi;
-                selectedkitapturu.DegisiklikYapan = kullaniciiD;
-                selectedkitapturu.DegisiklikTarihi = DateTime.Now;
-                bool kaydedildi = DbKitapTuru.EkleDuzenle(selectedkitapturu);
-                if (kaydedildi)
-                {
-                    MessageBox.Show("????");
-                    gridControl1.DataSource = DbKitapTuru.ListeyeEkle();
-                }
-                else
-                {
-                    MessageBox.Show("Kitap Türü Başarıyla Güncellendi");
-                    gridControl1.DataSource = DbKitapTuru.ListeyeEkle();
-                }
+                MessageBox.Show("Kitap türü başarıyla güncellendi");
+                gridControl1.DataSource = DbKitapTuru.ListeyeEkle();
+            }
+            else
+            {
+                MessageBox.Show("Kitap türü güncellenirken bir hata oluştu");
             }
         }
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            if (gridView1.GetFocusedRow() is KitapTuru selectedkitapturu)
+            if (gridView1.GetFocusedRow() is EntityKitapTuruListe selectedkitaptur)
             {
                 string silinecek = textEdit1.Text;
-                selectedkitapturu.Adi = silinecek;
-                bool kaydedildi = DbKitapTuru.sil(selectedkitapturu);
+
+                selectedkitaptur.Adi = silinecek;
+
+                bool kaydedildi = DbKitapTuru.sil(selectedkitaptur);
                 if (kaydedildi)
                 {
                     MessageBox.Show("Kitap türü başarıyla Silindi");
+
                     gridControl1.DataSource = DbKitapTuru.ListeyeEkle();
                 }
                 else
@@ -106,10 +114,18 @@ namespace Kutuphane_Uygulaması
 
         private void gridControl1_Click(object sender, EventArgs e)
         {
-            object deneme12 = gridView1.GetFocusedRowCellValue("Adi");
-            if (deneme12 != null)
+            object secilenyayineviID = gridView1.GetFocusedRowCellValue("ID");
+            if (secilenyayineviID != null)
             {
-                textEdit1.Text = deneme12.ToString();
+
+                label2.Text = secilenyayineviID.ToString();
+
+            }
+
+            object secilenkitapturu = gridView1.GetFocusedRowCellValue("Adi");
+            if (secilenkitapturu != null)
+            {
+                textEdit1.Text = secilenkitapturu.ToString();
             }
         }
 

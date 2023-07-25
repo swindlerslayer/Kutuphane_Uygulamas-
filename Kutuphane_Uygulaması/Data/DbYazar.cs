@@ -1,95 +1,71 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
+using static Kutuphane_Uygulaması.Data.Degiskenler;
 
 namespace Kutuphane_Uygulaması.Data
 {
     static class DbYazar
     {
 
-        public static bool EkleDuzenle(Yazar y)
+        public static bool EkleDuzenle(EntityFullYazar y)
         {
-
-            using (KutuphaneEntities2 db = new KutuphaneEntities2())
+            if (y != null)
             {
-                if (y.ID == 0)
-                {
-                    y.KayitTarihi = DateTime.Now;
-                    db.Yazar.Add(y);
-                    db.SaveChanges();
-                    return true;
-                }
-                else
-                {
-                    var yazar = db.Yazar.FirstOrDefault(x => x.ID == y.ID);
-
-                    yazar.AdiSoyadi = y.AdiSoyadi;
-
-                    db.SaveChanges();
-                    return false;
-                }
+                string strJson = JsonSerializer.Serialize(y);
+                //Json verimizi stringContent'e çeviriyoruz 
+                StringContent stringwrap = new StringContent(strJson);
+                //Daha fazla veri vermek veya application şeklini değiştirmek istersek alttaki kodu da kullanabiliriz.
+                //HttpContent httpContent = new StringContent(strJson, System.Text.Encoding.UTF8, "application/json");
+                var res = URL.Yazar.YazarEkleDuzenle.Post<Boolean>(Body: stringwrap);
+                return true;
             }
+            else
+            {
+                return false;
+            }
+            
         }
-        public static List<Yazar> ListeyeEkle()
+        public static List<EntityYazarListe> ListeyeEkle()
         {
-            using (KutuphaneEntities2 db = new KutuphaneEntities2())
-            {
-                try
-                {
-                    var yazarlar = db.Yazar.ToList();
-                    return yazarlar;
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-            }
+
+            var res = URL.Yazar.YazarTümYazarlarıListele.Get<List<EntityYazarListe>>(urlEk: $"");
+            return res;          
+        
         }
 
-        public static bool sil(Yazar y)
+        public static bool sil(EntityYazarListe id)
         {
-            using (KutuphaneEntities2 db = new KutuphaneEntities2())
+            int ID = id.ID;
+            var res = URL.Yazar.YazarSil.Get<Boolean>(urlEk: $"?ID={ID}");
+            if (res ==false)
             {
-                var kitapkontrol = db.Kitap.FirstOrDefault(x => x.YazarID == y.ID);
-                if (kitapkontrol != null)
-                {
-                    return false;
-                }                
-                else {                 
-                    if (y.ID == 0)                  
-                    {                    
-                        return false;                
-                    }                
-                    else
-                    {
-                        var silinecekyazar = db.Yazar.FirstOrDefault(x => x.AdiSoyadi == y.AdiSoyadi);
-                        db.Yazar.Remove(silinecekyazar);
-                        db.SaveChanges();
-                        return true;
-
-                
-                    }
-                }
+                return false;
             }
+
+            return true;
+           
+            
         }
 
-        public static bool YK(Yazar kntrl)
+        public static bool YK(EntityFullYazar id)
         {
-            using (KutuphaneEntities2 db = new KutuphaneEntities2())
+            var yazarid = id.ID;
+            var res = URL.Yazar.YazarKontrol.Get<EntityFullYazar>(urlEk: $"?ID={yazarid}");
+            if(res.ID == 0)
             {
-
-                var yazar = db.Yazar.FirstOrDefault(x => x.AdiSoyadi == kntrl.AdiSoyadi);
-                if (yazar != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return false;
+              
             }
+            else
+            {
+                return true;
+            }
+            
         }
 
     }

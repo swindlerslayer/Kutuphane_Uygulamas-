@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kutuphane_Uygulaması.Data;
+using static Kutuphane_Uygulaması.Data.Degiskenler;
+
 
 
 namespace Kutuphane_Uygulaması
@@ -22,15 +24,14 @@ namespace Kutuphane_Uygulaması
             this.StartPosition = FormStartPosition.CenterScreen;
             this.kullaniciiD = KullaniciID;
             gridControl1.DataSource = DbYazar.ListeyeEkle();
-
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void YazarEkleButton_Click(object sender, EventArgs e)
         {
 
             string yazaradi;
             yazaradi = textEdit1.Text;
-            Yazar yazar = new Yazar();
+            EntityFullYazar yazar = new EntityFullYazar();
             yazar.AdiSoyadi = yazaradi;
             yazar.KayitTarihi = DateTime.Now;
             yazar.KayitYapan = kullaniciiD;
@@ -58,39 +59,38 @@ namespace Kutuphane_Uygulaması
             }
         }
 
-        private void simpleButton2_Click(object sender, EventArgs e)
+        private void YazarGuncelleButton_Click(object sender, EventArgs e)
         {
 
-            if (gridView1.GetFocusedRow() is Yazar selectedyazar)
-            {
-                string yeniAdi = textEdit1.Text;
+            string yazaradi, yazarid;
+            yazaradi = textEdit1.Text;
+            yazarid = label2.Text;
+            EntityFullYazar yazar = new EntityFullYazar();
+            yazar.ID = Int32.Parse(yazarid);
+            yazar.AdiSoyadi = yazaradi;
+            yazar.KayitTarihi = DateTime.Now;
+            yazar.KayitYapan = kullaniciiD;
 
-                selectedyazar.AdiSoyadi = yeniAdi;
-
-                selectedyazar.KayitTarihi = DateTime.Now;
-                selectedyazar.KayitYapan = kullaniciiD;
-
-                bool kaydedildi = DbYazar.EkleDuzenle(selectedyazar);
+            
+                bool kaydedildi = DbYazar.EkleDuzenle(yazar);
                 if (kaydedildi)
                 {
-                    MessageBox.Show("????");
-
+                    MessageBox.Show("Yazar başarıyla güncellendi");
                     gridControl1.DataSource = DbYazar.ListeyeEkle();
                 }
                 else
                 {
-                    MessageBox.Show("Yazar Başarıyla Güncellendi");
-                    gridControl1.DataSource = DbYazar.ListeyeEkle();
-
+                    MessageBox.Show("Yazar güncellenirken bir hata oluştu");
                 }
-            }
+
+         
         }
 
-        private void simpleButton3_Click(object sender, EventArgs e)
+        private void YazarSilButton_Click(object sender, EventArgs e)
         {
 
-
-            if (gridView1.GetFocusedRow() is Yazar selectedYazar)
+            
+            if (gridView1.GetFocusedRow() is EntityYazarListe selectedYazar)
             {
                 string silinecek = textEdit1.Text;
 
@@ -113,10 +113,19 @@ namespace Kutuphane_Uygulaması
         private void gridControl1_Click(object sender, EventArgs e)
         {
 
-            object deneme12 = gridView1.GetFocusedRowCellValue("AdiSoyadi");
-            if (deneme12 != null)
+            object secilenyazarID = gridView1.GetFocusedRowCellValue("ID");
+            if(secilenyazarID != null)
             {
-                textEdit1.Text = deneme12.ToString();
+                
+                label2.Text = secilenyazarID.ToString();
+
+            }
+
+            object secilenyazar = gridView1.GetFocusedRowCellValue("AdiSoyadi");
+            if (secilenyazar != null)
+            {
+                textEdit1.Text = secilenyazar.ToString();
+                
             }
         }
 

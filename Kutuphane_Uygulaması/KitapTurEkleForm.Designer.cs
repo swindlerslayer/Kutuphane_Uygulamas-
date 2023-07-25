@@ -37,6 +37,8 @@ namespace Kutuphane_Uygulaması
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
@@ -56,6 +58,7 @@ namespace Kutuphane_Uygulaması
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn2,
             this.gridColumn1});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -68,7 +71,8 @@ namespace Kutuphane_Uygulaması
             this.gridColumn1.FieldName = "Adi";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.Width = 777;
             // 
             // simpleButton1
             // 
@@ -113,11 +117,31 @@ namespace Kutuphane_Uygulaması
             this.label1.TabIndex = 5;
             this.label1.Text = "Tür Adı";
             // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "ID";
+            this.gridColumn2.FieldName = "ID";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            this.gridColumn2.Width = 35;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(200, 193);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "label2";
+            this.label2.Visible = false;
+            // 
             // KitapTurEkleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 196);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.simpleButton3);
@@ -145,5 +169,7 @@ namespace Kutuphane_Uygulaması
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -11,17 +11,18 @@ namespace Kutuphane_Uygulaması.Data
 
         public List<OgrenciViewModel> GetOgrenciListesi()
         {
-            using (var dbContext = new KutuphaneEntities2())
-            {
-                var ogrencilistesi = dbContext.Ogrenci.Select(k => new OgrenciViewModel
-                {
-                    ID=k.ID,
-                    AdiSoyadi = k.AdiSoyadi,
-                    OkulNo = k.OkulNo
-                }).ToList();
+            return null;
+            //using (var dbContext = new KutuphaneEntities2())
+            //{
+            //    var ogrencilistesi = dbContext.Ogrenci.Select(k => new OgrenciViewModel
+            //    {
+            //        ID=k.ID,
+            //        AdiSoyadi = k.AdiSoyadi,
+            //        OkulNo = k.OkulNo
+            //    }).ToList();
 
-                return ogrencilistesi;
-            }
+            //    return ogrencilistesi;
+            //}
         }
     }
 

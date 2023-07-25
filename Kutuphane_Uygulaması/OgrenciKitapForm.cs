@@ -2,6 +2,7 @@
 using Kutuphane_Uygulaması.Data;
 using System;
 using System.Windows.Forms;
+using static Kutuphane_Uygulaması.Data.Degiskenler;
 
 
 namespace Kutuphane_Uygulaması
@@ -48,7 +49,7 @@ namespace Kutuphane_Uygulaması
             else
             {
 
-                KitapOgrenci kitapo = new KitapOgrenci();
+                EntityFullKitapOgrenci kitapo = new EntityFullKitapOgrenci();
                 kitapo.OgrenciID = ((int)searchLookUpEdit1.EditValue);
                 kitapo.KitapID = (int)searchLookUpEdit2.EditValue;
                 kitapo.AlisTarihi = dateEdit1.DateTime;
@@ -78,7 +79,7 @@ namespace Kutuphane_Uygulaması
             }
             else
             {
-                KitapOgrenci kitapo = new KitapOgrenci();
+                EntityFullKitapOgrenci kitapo = new EntityFullKitapOgrenci();
                 kitapo.ID = Int32.Parse(label6.Text);
                 kitapo.OgrenciID = ((int)searchLookUpEdit1.EditValue);
                 kitapo.KitapID = (int)searchLookUpEdit2.EditValue;
@@ -142,7 +143,7 @@ namespace Kutuphane_Uygulaması
         private void VeriSilme_Click(object sender, EventArgs e)
         {
 
-            if (gridView1.GetFocusedRow() is KitapOgrenci selectedkitapogrenci)
+            if (gridView1.GetFocusedRow() is EntityFullKitapOgrenci selectedkitapogrenci)
             {
                 string silinecek = searchLookUpEdit1.EditValue.ToString();
                 selectedkitapogrenci.ID =Int32.Parse( silinecek);

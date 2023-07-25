@@ -53,6 +53,127 @@ namespace Kutuphane_Uygulaması.Data
             }
 
         }
+        public static class Yazar
+        {
+            public static string YazarSil
+            {
+                get
+                {
+                    return "api/yazarsil";
+                }
+            }
+            public static string YazarGetirTekDetaylı
+            {
+                get
+                {
+                    return "api/yazargetir";
+                }
+            }
+            public static string YazarEkleDuzenle
+            {
+                get
+                {
+                    return "api/yazarekleduzenle";
+                }
+            }
+            public static string YazarTümYazarlarıListele
+            {
+                get
+                {
+                    return "api/yazarlisteyeekle";
+                }
+            }
+            public static string YazarKontrol
+            {
+                get
+                {
+                    return "api/yazarkontrol";
+                }
+            }
+        }
+        public static class Yayinevi {
+
+            public static string YayinEviListeyeEkle
+            {
+                get
+                {
+                    return "api/yayinevilisteyeekle";
+                }
+            }
+
+            public static string YayineviGetirTekDetaylı
+            {
+                get
+                {
+                    return "api/yayinevigetir";
+                }
+            }
+            public static string YayineviSil
+            {
+                get
+                {
+                    return "api/yayinevisil";
+                }
+            }
+            public static string YayineviEkleGuncelle
+            {
+                get
+                {
+                    return "api/yayineviekleduzenle";
+                }
+            }
+            public static string YayineviKontrol
+            {
+                get
+                {
+                    return "api/yayinevikontrol";
+                }
+            }
+            
+        }
+        public static class KitapTuru
+        {
+            public static string KitapTurGetirTekDeyayli
+            {
+                get
+                {
+                    return "api/kitapturugetir";
+                }
+            }
+            public static string KitapTurSil
+            {
+                get
+                {
+                    return "api/kitapturusil";
+                }
+            }
+            public static string KitapTurEkleDuzenle
+            {
+                get
+                {
+                    return "api/kitapturuekleduzenle";
+                }
+            }
+
+            public static string KitapTurKontrol
+            {
+                get
+                {
+                    return "api/kitapturkontrol";
+                }
+            }
+
+            public static string KitapTurListeyeEkle
+            {
+                get
+                {
+                    return "api/kitapturulisteyeekle";
+                }
+            }
+            
+
+
+        }
         public static class Kullanici
         {
             public static string KullaniciKontrol { get { return "api/kullanici/kullaniciKontrol"; } }
@@ -67,8 +188,8 @@ namespace Kutuphane_Uygulaması.Data
             {
                 var values = new Dictionary<string, string>();
                 values.Add("grant_type", "password");
-                values.Add("username", LoginMi ? kullaniciAdi : StaticDegiskenler.Kullanici.KullaniciAdi);
-                values.Add("password", LoginMi ? Password : StaticDegiskenler.Kullanici.Parola);
+                values.Add("username", LoginMi ? kullaniciAdi : StaticDegiskenler.kullanici.KullaniciAdi);
+                values.Add("password", LoginMi ? Password : StaticDegiskenler.kullanici.Parola);
 
                 var content = new FormUrlEncodedContent(values);
 
@@ -94,6 +215,10 @@ namespace Kutuphane_Uygulaması.Data
                 var content = res.Content.ReadAsStringAsync().Result;
                 var data = JsonConvert.DeserializeObject<T>(content);
                 return data;
+            
+
+              
+             
             }
         }
         //,string urlEk = ""

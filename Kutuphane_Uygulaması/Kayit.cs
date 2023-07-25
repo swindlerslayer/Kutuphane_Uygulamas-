@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using Kutuphane_Uygulaması.Data;
+using static Kutuphane_Uygulaması.Data.Degiskenler;
 
 namespace Kutuphane_Uygulaması
 {
@@ -57,7 +58,7 @@ namespace Kutuphane_Uygulaması
             //if kullanıcı adına bağlı bir ID var ise Kullanıcı adı kullanılıyor döndür 
 
 
-            Kullanici kullanici = new Kullanici();
+            EntityKullanici kullanici = new EntityKullanici();
             kullanici.KullaniciAdi = Kadi;
             kullanici.Parola = SifreliKsifre;
             bool kontrol = DbKullanici.KK(kullanici);

@@ -13,53 +13,55 @@ namespace Kutuphane_Uygulaması.Data
 
 
 
-        public static bool EkleDuzenle(Kullanici k)
+        public static bool EkleDuzenle(EntityKullanici k)
         {
-            try
-            {
-                using (KutuphaneEntities2 db = new KutuphaneEntities2())
-                {
-                    if (k.ID == 0)
-                    {
+            return true;
+            //try
+            //{
+            //    using (KutuphaneEntities2 db = new KutuphaneEntities2())
+            //    {
+            //        if (k.ID == 0)
+            //        {
 
 
-                        k.KayitTarihi = DateTime.Now;
-                        k.KayitYapan = k.KullaniciAdi;
-                        db.Kullanici.Add(k);
-                        db.SaveChanges();
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
+            //            k.KayitTarihi = DateTime.Now;
+            //            k.KayitYapan = k.KullaniciAdi;
+            //            db.Kullanici.Add(k);
+            //            db.SaveChanges();
+            //            return true;
+            //        }
+            //        else
+            //        {
+            //            return false;
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    return false;
+            //}
         }
 
-        public static bool KK(Kullanici kntrl)
+        public static bool KK(EntityKullanici kntrl)
         {
-            using (KutuphaneEntities2 db = new KutuphaneEntities2())
-            {
+            return true;
+            //using (KutuphaneEntities2 db = new KutuphaneEntities2())
+            //{
 
-                var kullanici = db.Kullanici.FirstOrDefault(x => x.KullaniciAdi == kntrl.KullaniciAdi);
-                if (kullanici != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
+            //    var kullanici = db.Kullanici.FirstOrDefault(x => x.KullaniciAdi == kntrl.KullaniciAdi);
+            //    if (kullanici != null)
+            //    {
+            //        return true;
+            //    }
+            //    else
+            //    {
+            //        return false;
+            //    }
+            //}
         }
-        public static Kullanici KullaniciControl(string kullaniciAdi, string parola, bool loginMi)
+        public static EntityKullanici KullaniciControl(string kullaniciAdi, string parola, bool loginMi)
         {
-            var data = URL.Kullanici.KullaniciKontrol.Get<Kullanici>($"?kullaniciAdi={kullaniciAdi}&parola={parola}", kullaniciAdi: kullaniciAdi, parola: parola);
+            var data = URL.Kullanici.KullaniciKontrol.Get<EntityKullanici>($"?kullaniciAdi={kullaniciAdi}&parola={parola}", kullaniciAdi: kullaniciAdi, parola: parola);
             return data;
         }
     }

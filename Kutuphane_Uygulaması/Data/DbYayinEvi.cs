@@ -1,93 +1,64 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
+using static Kutuphane_Uygulaması.Data.Degiskenler;
 
 namespace Kutuphane_Uygulaması.Data
 {
     static class DbYayinEvi
     {
-        public static List<YayinEvi> ListeyeEkle()
+        public static List<EntityYayineviListe> ListeyeEkle()
         {
-            using (KutuphaneEntities2 db = new KutuphaneEntities2())
+            var res = URL.Yayinevi.YayinEviListeyeEkle.Get<List<EntityYayineviListe>>(urlEk: $"");
+            return res;
+        }
+
+        public static bool sil(EntityYayineviListe y)
+        {
+            int ID = y.ID;
+            var res = URL.Yayinevi.YayineviSil.Get<Boolean>(urlEk: $"?ID={ID}");
+
+            if (res == false)
             {
-                try
-                {
-                    var Yayinevleri = db.YayinEvi.ToList();
-                    return Yayinevleri;
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
+                return false;
+            }
+            return true;
+        }
+        public static bool EkleDuzenle(EntityFullYayinevi y)
+        {
+            if (y != null)
+            {
+                string strJson = JsonSerializer.Serialize(y);
+                //Json verimizi stringContent'e çeviriyoruz 
+                StringContent stringwrap = new StringContent(strJson);
+                //Daha fazla veri vermek veya application şeklini değiştirmek istersek alttaki kodu da kullanabiliriz.
+                //HttpContent httpContent = new StringContent(strJson, System.Text.Encoding.UTF8, "application/json");
+                var res = URL.Yayinevi.YayineviEkleGuncelle.Post<Boolean>(Body: stringwrap);
+                return true;
+
+             }
+            else
+            {
+                return false;
             }
         }
 
-        public static bool sil(YayinEvi y)
+        public static bool YK(EntityFullYayinevi id)
         {
-            using(KutuphaneEntities2 db = new KutuphaneEntities2())
+            var yayineviid = id.ID;
+            var res = URL.Yayinevi.YayineviKontrol.Get<EntityFullYazar>(urlEk: $"?ID={yayineviid}");
+            if (res.ID == 0)
             {
-                var kitapkontrol = db.Kitap.FirstOrDefault(x => x.YayinEviID == y.ID);
-                if(kitapkontrol != null) {
-                    return false;
-                }            
-                
-                else
-                {
-                    if (y.ID == 0)
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        var silinecekyayinevi = db.YayinEvi.FirstOrDefault(x => x.Adi == y.Adi);
-                        db.YayinEvi.Remove(silinecekyayinevi);
-                        db.SaveChanges();
-                        return true;
+                return false;
 
-                    }
-                }
             }
-        }
-        public static bool EkleDuzenle(YayinEvi y)
-        {
-
-            using (KutuphaneEntities2 db = new KutuphaneEntities2())
+            else
             {
-                if (y.ID == 0)
-                {
-                    y.KayitTarihi = DateTime.Now;
-                    db.YayinEvi.Add(y);
-                    db.SaveChanges();
-                    return true;
-                }
-                else
-                {
-                    var yayinevi = db.YayinEvi.FirstOrDefault(x => x.ID == y.ID);
-
-                    yayinevi.Adi = y.Adi;
-
-                    db.SaveChanges();
-                    return false;
-                }
-            }
-        }
-
-        public static bool YK(YayinEvi kntrl)
-        {
-            using (KutuphaneEntities2 db = new KutuphaneEntities2())
-            {
-
-                var yayinevi = db.YayinEvi.FirstOrDefault(x => x.Adi == kntrl.Adi);
-                if (yayinevi != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return true;
             }
         }
     }

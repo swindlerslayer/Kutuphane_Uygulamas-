@@ -14,7 +14,6 @@ namespace Kutuphane_Uygulaması.Data
             return res;
         }
 
-
         public static bool EkleDuzenle(EntityFullKitap k)
         {
             if (k != null)
@@ -33,41 +32,41 @@ namespace Kutuphane_Uygulaması.Data
             }
         }
 
-        public static bool KitapKontrolKontrol(Kitap kntrl)
-        {
-            using (KutuphaneEntities2 db = new KutuphaneEntities2())
-            {
+        //public static bool KitapKontrolKontrol(Kitap kntrl)
+        //{
+        //    using (KutuphaneEntities2 db = new KutuphaneEntities2())
+        //    {
 
-                var kitap = db.Kitap.FirstOrDefault(x => x.Adi == kntrl.Adi);
-                if (kitap != null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
+        //        var kitap = db.Kitap.FirstOrDefault(x => x.Adi == kntrl.Adi);
+        //        if (kitap != null)
+        //        {
+        //            return true;
+        //        }
+        //        else
+        //        {
+        //            return false;
+        //        }
+        //    }
+        //}
 
         public static bool Resimsil(int id)
         {
 
-            var res = URL.Kitap.KitapResimSil.Get<Kitap>(urlEk: $"?ID={id}");
+            var res = URL.Kitap.KitapResimSil.Get<EntityFullKitap>(urlEk: $"?ID={id}");
             return true;
 
         }
 
         public static bool sil(int id)
         {
-            var res = URL.Kitap.KitapSil.Get<Kitap>(urlEk: $"?ID={id}");
+            var res = URL.Kitap.KitapSil.Get<EntityFullKitap>(urlEk: $"?ID={id}");
             return true;
 
         }
 
-        public static Kitap KitapGetir(int id)
+        public static EntityFullKitap KitapGetir(int id)
         {
-            var res = URL.Kitap.KitalGetirTekDetayli.Get<Kitap>(urlEk: $"?ID={id}");
+            var res = URL.Kitap.KitalGetirTekDetayli.Get<EntityFullKitap>(urlEk: $"?ID={id}");
             return res;
         }
     }
