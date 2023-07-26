@@ -74,7 +74,7 @@ namespace Kutuphane_Uygulaması
             Ksifre = textEdit2.Text;
 
             var res = DbKullanici.KullaniciControl(Kadi, Ksifre, true);
-            KullaniciGirisForm GrsForm = new KullaniciGirisForm(res);
+            AnaGirisForm GrsForm = new AnaGirisForm(res);
 
 
             StaticDegiskenler.kullanici = res;

@@ -31,13 +31,13 @@ namespace Kutuphane_Uygulaması
         {
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.KitapTurEkleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.KitapTurGuncelleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.KitapTurSilButton = new DevExpress.XtraEditors.SimpleButton();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -65,6 +65,15 @@ namespace Kutuphane_Uygulaması
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "ID";
+            this.gridColumn2.FieldName = "ID";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            this.gridColumn2.Width = 35;
+            // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Adı";
@@ -74,32 +83,32 @@ namespace Kutuphane_Uygulaması
             this.gridColumn1.VisibleIndex = 1;
             this.gridColumn1.Width = 777;
             // 
-            // simpleButton1
+            // KitapTurEkleButton
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(28, 60);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(205, 37);
-            this.simpleButton1.TabIndex = 1;
-            this.simpleButton1.Text = "Kitap Türü Ekle";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.KitapTurEkleButton.Location = new System.Drawing.Point(28, 60);
+            this.KitapTurEkleButton.Name = "KitapTurEkleButton";
+            this.KitapTurEkleButton.Size = new System.Drawing.Size(205, 37);
+            this.KitapTurEkleButton.TabIndex = 1;
+            this.KitapTurEkleButton.Text = "Kitap Türü Ekle";
+            this.KitapTurEkleButton.Click += new System.EventHandler(this.KitapTurEkleButton_Click);
             // 
-            // simpleButton2
+            // KitapTurGuncelleButton
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(28, 108);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(205, 37);
-            this.simpleButton2.TabIndex = 2;
-            this.simpleButton2.Text = "Kitap Türü Güncelle";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.KitapTurGuncelleButton.Location = new System.Drawing.Point(28, 108);
+            this.KitapTurGuncelleButton.Name = "KitapTurGuncelleButton";
+            this.KitapTurGuncelleButton.Size = new System.Drawing.Size(205, 37);
+            this.KitapTurGuncelleButton.TabIndex = 2;
+            this.KitapTurGuncelleButton.Text = "Kitap Türü Güncelle";
+            this.KitapTurGuncelleButton.Click += new System.EventHandler(this.KitapTurGuncelleButton_Click);
             // 
-            // simpleButton3
+            // KitapTurSilButton
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(28, 153);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(205, 37);
-            this.simpleButton3.TabIndex = 3;
-            this.simpleButton3.Text = "Kitap Türü Sil";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            this.KitapTurSilButton.Location = new System.Drawing.Point(28, 153);
+            this.KitapTurSilButton.Name = "KitapTurSilButton";
+            this.KitapTurSilButton.Size = new System.Drawing.Size(205, 37);
+            this.KitapTurSilButton.TabIndex = 3;
+            this.KitapTurSilButton.Text = "Kitap Türü Sil";
+            this.KitapTurSilButton.Click += new System.EventHandler(this.KitapTurSilButton_Click);
             // 
             // textEdit1
             // 
@@ -116,15 +125,6 @@ namespace Kutuphane_Uygulaması
             this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tür Adı";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "ID";
-            this.gridColumn2.FieldName = "ID";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
-            this.gridColumn2.Width = 35;
             // 
             // label2
             // 
@@ -144,9 +144,9 @@ namespace Kutuphane_Uygulaması
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textEdit1);
-            this.Controls.Add(this.simpleButton3);
-            this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.KitapTurSilButton);
+            this.Controls.Add(this.KitapTurGuncelleButton);
+            this.Controls.Add(this.KitapTurEkleButton);
             this.Controls.Add(this.gridControl1);
             this.Name = "KitapTurEkleForm";
             this.Text = "KitapTurEkleForm";
@@ -163,9 +163,9 @@ namespace Kutuphane_Uygulaması
 
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton KitapTurEkleButton;
+        private DevExpress.XtraEditors.SimpleButton KitapTurGuncelleButton;
+        private DevExpress.XtraEditors.SimpleButton KitapTurSilButton;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;

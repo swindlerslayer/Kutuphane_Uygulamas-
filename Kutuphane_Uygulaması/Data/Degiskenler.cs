@@ -128,6 +128,19 @@ namespace Kutuphane_Uygulaması.Data
             public int ID { get; set; }
             public string Adi { get; set; }
         }
+
+        public class EntityOkGridListe
+        {
+            public int ID { get; set; }
+            public string Adi { get; set; }
+            public string AdiSoyadi { get; set; }
+            public int OkulNo { get; set; }
+            public string YayinEviAdi { get; set; }
+            public DateTime? AlisTarihi { get; set; }
+            public DateTime? TeslimTarihi { get; set; }
+            public bool TeslimDurumu { get; set; }
+
+        }
     }
 
 }

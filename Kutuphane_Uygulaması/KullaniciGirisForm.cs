@@ -13,11 +13,12 @@ namespace Kutuphane_Uygulaması
 
         private string selectedImagePath; // Seçilen resmin yolunu tutmak için değişken
         private byte[] resim;
-        public KullaniciGirisForm(EntityKullanici kullanici)
+        private string kullaniciadi;
+        public KullaniciGirisForm(string kullaniciadi)
         {
             InitializeComponent();
-
-            label2.Text = kullanici.KullaniciAdi.ToString();
+            
+            label2.Text = kullaniciadi;
             this.StartPosition = FormStartPosition.CenterScreen;
         }
       
@@ -159,27 +160,6 @@ namespace Kutuphane_Uygulaması
                 }
             }
         }
-        private void yazarEkleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string kad = label2.Text;
-            
-            YazarEkleForm GrsForm = new YazarEkleForm(kad);
-            GrsForm.Show();
-        }
-        private void yayınEviEkleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string kad = label2.Text;
-
-            YayineviEkleForm GrsForm = new YayineviEkleForm(kad);
-            GrsForm.Show();
-        }
-        private void kitapTürüEkleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string kad = label2.Text;
-
-            KitapTurEkleForm GrsForm = new KitapTurEkleForm(kad);
-            GrsForm.Show();
-        }
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
 
@@ -267,12 +247,12 @@ namespace Kutuphane_Uygulaması
         private void bisiToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            bisiToolStripMenuItem.Text = StaticDegiskenler.kullanici.ID.ToString();
+          //  bisiToolStripMenuItem.Text = StaticDegiskenler.kullanici.ID.ToString();
 
         }
         private void KullaniciGirisForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+           // Application.Exit();
         }
     }
 }

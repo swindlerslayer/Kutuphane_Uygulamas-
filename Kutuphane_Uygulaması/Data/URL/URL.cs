@@ -131,6 +131,16 @@ namespace Kutuphane_Uygulaması.Data
             }
             
         }
+        public static class OgrenciKitap
+        {
+            public static string OkGridDoldur
+            {
+                get
+                {
+                    return "api/ogrencikitaplisteyeekle";
+                }
+            }
+        }
         public static class KitapTuru
         {
             public static string KitapTurGetirTekDeyayli

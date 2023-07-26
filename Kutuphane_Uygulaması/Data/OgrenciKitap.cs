@@ -94,28 +94,8 @@ namespace Kutuphane_Uygulaması.Data
     
         public List<OKViewModel> GetGridDoldur()    
         {
-            return null;
-            //using (KutuphaneEntities2 dbContext = new KutuphaneEntities2())        
-            //{  
-                
-               
-            //    var kitapOgrenciListesi = dbContext.KitapOgrenci.Select(ko => new OKViewModel
-            //    {
-            //        ID = ko.ID,
-            //        Adi = ko.Kitap.Adi,
-            //        AdiSoyadi = ko.Ogrenci.AdiSoyadi,
-            //        OkulNo = ko.Ogrenci.OkulNo,
-            //        YayinEviAdi = ko.Kitap.YayinEvi.Adi,
-            //        AlisTarihi = ko.AlisTarihi,
-            //        TeslimTarihi = ko.TeslimTarihi,
-            //        TeslimDurumu = ko.TeslimDurumu == true
-            //        ? true
-            //        : false
-
-            //    }).ToList();
-
-            //    return kitapOgrenciListesi;
-            //}
+            var res = URL.OgrenciKitap.OkGridDoldur.Get<List<OKViewModel>>(urlEk: $"");
+            return res;
         }
     }
     public class KitapViewModel

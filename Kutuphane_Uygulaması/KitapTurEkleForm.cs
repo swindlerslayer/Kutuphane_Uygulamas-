@@ -32,7 +32,7 @@ namespace Kutuphane_Uygulaması
         {
 
         }
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void KitapTurEkleButton_Click(object sender, EventArgs e)
         {
 
             string kitapturadi;
@@ -65,7 +65,7 @@ namespace Kutuphane_Uygulaması
 
         }
 
-        private void simpleButton2_Click(object sender, EventArgs e)
+        private void KitapTurGuncelleButton_Click(object sender, EventArgs e)
         {
 
             string kitapturuadi, kitapturuid;
@@ -89,7 +89,7 @@ namespace Kutuphane_Uygulaması
                 MessageBox.Show("Kitap türü güncellenirken bir hata oluştu");
             }
         }
-        private void simpleButton3_Click(object sender, EventArgs e)
+        private void KitapTurSilButton_Click(object sender, EventArgs e)
         {
             if (gridView1.GetFocusedRow() is EntityKitapTuruListe selectedkitaptur)
             {

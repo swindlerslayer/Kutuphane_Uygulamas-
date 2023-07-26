@@ -32,14 +32,6 @@ namespace Kutuphane_Uygulaması
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.kitapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.yazarEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.yayınEviEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kitapTürüEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.öğrenciKitapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bisiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.ResimSil = new System.Windows.Forms.Button();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
@@ -87,7 +79,6 @@ namespace Kutuphane_Uygulaması
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
@@ -136,73 +127,6 @@ namespace Kutuphane_Uygulaması
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.kitapToolStripMenuItem,
-            this.yazarEkleToolStripMenuItem,
-            this.yayınEviEkleToolStripMenuItem,
-            this.kitapTürüEkleToolStripMenuItem,
-            this.öğrenciKitapToolStripMenuItem,
-            this.bisiToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1364, 28);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(14, 24);
-            // 
-            // kitapToolStripMenuItem
-            // 
-            this.kitapToolStripMenuItem.Name = "kitapToolStripMenuItem";
-            this.kitapToolStripMenuItem.Size = new System.Drawing.Size(161, 24);
-            this.kitapToolStripMenuItem.Text = "Kitap Listesini Göster";
-            this.kitapToolStripMenuItem.Click += new System.EventHandler(this.kitapToolStripMenuItem_Click);
-            // 
-            // yazarEkleToolStripMenuItem
-            // 
-            this.yazarEkleToolStripMenuItem.Name = "yazarEkleToolStripMenuItem";
-            this.yazarEkleToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
-            this.yazarEkleToolStripMenuItem.Text = "Yazar Ekle Düzenle";
-            this.yazarEkleToolStripMenuItem.Click += new System.EventHandler(this.yazarEkleToolStripMenuItem_Click);
-            // 
-            // yayınEviEkleToolStripMenuItem
-            // 
-            this.yayınEviEkleToolStripMenuItem.Name = "yayınEviEkleToolStripMenuItem";
-            this.yayınEviEkleToolStripMenuItem.Size = new System.Drawing.Size(111, 24);
-            this.yayınEviEkleToolStripMenuItem.Text = "Yayın Evi Ekle";
-            this.yayınEviEkleToolStripMenuItem.Click += new System.EventHandler(this.yayınEviEkleToolStripMenuItem_Click);
-            // 
-            // kitapTürüEkleToolStripMenuItem
-            // 
-            this.kitapTürüEkleToolStripMenuItem.Name = "kitapTürüEkleToolStripMenuItem";
-            this.kitapTürüEkleToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
-            this.kitapTürüEkleToolStripMenuItem.Text = "Kitap Türü Ekle";
-            this.kitapTürüEkleToolStripMenuItem.Click += new System.EventHandler(this.kitapTürüEkleToolStripMenuItem_Click);
-            // 
-            // öğrenciKitapToolStripMenuItem
-            // 
-            this.öğrenciKitapToolStripMenuItem.Name = "öğrenciKitapToolStripMenuItem";
-            this.öğrenciKitapToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
-            this.öğrenciKitapToolStripMenuItem.Text = "Öğrenci - Kitap";
-            this.öğrenciKitapToolStripMenuItem.Click += new System.EventHandler(this.öğrenciKitapToolStripMenuItem_Click);
-            // 
-            // bisiToolStripMenuItem
-            // 
-            this.bisiToolStripMenuItem.Name = "bisiToolStripMenuItem";
-            this.bisiToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
-            this.bisiToolStripMenuItem.Text = "bisi";
-            this.bisiToolStripMenuItem.Click += new System.EventHandler(this.bisiToolStripMenuItem_Click);
-            // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.ResimSil);
@@ -222,19 +146,19 @@ namespace Kutuphane_Uygulaması
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem11});
-            this.layoutControl1.Location = new System.Drawing.Point(0, 28);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1364, 818);
+            this.layoutControl1.Size = new System.Drawing.Size(860, 549);
             this.layoutControl1.TabIndex = 20;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // ResimSil
             // 
-            this.ResimSil.Location = new System.Drawing.Point(482, 272);
+            this.ResimSil.Location = new System.Drawing.Point(307, 246);
             this.ResimSil.Name = "ResimSil";
-            this.ResimSil.Size = new System.Drawing.Size(461, 28);
+            this.ResimSil.Size = new System.Drawing.Size(285, 25);
             this.ResimSil.TabIndex = 16;
             this.ResimSil.Text = "Resim Sil";
             this.ResimSil.UseVisualStyleBackColor = true;
@@ -243,19 +167,19 @@ namespace Kutuphane_Uygulaması
             // pictureEdit1
             // 
             this.pictureEdit1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureEdit1.Location = new System.Drawing.Point(949, 16);
+            this.pictureEdit1.Location = new System.Drawing.Point(598, 16);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.PictureStoreMode = DevExpress.XtraEditors.Controls.PictureStoreMode.ByteArray;
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(399, 250);
+            this.pictureEdit1.Size = new System.Drawing.Size(246, 224);
             this.pictureEdit1.StyleController = this.layoutControl1;
             this.pictureEdit1.TabIndex = 15;
             // 
             // ResimYukle
             // 
-            this.ResimYukle.Location = new System.Drawing.Point(949, 272);
+            this.ResimYukle.Location = new System.Drawing.Point(598, 246);
             this.ResimYukle.Name = "ResimYukle";
-            this.ResimYukle.Size = new System.Drawing.Size(399, 28);
+            this.ResimYukle.Size = new System.Drawing.Size(246, 25);
             this.ResimYukle.TabIndex = 14;
             this.ResimYukle.Text = "Resim Yükle";
             this.ResimYukle.UseVisualStyleBackColor = true;
@@ -273,10 +197,10 @@ namespace Kutuphane_Uygulaması
             // 
             // Sil
             // 
-            this.Sil.Location = new System.Drawing.Point(16, 272);
+            this.Sil.Location = new System.Drawing.Point(16, 246);
             this.Sil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Sil.Name = "Sil";
-            this.Sil.Size = new System.Drawing.Size(460, 28);
+            this.Sil.Size = new System.Drawing.Size(285, 25);
             this.Sil.TabIndex = 10;
             this.Sil.Text = "Sil";
             this.Sil.UseVisualStyleBackColor = true;
@@ -287,7 +211,7 @@ namespace Kutuphane_Uygulaması
             this.Guncelle.Location = new System.Drawing.Point(16, 184);
             this.Guncelle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Guncelle.Name = "Guncelle";
-            this.Guncelle.Size = new System.Drawing.Size(927, 42);
+            this.Guncelle.Size = new System.Drawing.Size(576, 25);
             this.Guncelle.TabIndex = 7;
             this.Guncelle.Text = "Güncelle";
             this.Guncelle.UseVisualStyleBackColor = true;
@@ -295,12 +219,12 @@ namespace Kutuphane_Uygulaması
             // 
             // Kaydet
             // 
-            this.Kaydet.Location = new System.Drawing.Point(16, 232);
+            this.Kaydet.Location = new System.Drawing.Point(16, 215);
             this.Kaydet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Kaydet.Name = "Kaydet";
-            this.Kaydet.Size = new System.Drawing.Size(927, 34);
+            this.Kaydet.Size = new System.Drawing.Size(576, 25);
             this.Kaydet.TabIndex = 8;
-            this.Kaydet.Text = "Kaydet";
+            this.Kaydet.Text = "Yen Kitap Kaydet";
             this.Kaydet.UseVisualStyleBackColor = true;
             this.Kaydet.Click += new System.EventHandler(this.Kaydet_Click);
             // 
@@ -315,7 +239,7 @@ namespace Kutuphane_Uygulaması
             this.LookUpYazar.Properties.NullText = "";
             this.LookUpYazar.Properties.ValueMember = "ID";
             this.LookUpYazar.Properties.View = this.searchLookUpEdit2View;
-            this.LookUpYazar.Size = new System.Drawing.Size(854, 22);
+            this.LookUpYazar.Size = new System.Drawing.Size(503, 22);
             this.LookUpYazar.StyleController = this.layoutControl1;
             this.LookUpYazar.TabIndex = 5;
             // 
@@ -347,7 +271,7 @@ namespace Kutuphane_Uygulaması
             this.LookUpYayinEvi.Properties.DisplayMember = "Adi";
             this.LookUpYayinEvi.Properties.ValueMember = "ID";
             this.LookUpYayinEvi.Properties.View = this.gridView2;
-            this.LookUpYayinEvi.Size = new System.Drawing.Size(854, 22);
+            this.LookUpYayinEvi.Size = new System.Drawing.Size(503, 22);
             this.LookUpYayinEvi.StyleController = this.layoutControl1;
             this.LookUpYayinEvi.TabIndex = 4;
             // 
@@ -379,7 +303,7 @@ namespace Kutuphane_Uygulaması
             this.lookKitapTuru.Properties.NullText = "";
             this.lookKitapTuru.Properties.ValueMember = "ID";
             this.lookKitapTuru.Properties.View = this.searchLookUpEdit1View;
-            this.lookKitapTuru.Size = new System.Drawing.Size(854, 22);
+            this.lookKitapTuru.Size = new System.Drawing.Size(503, 22);
             this.lookKitapTuru.StyleController = this.layoutControl1;
             this.lookKitapTuru.TabIndex = 3;
             // 
@@ -405,7 +329,7 @@ namespace Kutuphane_Uygulaması
             this.textEdit3.Location = new System.Drawing.Point(89, 156);
             this.textEdit3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(854, 22);
+            this.textEdit3.Size = new System.Drawing.Size(503, 22);
             this.textEdit3.StyleController = this.layoutControl1;
             this.textEdit3.TabIndex = 6;
             // 
@@ -414,7 +338,7 @@ namespace Kutuphane_Uygulaması
             this.textEdit2.Location = new System.Drawing.Point(89, 44);
             this.textEdit2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(854, 22);
+            this.textEdit2.Size = new System.Drawing.Size(503, 22);
             this.textEdit2.StyleController = this.layoutControl1;
             this.textEdit2.TabIndex = 2;
             // 
@@ -423,7 +347,7 @@ namespace Kutuphane_Uygulaması
             this.textEdit1.Location = new System.Drawing.Point(89, 16);
             this.textEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(854, 22);
+            this.textEdit1.Size = new System.Drawing.Size(503, 22);
             this.textEdit1.StyleController = this.layoutControl1;
             this.textEdit1.TabIndex = 0;
             // 
@@ -431,13 +355,13 @@ namespace Kutuphane_Uygulaması
             // 
             this.gridControl1.DataSource = this.entityKitapBindingSource;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridControl1.Location = new System.Drawing.Point(16, 306);
+            this.gridControl1.Location = new System.Drawing.Point(16, 277);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemImageEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(1332, 496);
+            this.gridControl1.Size = new System.Drawing.Size(828, 256);
             this.gridControl1.TabIndex = 9;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -539,7 +463,7 @@ namespace Kutuphane_Uygulaması
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1364, 818);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(860, 549);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem5
@@ -547,7 +471,7 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem5.Control = this.textEdit1;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(933, 28);
+            this.layoutControlItem5.Size = new System.Drawing.Size(582, 28);
             this.layoutControlItem5.Text = "Adi";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(69, 16);
             // 
@@ -556,7 +480,7 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem1.Control = this.textEdit2;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 28);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(933, 28);
+            this.layoutControlItem1.Size = new System.Drawing.Size(582, 28);
             this.layoutControlItem1.Text = "Sayfa Sayısı";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(69, 16);
             // 
@@ -566,7 +490,7 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 140);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(129, 28);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(933, 28);
+            this.layoutControlItem2.Size = new System.Drawing.Size(582, 28);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.Text = "Barkod ";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(69, 16);
@@ -577,7 +501,7 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem6.CustomizationFormText = "comb";
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 56);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(933, 28);
+            this.layoutControlItem6.Size = new System.Drawing.Size(582, 28);
             this.layoutControlItem6.Text = "Kitap Türü";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(69, 16);
             // 
@@ -586,7 +510,7 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem3.Control = this.LookUpYayinEvi;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 84);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(933, 28);
+            this.layoutControlItem3.Size = new System.Drawing.Size(582, 28);
             this.layoutControlItem3.Text = "Yayın Evi";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(69, 16);
             // 
@@ -595,16 +519,16 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem4.Control = this.LookUpYazar;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 112);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(933, 28);
+            this.layoutControlItem4.Size = new System.Drawing.Size(582, 28);
             this.layoutControlItem4.Text = "Yazar ";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(69, 16);
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.Kaydet;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 216);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 199);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(933, 40);
+            this.layoutControlItem8.Size = new System.Drawing.Size(582, 31);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
@@ -613,52 +537,52 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem9.Control = this.Guncelle;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 168);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(933, 48);
+            this.layoutControlItem9.Size = new System.Drawing.Size(582, 31);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.gridControl1;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 290);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 261);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(1338, 502);
+            this.layoutControlItem7.Size = new System.Drawing.Size(834, 262);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.pictureEdit1;
-            this.layoutControlItem12.Location = new System.Drawing.Point(933, 0);
+            this.layoutControlItem12.Location = new System.Drawing.Point(582, 0);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(405, 256);
+            this.layoutControlItem12.Size = new System.Drawing.Size(252, 230);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
             // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.Sil;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 256);
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 230);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(466, 34);
+            this.layoutControlItem10.Size = new System.Drawing.Size(291, 31);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
             // layoutControlItem14
             // 
             this.layoutControlItem14.Control = this.ResimYukle;
-            this.layoutControlItem14.Location = new System.Drawing.Point(933, 256);
+            this.layoutControlItem14.Location = new System.Drawing.Point(582, 230);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(405, 34);
+            this.layoutControlItem14.Size = new System.Drawing.Size(252, 31);
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem14.TextVisible = false;
             // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.ResimSil;
-            this.layoutControlItem13.Location = new System.Drawing.Point(466, 256);
+            this.layoutControlItem13.Location = new System.Drawing.Point(291, 230);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(467, 34);
+            this.layoutControlItem13.Size = new System.Drawing.Size(291, 31);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
             // 
@@ -678,20 +602,16 @@ namespace Kutuphane_Uygulaması
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1364, 846);
+            this.ClientSize = new System.Drawing.Size(860, 549);
             this.Controls.Add(this.layoutControl1);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "KullaniciGirisForm";
             this.Text = "KullaniciGirisForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.KullaniciGirisForm_FormClosed);
             this.Load += new System.EventHandler(this.KullaniciGirisForm_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
@@ -731,9 +651,6 @@ namespace Kutuphane_Uygulaması
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem kitapToolStripMenuItem;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -766,12 +683,8 @@ namespace Kutuphane_Uygulaması
         private DevExpress.XtraGrid.Columns.GridColumn colAdi;
         private DevExpress.XtraGrid.Columns.GridColumn colYazarAdi;
         private DevExpress.XtraGrid.Columns.GridColumn colYazarID;
-        private System.Windows.Forms.ToolStripMenuItem yazarEkleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem yayınEviEkleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kitapTürüEkleToolStripMenuItem;
         private System.Windows.Forms.Button Sil;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
-        private System.Windows.Forms.ToolStripMenuItem öğrenciKitapToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
@@ -785,6 +698,5 @@ namespace Kutuphane_Uygulaması
         private System.Windows.Forms.Button ResimSil;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private DevExpress.XtraEditors.Repository.RepositoryItemImageEdit repositoryItemImageEdit1;
-        private System.Windows.Forms.ToolStripMenuItem bisiToolStripMenuItem;
     }
 }
