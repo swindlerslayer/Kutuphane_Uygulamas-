@@ -12,6 +12,7 @@ using System.Text.Json;
 using Kutuphane_Uygulaması.Data;
 using DevExpress.XtraEditors;
 using static Kutuphane_Uygulaması.Data.Degiskenler;
+using Kutuphane_Uygulaması.Data.Wait;
 
 namespace Kutuphane_Uygulaması
 {
@@ -23,7 +24,8 @@ namespace Kutuphane_Uygulaması
             textEdit2.Properties.PasswordChar = '*';
             this.StartPosition = FormStartPosition.CenterScreen;
         }
-   
+        
+
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Kayit KytForm = new Kayit();
@@ -68,7 +70,8 @@ namespace Kutuphane_Uygulaması
             }
         }        
         private void simpleButton1_Click(object sender, EventArgs e)
-        {            
+        {
+            Loading.Open();    
             string Kadi, Ksifre;
             Kadi = textEdit1.Text;
             Ksifre = textEdit2.Text;
@@ -78,9 +81,9 @@ namespace Kutuphane_Uygulaması
 
 
             StaticDegiskenler.kullanici = res;
-
             GrsForm.Show();
             this.Hide();
+
 
             bool hatirla = checkEdit1.Checked; 
             KullaniciHatirla(hatirla);

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kutuphane_Uygulaması.Data;
 using static Kutuphane_Uygulaması.Data.Degiskenler;
+using Kutuphane_Uygulaması.Data.Wait;
 
 
 
@@ -146,5 +147,9 @@ namespace Kutuphane_Uygulaması
             }
         }
 
+        private void YazarEkleForm_Load(object sender, EventArgs e)
+        {
+            Loading.Close();
+        }
     }
 }

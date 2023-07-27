@@ -35,31 +35,31 @@ namespace Kutuphane_Uygulaması
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.label1 = new System.Windows.Forms.Label();
-            this.YazarEkleButton = new DevExpress.XtraEditors.SimpleButton();
-            this.YazarGuncelleButton = new DevExpress.XtraEditors.SimpleButton();
-            this.YazarSilButton = new DevExpress.XtraEditors.SimpleButton();
-            this.label2 = new System.Windows.Forms.Label();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.label2 = new System.Windows.Forms.Label();
+            this.YazarSilButton = new DevExpress.XtraEditors.SimpleButton();
+            this.YazarGuncelleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.YazarEkleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -103,65 +103,11 @@ namespace Kutuphane_Uygulaması
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(81, 16);
+            this.textEdit1.Location = new System.Drawing.Point(80, 16);
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(165, 22);
+            this.textEdit1.Size = new System.Drawing.Size(166, 22);
             this.textEdit1.StyleController = this.layoutControl1;
             this.textEdit1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Yazar İsmi";
-            // 
-            // YazarEkleButton
-            // 
-            this.YazarEkleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("YazarEkleButton.ImageOptions.Image")));
-            this.YazarEkleButton.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.YazarEkleButton.Location = new System.Drawing.Point(16, 44);
-            this.YazarEkleButton.Name = "YazarEkleButton";
-            this.YazarEkleButton.Size = new System.Drawing.Size(230, 60);
-            this.YazarEkleButton.StyleController = this.layoutControl1;
-            this.YazarEkleButton.TabIndex = 3;
-            this.YazarEkleButton.Text = "Yazar Ekle ";
-            this.YazarEkleButton.Click += new System.EventHandler(this.YazarEkleButton_Click);
-            // 
-            // YazarGuncelleButton
-            // 
-            this.YazarGuncelleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("YazarGuncelleButton.ImageOptions.Image")));
-            this.YazarGuncelleButton.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.YazarGuncelleButton.Location = new System.Drawing.Point(16, 110);
-            this.YazarGuncelleButton.Name = "YazarGuncelleButton";
-            this.YazarGuncelleButton.Size = new System.Drawing.Size(230, 60);
-            this.YazarGuncelleButton.StyleController = this.layoutControl1;
-            this.YazarGuncelleButton.TabIndex = 4;
-            this.YazarGuncelleButton.Text = "Yazar Güncelle";
-            this.YazarGuncelleButton.Click += new System.EventHandler(this.YazarGuncelleButton_Click);
-            // 
-            // YazarSilButton
-            // 
-            this.YazarSilButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("YazarSilButton.ImageOptions.Image")));
-            this.YazarSilButton.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
-            this.YazarSilButton.Location = new System.Drawing.Point(16, 176);
-            this.YazarSilButton.Name = "YazarSilButton";
-            this.YazarSilButton.Size = new System.Drawing.Size(230, 60);
-            this.YazarSilButton.StyleController = this.layoutControl1;
-            this.YazarSilButton.TabIndex = 5;
-            this.YazarSilButton.Text = "Yazar Sil";
-            this.YazarSilButton.Click += new System.EventHandler(this.YazarSilButton_Click);
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(16, 143);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 193);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "label2";
-            this.label2.Visible = false;
             // 
             // layoutControl1
             // 
@@ -180,6 +126,60 @@ namespace Kutuphane_Uygulaması
             this.layoutControl1.Size = new System.Drawing.Size(746, 360);
             this.layoutControl1.TabIndex = 7;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(16, 143);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(163, 193);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "label2";
+            this.label2.Visible = false;
+            // 
+            // YazarSilButton
+            // 
+            this.YazarSilButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("YazarSilButton.ImageOptions.Image")));
+            this.YazarSilButton.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.YazarSilButton.Location = new System.Drawing.Point(16, 176);
+            this.YazarSilButton.Name = "YazarSilButton";
+            this.YazarSilButton.Size = new System.Drawing.Size(230, 60);
+            this.YazarSilButton.StyleController = this.layoutControl1;
+            this.YazarSilButton.TabIndex = 5;
+            this.YazarSilButton.Text = "Yazar Sil";
+            this.YazarSilButton.Click += new System.EventHandler(this.YazarSilButton_Click);
+            // 
+            // YazarGuncelleButton
+            // 
+            this.YazarGuncelleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("YazarGuncelleButton.ImageOptions.Image")));
+            this.YazarGuncelleButton.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.YazarGuncelleButton.Location = new System.Drawing.Point(16, 110);
+            this.YazarGuncelleButton.Name = "YazarGuncelleButton";
+            this.YazarGuncelleButton.Size = new System.Drawing.Size(230, 60);
+            this.YazarGuncelleButton.StyleController = this.layoutControl1;
+            this.YazarGuncelleButton.TabIndex = 4;
+            this.YazarGuncelleButton.Text = "Yazar Güncelle";
+            this.YazarGuncelleButton.Click += new System.EventHandler(this.YazarGuncelleButton_Click);
+            // 
+            // YazarEkleButton
+            // 
+            this.YazarEkleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("YazarEkleButton.ImageOptions.Image")));
+            this.YazarEkleButton.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.YazarEkleButton.Location = new System.Drawing.Point(16, 44);
+            this.YazarEkleButton.Name = "YazarEkleButton";
+            this.YazarEkleButton.Size = new System.Drawing.Size(230, 60);
+            this.YazarEkleButton.StyleController = this.layoutControl1;
+            this.YazarEkleButton.TabIndex = 3;
+            this.YazarEkleButton.Text = "Yazar Ekle ";
+            this.YazarEkleButton.Click += new System.EventHandler(this.YazarEkleButton_Click);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.label2;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 127);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(169, 199);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlGroup1
             // 
@@ -242,14 +242,14 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
-            // layoutControlItem6
+            // label1
             // 
-            this.layoutControlItem6.Control = this.label2;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 127);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(169, 199);
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextVisible = false;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Yazar İsmi";
             // 
             // YazarEkleForm
             // 
@@ -261,18 +261,19 @@ namespace Kutuphane_Uygulaması
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "YazarEkleForm";
             this.Text = "YazarEkleForm";
+            this.Load += new System.EventHandler(this.YazarEkleForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

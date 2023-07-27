@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kutuphane_Uygulaması.Data;
 using static Kutuphane_Uygulaması.Data.Degiskenler;
+using Kutuphane_Uygulaması.Data.Wait;
 
 namespace Kutuphane_Uygulaması
 {
@@ -73,6 +74,8 @@ namespace Kutuphane_Uygulaması
             searchLookUpEdit1.Properties.DataSource = DbKitapTuru.ListeyeEkle();
             searchLookUpEdit2.Properties.DataSource = DbYayinEvi.ListeyeEkle();
             searchLookUpEdit3.Properties.DataSource = DbYazar.ListeyeEkle();
+            Loading.Close();
+
         }
 
         private void ResimYukleButon_Click(object sender, EventArgs e)

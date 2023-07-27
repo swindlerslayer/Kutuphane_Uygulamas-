@@ -33,8 +33,9 @@ namespace Kutuphane_Uygulaması
             DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener1 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
             DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener2 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaGirisForm));
-            this.xrDesignRibbonController1 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonController(this.components);
             this.xrDesignDockManager1 = new DevExpress.XtraReports.UserDesigner.XRDesignDockManager(this.components);
+            this.xrDesignRibbonController1 = new DevExpress.XtraReports.UserDesigner.XRDesignRibbonController(this.components);
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::Kutuphane_Uygulaması.Wait.WaitForm1), true, true);
             this.reportDesigner1 = new DevExpress.XtraReports.UserDesigner.XRDesignMdiController(this.components);
             this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
@@ -76,8 +77,8 @@ namespace Kutuphane_Uygulaması
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            ((System.ComponentModel.ISupportInitialize)(this.xrDesignRibbonController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrDesignDockManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrDesignRibbonController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -100,12 +101,6 @@ namespace Kutuphane_Uygulaması
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
-            // xrDesignRibbonController1
-            // 
-            this.xrDesignRibbonController1.RibbonControl = null;
-            this.xrDesignRibbonController1.RibbonStatusBar = null;
-            this.xrDesignRibbonController1.XRDesignDockManager = this.xrDesignDockManager1;
-            // 
             // xrDesignDockManager1
             // 
             this.xrDesignDockManager1.Form = this;
@@ -122,11 +117,21 @@ namespace Kutuphane_Uygulaması
             "DevExpress.XtraBars.Navigation.TileNavPane",
             "DevExpress.XtraBars.TabFormControl"});
             // 
+            // xrDesignRibbonController1
+            // 
+            this.xrDesignRibbonController1.RibbonControl = null;
+            this.xrDesignRibbonController1.RibbonStatusBar = null;
+            this.xrDesignRibbonController1.XRDesignDockManager = this.xrDesignDockManager1;
+            // 
+            // splashScreenManager1
+            // 
+            this.splashScreenManager1.ClosingDelay = 500;
+            // 
             // reportDesigner1
             // 
             this.reportDesigner1.ContainerControl = null;
-            xrDesignPanelListener1.DesignControl = this.xrDesignRibbonController1;
-            xrDesignPanelListener2.DesignControl = this.xrDesignDockManager1;
+            xrDesignPanelListener1.DesignControl = this.xrDesignDockManager1;
+            xrDesignPanelListener2.DesignControl = this.xrDesignRibbonController1;
             this.reportDesigner1.DesignPanelListeners.AddRange(new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener[] {
             xrDesignPanelListener1,
             xrDesignPanelListener2});
@@ -549,8 +554,8 @@ namespace Kutuphane_Uygulaması
             this.Text = "AnaGirisForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AnaGirisForm_FormClosing);
             this.Load += new System.EventHandler(this.AnaGirisForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.xrDesignRibbonController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrDesignDockManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrDesignRibbonController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -579,7 +584,6 @@ namespace Kutuphane_Uygulaması
         #endregion
 
         private DevExpress.XtraReports.UserDesigner.XRDesignMdiController reportDesigner1;
-        private DevExpress.XtraReports.UserDesigner.XRDesignRibbonController xrDesignRibbonController1;
         private DevExpress.XtraReports.UserDesigner.XRDesignDockManager xrDesignDockManager1;
         private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenu1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
@@ -621,5 +625,7 @@ namespace Kutuphane_Uygulaması
         private DevExpress.XtraBars.PopupMenu popupMenu1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraReports.UserDesigner.XRDesignRibbonController xrDesignRibbonController1;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

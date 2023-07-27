@@ -3,6 +3,7 @@ using Kutuphane_Uygulaması.Data;
 using System;
 using System.Windows.Forms;
 using static Kutuphane_Uygulaması.Data.Degiskenler;
+using Kutuphane_Uygulaması.Data.Wait;
 
 
 namespace Kutuphane_Uygulaması
@@ -37,7 +38,8 @@ namespace Kutuphane_Uygulaması
             searchLookUpEdit1.Properties.DataSource = ogrenciListesi;
             searchLookUpEdit2.Properties.DataSource = kitapListesi;
             gridControl1.DataSource = okgrid.GetGridDoldur();
-          //  label1.Text = kullaniciiD;
+            Loading.Close();
+
 
         }
 

@@ -2,6 +2,8 @@
 using System;
 using System.Windows.Forms;
 using static Kutuphane_Uygulaması.Data.Degiskenler;
+using Kutuphane_Uygulaması.Data.Wait;
+
 
 namespace Kutuphane_Uygulaması
 {
@@ -18,6 +20,7 @@ namespace Kutuphane_Uygulaması
         private void YayineviEkleForm_Load(object sender, EventArgs e)
         {
             gridControl1.DataSource = DbYayinEvi.ListeyeEkle();
+            Loading.Close();
         }
 
         private void YayineviEkleButton_Click(object sender, EventArgs e)

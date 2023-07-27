@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-
+using System.Threading;
 using System.Windows.Forms;
 using DevExpress.Utils.Menu;
+using DevExpress.XtraSplashScreen;
 using Kutuphane_Uygulaması.Data;
 using static Kutuphane_Uygulaması.Data.Degiskenler;
+using Kutuphane_Uygulaması.Wait;
+using static Kutuphane_Uygulaması.Data.Wait.Loading;
+using Kutuphane_Uygulaması.Data.Wait;
 
 namespace Kutuphane_Uygulaması
 {
@@ -23,13 +27,14 @@ namespace Kutuphane_Uygulaması
             kullaniciadi = kullanici.KullaniciAdi;
             kullaniciid = kullanici.ID;
             this.StartPosition = FormStartPosition.CenterScreen;
-
         }
 
+  
         private void AnaGirisForm_Load(object sender, EventArgs e)
         {
             gridControl1.DataSource = okgrid.GetGridDoldur();
 
+            Loading.Close();
         }
 
 
@@ -37,6 +42,8 @@ namespace Kutuphane_Uygulaması
 
         private void KitapEkleButton_Click(object sender, EventArgs e)
         {
+            Loading.Open();
+
             KullaniciGirisForm frm = new KullaniciGirisForm(kullaniciadi);
             frm.Show();
 
@@ -57,12 +64,16 @@ namespace Kutuphane_Uygulaması
 
         private void OgrenciKitapButton_Click(object sender, EventArgs e)
         {
+            Loading.Open();
+
             OgrenciKitapForm frm = new OgrenciKitapForm(kullaniciid);
             frm.Show();
         }
 
         private void OgrenciEkleButton_Click(object sender, EventArgs e)
         {
+            Loading.Open();
+
             OgrenciEkleForm frm = new OgrenciEkleForm(kullaniciadi);
             frm.Show();
 
@@ -70,18 +81,24 @@ namespace Kutuphane_Uygulaması
 
         private void YazarEkleButton_Click(object sender, EventArgs e)
         {
+            Loading.Open();
+
             YazarEkleForm frm = new YazarEkleForm(kullaniciadi);
             frm.Show();
         }
 
         private void YayıneviEkleButton_Click(object sender, EventArgs e)
         {
+            Loading.Open();
+
             YayineviEkleForm frm = new YayineviEkleForm(kullaniciadi);
             frm.Show();
         }
 
         private void KitapTurEkleButton_Click(object sender, EventArgs e)
         {
+            Loading.Open();
+
             KitapTurEkleForm frm = new KitapTurEkleForm(kullaniciadi);
             frm.Show();
 
@@ -104,9 +121,7 @@ namespace Kutuphane_Uygulaması
                 }
             
             }
-        }
-
-     
+        }   
 
         private void barButtonAlindi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

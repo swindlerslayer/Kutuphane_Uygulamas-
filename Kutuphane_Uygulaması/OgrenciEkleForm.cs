@@ -3,6 +3,7 @@ using Kutuphane_Uygulaması.Data;
 using System;
 using System.Windows.Forms;
 using static Kutuphane_Uygulaması.Data.Degiskenler;
+using Kutuphane_Uygulaması.Data.Wait;
 
 namespace Kutuphane_Uygulaması
 {
@@ -20,6 +21,8 @@ namespace Kutuphane_Uygulaması
         }
         private void OgrenciEkleForm_Load(object sender, EventArgs e)
         {
+            Loading.Close();
+
         }
         private void EkleButon_Click(object sender, EventArgs e)
         {

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kutuphane_Uygulaması.Data;
 using static Kutuphane_Uygulaması.Data.Degiskenler;
+using Kutuphane_Uygulaması.Data.Wait;
 
 
 
@@ -30,6 +31,7 @@ namespace Kutuphane_Uygulaması
 
         private void KitapTurEkleForm_Load(object sender, EventArgs e)
         {
+            Loading.Close();
 
         }
         private void KitapTurEkleButton_Click(object sender, EventArgs e)

@@ -396,6 +396,7 @@ namespace Kutuphane_Uygulaması
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(897, 222);
             this.Controls.Add(this.layoutControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "GridGuncelle";
             this.Text = "GridGuncelle";
             this.Load += new System.EventHandler(this.GridGuncelle_Load);
