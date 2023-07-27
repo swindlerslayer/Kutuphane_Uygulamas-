@@ -130,17 +130,7 @@ namespace Kutuphane_Uygulaması.Data
                 }
             }
             
-        }
-        public static class OgrenciKitap
-        {
-            public static string OkGridDoldur
-            {
-                get
-                {
-                    return "api/ogrencikitaplisteyeekle";
-                }
-            }
-        }
+        }       
         public static class KitapTuru
         {
             public static string KitapTurGetirTekDeyayli
@@ -183,6 +173,90 @@ namespace Kutuphane_Uygulaması.Data
             
 
 
+        }
+        public static class Ogrenci
+        {
+            public static string OgrenciSil
+            {
+                get
+                {
+                    return "api/ogrencisil";
+                }
+            }
+            public static string OgrenciGetirTekDetayli
+            {
+                get
+                {
+                    return "api/ogrencigetir";
+                }
+            }
+            
+            public static string OgrenciListeyeEkle
+            {
+                get
+                {
+                    return "api/ogrencilisteyeekle";
+                }
+            }
+            public static string OgrenciKontrol
+            {
+                get
+                {
+                    return "api/ogrencikontrol";
+                }
+            }
+
+            public static string OgrenciEkleDuzenle
+            {
+                get
+                {
+                    return "api/ogrenciekleduzenle";
+                }
+            }
+        }
+        public static class OgrenciKitap
+        {
+            
+     
+            public static string OgrenciKitapKitapListesiGetir
+            {
+                get
+                {
+                    return "api/okitaplisteyeekle";
+                }
+            }
+            public static string OgrenciKitapTekGetirDetayli
+            {
+                get
+                {
+                    return "api/ogrencikitapteklisteyeekle";
+                }
+            }
+            public static string OgrenciKitapEkleDuzenle
+            {
+                get
+                {
+                    return "api/kitapogrenciekleduzenle";
+                }
+            }
+
+            public static string OgrenciKitapSil
+            {
+                get
+                {
+                    return "api/kitapogrencisil";
+                }
+            }
+            
+          
+            public static string OgrenciKitapListeyeEkle
+            {
+                get
+                {
+
+                    return "api/ogrkitaplisteyeekle";
+                }
+            }
         }
         public static class Kullanici
         {
@@ -231,7 +305,7 @@ namespace Kutuphane_Uygulaması.Data
              
             }
         }
-        //,string urlEk = ""
+       
         public static T Post<T>(this string u, HttpContent Body)
         {
             using (HttpClient client = new HttpClient())

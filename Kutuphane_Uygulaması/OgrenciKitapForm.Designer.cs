@@ -29,13 +29,10 @@ namespace Kutuphane_Uygulaması
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OgrenciKitapForm));
             this.label1 = new System.Windows.Forms.Label();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
-            this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
-            this.searchLookUpEdit2 = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.searchLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Teslimetme = new DevExpress.XtraEditors.SimpleButton();
-            this.Teslimalma = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -47,35 +44,59 @@ namespace Kutuphane_Uygulaması
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.VeriSilme = new DevExpress.XtraEditors.SimpleButton();
+            this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.label6 = new System.Windows.Forms.Label();
-            this.VeriSilme = new DevExpress.XtraEditors.SimpleButton();
+            this.searchLookUpEdit2 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Teslimalma = new DevExpress.XtraEditors.SimpleButton();
+            this.Teslimetme = new DevExpress.XtraEditors.SimpleButton();
+            this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(16, 227);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.Size = new System.Drawing.Size(162, 228);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             this.label1.Visible = false;
@@ -83,80 +104,50 @@ namespace Kutuphane_Uygulaması
             // dateEdit1
             // 
             this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(137, 150);
+            this.dateEdit1.Location = new System.Drawing.Point(95, 72);
             this.dateEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateEdit1.Name = "dateEdit1";
             this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(100, 22);
+            this.dateEdit1.Size = new System.Drawing.Size(125, 22);
+            this.dateEdit1.StyleController = this.layoutControl1;
             this.dateEdit1.TabIndex = 5;
             // 
-            // dateEdit2
+            // layoutControl1
             // 
-            this.dateEdit2.EditValue = null;
-            this.dateEdit2.Location = new System.Drawing.Point(137, 189);
-            this.dateEdit2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateEdit2.Name = "dateEdit2";
-            this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Size = new System.Drawing.Size(100, 22);
-            this.dateEdit2.TabIndex = 6;
-            // 
-            // searchLookUpEdit2
-            // 
-            this.searchLookUpEdit2.Location = new System.Drawing.Point(96, 108);
-            this.searchLookUpEdit2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.searchLookUpEdit2.Name = "searchLookUpEdit2";
-            this.searchLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.searchLookUpEdit2.Properties.DisplayMember = "Adi";
-            this.searchLookUpEdit2.Properties.NullText = "";
-            this.searchLookUpEdit2.Properties.ValueMember = "ID";
-            this.searchLookUpEdit2.Properties.View = this.searchLookUpEdit2View;
-            this.searchLookUpEdit2.Size = new System.Drawing.Size(191, 22);
-            this.searchLookUpEdit2.TabIndex = 8;
-            // 
-            // searchLookUpEdit2View
-            // 
-            this.searchLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchLookUpEdit2View.Name = "searchLookUpEdit2View";
-            this.searchLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchLookUpEdit2View.OptionsView.ShowGroupPanel = false;
-            // 
-            // Teslimetme
-            // 
-            this.Teslimetme.Location = new System.Drawing.Point(89, 257);
-            this.Teslimetme.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Teslimetme.Name = "Teslimetme";
-            this.Teslimetme.Size = new System.Drawing.Size(123, 47);
-            this.Teslimetme.TabIndex = 9;
-            this.Teslimetme.Text = "Teslim Etme";
-            this.Teslimetme.Click += new System.EventHandler(this.Teslimetme_Click);
-            // 
-            // Teslimalma
-            // 
-            this.Teslimalma.Location = new System.Drawing.Point(89, 336);
-            this.Teslimalma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Teslimalma.Name = "Teslimalma";
-            this.Teslimalma.Size = new System.Drawing.Size(123, 47);
-            this.Teslimalma.TabIndex = 10;
-            this.Teslimalma.Text = "Teslim alma";
-            this.Teslimalma.Click += new System.EventHandler(this.Teslimalma_Click);
+            this.layoutControl1.Controls.Add(this.gridControl1);
+            this.layoutControl1.Controls.Add(this.label1);
+            this.layoutControl1.Controls.Add(this.label6);
+            this.layoutControl1.Controls.Add(this.VeriSilme);
+            this.layoutControl1.Controls.Add(this.searchLookUpEdit1);
+            this.layoutControl1.Controls.Add(this.searchLookUpEdit2);
+            this.layoutControl1.Controls.Add(this.Teslimalma);
+            this.layoutControl1.Controls.Add(this.dateEdit1);
+            this.layoutControl1.Controls.Add(this.Teslimetme);
+            this.layoutControl1.Controls.Add(this.dateEdit2);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem9,
+            this.layoutControlItem10});
+            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Root = this.layoutControlGroup1;
+            this.layoutControl1.Size = new System.Drawing.Size(1038, 505);
+            this.layoutControl1.TabIndex = 19;
+            this.layoutControl1.Text = "layoutControl1";
             // 
             // gridControl1
             // 
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridControl1.Location = new System.Drawing.Point(293, -6);
+            this.gridControl1.Location = new System.Drawing.Point(226, 16);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(588, 506);
+            this.gridControl1.Size = new System.Drawing.Size(796, 473);
             this.gridControl1.TabIndex = 11;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -187,6 +178,7 @@ namespace Kutuphane_Uygulaması
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 0;
+            this.gridColumn9.Width = 62;
             // 
             // gridColumn1
             // 
@@ -195,6 +187,7 @@ namespace Kutuphane_Uygulaması
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.Width = 106;
             // 
             // gridColumn2
             // 
@@ -203,6 +196,7 @@ namespace Kutuphane_Uygulaması
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 2;
+            this.gridColumn2.Width = 106;
             // 
             // gridColumn3
             // 
@@ -211,6 +205,7 @@ namespace Kutuphane_Uygulaması
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 3;
+            this.gridColumn3.Width = 122;
             // 
             // gridColumn4
             // 
@@ -219,6 +214,7 @@ namespace Kutuphane_Uygulaması
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 4;
+            this.gridColumn4.Width = 131;
             // 
             // gridColumn5
             // 
@@ -227,6 +223,7 @@ namespace Kutuphane_Uygulaması
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 5;
+            this.gridColumn5.Width = 127;
             // 
             // gridColumn6
             // 
@@ -235,6 +232,7 @@ namespace Kutuphane_Uygulaması
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 6;
+            this.gridColumn6.Width = 103;
             // 
             // gridColumn10
             // 
@@ -244,47 +242,49 @@ namespace Kutuphane_Uygulaması
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 7;
+            this.gridColumn10.Width = 55;
             // 
             // repositoryItemCheckEdit1
             // 
             this.repositoryItemCheckEdit1.AutoHeight = false;
             this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
-            // label2
+            // label6
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 17);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Öğrenci";
+            this.label6.Location = new System.Drawing.Point(16, 227);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(162, 197);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "label6";
+            this.label6.Visible = false;
             // 
-            // label3
+            // VeriSilme
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 110);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 17);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Kitap";
+            this.VeriSilme.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("VeriSilme.ImageOptions.Image")));
+            this.VeriSilme.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.VeriSilme.Location = new System.Drawing.Point(16, 260);
+            this.VeriSilme.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.VeriSilme.Name = "VeriSilme";
+            this.VeriSilme.Size = new System.Drawing.Size(204, 60);
+            this.VeriSilme.StyleController = this.layoutControl1;
+            this.VeriSilme.TabIndex = 18;
+            this.VeriSilme.Text = "Veri Silme";
+            this.VeriSilme.Click += new System.EventHandler(this.VeriSilme_Click);
             // 
-            // label4
+            // searchLookUpEdit1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 153);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 17);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Alış Tarihi";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 192);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 17);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Teslim Tarihi";
+            this.searchLookUpEdit1.Location = new System.Drawing.Point(95, 16);
+            this.searchLookUpEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchLookUpEdit1.Name = "searchLookUpEdit1";
+            this.searchLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.searchLookUpEdit1.Properties.DisplayMember = "AdiSoyadi";
+            this.searchLookUpEdit1.Properties.NullText = "";
+            this.searchLookUpEdit1.Properties.ValueMember = "ID";
+            this.searchLookUpEdit1.Properties.View = this.searchLookUpEdit1View;
+            this.searchLookUpEdit1.Size = new System.Drawing.Size(125, 22);
+            this.searchLookUpEdit1.StyleController = this.layoutControl1;
+            this.searchLookUpEdit1.TabIndex = 7;
             // 
             // searchLookUpEdit1View
             // 
@@ -312,59 +312,183 @@ namespace Kutuphane_Uygulaması
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 1;
             // 
-            // searchLookUpEdit1
+            // searchLookUpEdit2
             // 
-            this.searchLookUpEdit1.Location = new System.Drawing.Point(96, 69);
-            this.searchLookUpEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.searchLookUpEdit1.Name = "searchLookUpEdit1";
-            this.searchLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.searchLookUpEdit2.Location = new System.Drawing.Point(95, 44);
+            this.searchLookUpEdit2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchLookUpEdit2.Name = "searchLookUpEdit2";
+            this.searchLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.searchLookUpEdit1.Properties.DisplayMember = "AdiSoyadi";
-            this.searchLookUpEdit1.Properties.NullText = "";
-            this.searchLookUpEdit1.Properties.ValueMember = "ID";
-            this.searchLookUpEdit1.Properties.View = this.searchLookUpEdit1View;
-            this.searchLookUpEdit1.Size = new System.Drawing.Size(191, 22);
-            this.searchLookUpEdit1.TabIndex = 7;
+            this.searchLookUpEdit2.Properties.DisplayMember = "Adi";
+            this.searchLookUpEdit2.Properties.NullText = "";
+            this.searchLookUpEdit2.Properties.ValueMember = "ID";
+            this.searchLookUpEdit2.Properties.View = this.searchLookUpEdit2View;
+            this.searchLookUpEdit2.Size = new System.Drawing.Size(125, 22);
+            this.searchLookUpEdit2.StyleController = this.layoutControl1;
+            this.searchLookUpEdit2.TabIndex = 8;
             // 
-            // label6
+            // searchLookUpEdit2View
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(100, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 17);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "label6";
-            this.label6.Visible = false;
+            this.searchLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit2View.Name = "searchLookUpEdit2View";
+            this.searchLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit2View.OptionsView.ShowGroupPanel = false;
             // 
-            // VeriSilme
+            // Teslimalma
             // 
-            this.VeriSilme.Location = new System.Drawing.Point(89, 410);
-            this.VeriSilme.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.VeriSilme.Name = "VeriSilme";
-            this.VeriSilme.Size = new System.Drawing.Size(123, 47);
-            this.VeriSilme.TabIndex = 18;
-            this.VeriSilme.Text = "Veri Silme";
-            this.VeriSilme.Click += new System.EventHandler(this.VeriSilme_Click);
+            this.Teslimalma.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Teslimalma.ImageOptions.Image")));
+            this.Teslimalma.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.Teslimalma.Location = new System.Drawing.Point(16, 194);
+            this.Teslimalma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Teslimalma.Name = "Teslimalma";
+            this.Teslimalma.Size = new System.Drawing.Size(204, 60);
+            this.Teslimalma.StyleController = this.layoutControl1;
+            this.Teslimalma.TabIndex = 10;
+            this.Teslimalma.Text = "Teslim alma";
+            this.Teslimalma.Click += new System.EventHandler(this.Teslimalma_Click);
+            // 
+            // Teslimetme
+            // 
+            this.Teslimetme.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Teslimetme.ImageOptions.Image")));
+            this.Teslimetme.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.Teslimetme.Location = new System.Drawing.Point(16, 128);
+            this.Teslimetme.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Teslimetme.Name = "Teslimetme";
+            this.Teslimetme.Size = new System.Drawing.Size(204, 60);
+            this.Teslimetme.StyleController = this.layoutControl1;
+            this.Teslimetme.TabIndex = 9;
+            this.Teslimetme.Text = "Teslim Etme";
+            this.Teslimetme.Click += new System.EventHandler(this.Teslimetme_Click);
+            // 
+            // dateEdit2
+            // 
+            this.dateEdit2.EditValue = null;
+            this.dateEdit2.Location = new System.Drawing.Point(95, 100);
+            this.dateEdit2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateEdit2.Name = "dateEdit2";
+            this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit2.Size = new System.Drawing.Size(125, 22);
+            this.dateEdit2.StyleController = this.layoutControl1;
+            this.dateEdit2.TabIndex = 6;
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.label6;
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 211);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(168, 203);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem9.TextVisible = false;
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.label1;
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 211);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(168, 234);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem10.TextVisible = false;
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem2,
+            this.layoutControlItem3,
+            this.layoutControlItem4,
+            this.layoutControlItem5,
+            this.layoutControlItem6,
+            this.layoutControlItem7,
+            this.layoutControlItem8,
+            this.layoutControlItem1});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1038, 505);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.searchLookUpEdit1;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(210, 28);
+            this.layoutControlItem2.Text = "Öğrenci";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(75, 16);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.searchLookUpEdit2;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 28);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(210, 28);
+            this.layoutControlItem3.Text = "Kitap";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(75, 16);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.dateEdit1;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 56);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(210, 28);
+            this.layoutControlItem4.Text = "Teslim Tarihi";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(75, 16);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.dateEdit2;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 84);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(210, 28);
+            this.layoutControlItem5.Text = "Alis Tarihi";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(75, 16);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.Teslimetme;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 112);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(210, 66);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.Teslimalma;
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 178);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(210, 66);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem7.TextVisible = false;
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.VeriSilme;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 244);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(210, 235);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem8.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.gridControl1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(210, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(802, 479);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
             // 
             // OgrenciKitapForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 494);
-            this.Controls.Add(this.VeriSilme);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.Teslimalma);
-            this.Controls.Add(this.Teslimetme);
-            this.Controls.Add(this.searchLookUpEdit2);
-            this.Controls.Add(this.searchLookUpEdit1);
-            this.Controls.Add(this.dateEdit2);
-            this.Controls.Add(this.dateEdit1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1038, 505);
+            this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "OgrenciKitapForm";
@@ -372,17 +496,29 @@ namespace Kutuphane_Uygulaması
             this.Load += new System.EventHandler(this.OgrenciKitapForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -395,26 +531,34 @@ namespace Kutuphane_Uygulaması
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit2View;
         private DevExpress.XtraEditors.SimpleButton Teslimetme;
         private DevExpress.XtraEditors.SimpleButton Teslimalma;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private System.Windows.Forms.Label label6;
+        private DevExpress.XtraEditors.SimpleButton VeriSilme;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private System.Windows.Forms.Label label6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
-        private DevExpress.XtraEditors.SimpleButton VeriSilme;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     }
 }

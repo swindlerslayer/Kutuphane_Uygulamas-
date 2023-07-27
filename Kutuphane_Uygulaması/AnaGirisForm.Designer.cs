@@ -39,6 +39,7 @@ namespace Kutuphane_Uygulaması
             this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.label6 = new System.Windows.Forms.Label();
             this.OgrenciKitapButton = new DevExpress.XtraEditors.SimpleButton();
             this.YayıneviEkleButton = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -56,6 +57,7 @@ namespace Kutuphane_Uygulaması
             this.YazarEkleButton = new DevExpress.XtraEditors.SimpleButton();
             this.KitapEkleButton = new DevExpress.XtraEditors.SimpleButton();
             this.OgrenciEkleButton = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -64,6 +66,16 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.simpleSeparator1 = new DevExpress.XtraLayout.SimpleSeparator();
+            this.simpleSeparator2 = new DevExpress.XtraLayout.SimpleSeparator();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             ((System.ComponentModel.ISupportInitialize)(this.xrDesignRibbonController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrDesignDockManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
@@ -73,6 +85,7 @@ namespace Kutuphane_Uygulaması
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -81,6 +94,10 @@ namespace Kutuphane_Uygulaması
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // xrDesignRibbonController1
@@ -122,6 +139,7 @@ namespace Kutuphane_Uygulaması
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.label6);
             this.layoutControl1.Controls.Add(this.OgrenciKitapButton);
             this.layoutControl1.Controls.Add(this.YayıneviEkleButton);
             this.layoutControl1.Controls.Add(this.gridControl1);
@@ -130,19 +148,30 @@ namespace Kutuphane_Uygulaması
             this.layoutControl1.Controls.Add(this.KitapEkleButton);
             this.layoutControl1.Controls.Add(this.OgrenciEkleButton);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.layoutControl1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem8});
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(920, 273, 562, 500);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1016, 525);
+            this.layoutControl1.Size = new System.Drawing.Size(995, 493);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(16, 121);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(963, 25);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "label1";
+            this.label6.Visible = false;
+            // 
             // OgrenciKitapButton
             // 
-            this.OgrenciKitapButton.Location = new System.Drawing.Point(16, 82);
+            this.OgrenciKitapButton.Location = new System.Drawing.Point(16, 85);
             this.OgrenciKitapButton.Name = "OgrenciKitapButton";
-            this.OgrenciKitapButton.Size = new System.Drawing.Size(984, 27);
+            this.OgrenciKitapButton.Size = new System.Drawing.Size(963, 27);
             this.OgrenciKitapButton.StyleController = this.layoutControl1;
             this.OgrenciKitapButton.TabIndex = 14;
             this.OgrenciKitapButton.Text = "Kitap Teslim et/al";
@@ -152,12 +181,12 @@ namespace Kutuphane_Uygulaması
             // 
             this.YayıneviEkleButton.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("YayıneviEkleButton.Appearance.Image")));
             this.YayıneviEkleButton.Appearance.Options.UseImage = true;
-            this.YayıneviEkleButton.ImageOptions.Image = global::Kutuphane_Uygulaması.Properties.Resources.home_32x32;
+            this.YayıneviEkleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("YayıneviEkleButton.ImageOptions.Image")));
             this.YayıneviEkleButton.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.YayıneviEkleButton.ImageOptions.SvgImageSize = new System.Drawing.Size(10, 10);
-            this.YayıneviEkleButton.Location = new System.Drawing.Point(600, 16);
+            this.YayıneviEkleButton.Location = new System.Drawing.Point(588, 16);
             this.YayıneviEkleButton.Name = "YayıneviEkleButton";
-            this.YayıneviEkleButton.Size = new System.Drawing.Size(186, 60);
+            this.YayıneviEkleButton.Size = new System.Drawing.Size(182, 60);
             this.YayıneviEkleButton.StyleController = this.layoutControl1;
             this.YayıneviEkleButton.TabIndex = 13;
             this.YayıneviEkleButton.Text = "Yayınevi Ekle ";
@@ -166,13 +195,13 @@ namespace Kutuphane_Uygulaması
             // gridControl1
             // 
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridControl1.Location = new System.Drawing.Point(16, 115);
+            this.gridControl1.Location = new System.Drawing.Point(16, 121);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(984, 394);
+            this.gridControl1.Size = new System.Drawing.Size(963, 356);
             this.gridControl1.TabIndex = 12;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -195,6 +224,7 @@ namespace Kutuphane_Uygulaması
             this.gridView1.OptionsFilter.AllowMultiSelectInCheckedFilterPopup = false;
             this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gridView1_PopupMenuShowing);
             // 
             // gridColumn9
             // 
@@ -270,12 +300,12 @@ namespace Kutuphane_Uygulaması
             // 
             this.KitapTurEkleButton.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("KitapTurEkleButton.Appearance.Image")));
             this.KitapTurEkleButton.Appearance.Options.UseImage = true;
-            this.KitapTurEkleButton.ImageOptions.Image = global::Kutuphane_Uygulaması.Properties.Resources.text_32x32;
+            this.KitapTurEkleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("KitapTurEkleButton.ImageOptions.Image")));
             this.KitapTurEkleButton.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.KitapTurEkleButton.ImageOptions.SvgImageSize = new System.Drawing.Size(10, 10);
-            this.KitapTurEkleButton.Location = new System.Drawing.Point(792, 16);
+            this.KitapTurEkleButton.Location = new System.Drawing.Point(776, 16);
             this.KitapTurEkleButton.Name = "KitapTurEkleButton";
-            this.KitapTurEkleButton.Size = new System.Drawing.Size(208, 60);
+            this.KitapTurEkleButton.Size = new System.Drawing.Size(203, 60);
             this.KitapTurEkleButton.StyleController = this.layoutControl1;
             this.KitapTurEkleButton.TabIndex = 6;
             this.KitapTurEkleButton.Text = "Kitap Turu Ekle";
@@ -285,12 +315,12 @@ namespace Kutuphane_Uygulaması
             // 
             this.YazarEkleButton.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("YazarEkleButton.Appearance.Image")));
             this.YazarEkleButton.Appearance.Options.UseImage = true;
-            this.YazarEkleButton.ImageOptions.Image = global::Kutuphane_Uygulaması.Properties.Resources.user_32x32;
+            this.YazarEkleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("YazarEkleButton.ImageOptions.Image")));
             this.YazarEkleButton.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.YazarEkleButton.ImageOptions.SvgImageSize = new System.Drawing.Size(10, 10);
-            this.YazarEkleButton.Location = new System.Drawing.Point(395, 16);
+            this.YazarEkleButton.Location = new System.Drawing.Point(387, 16);
             this.YazarEkleButton.Name = "YazarEkleButton";
-            this.YazarEkleButton.Size = new System.Drawing.Size(199, 60);
+            this.YazarEkleButton.Size = new System.Drawing.Size(195, 60);
             this.YazarEkleButton.StyleController = this.layoutControl1;
             this.YazarEkleButton.TabIndex = 5;
             this.YazarEkleButton.Text = "Yazar Ekle ";
@@ -300,12 +330,12 @@ namespace Kutuphane_Uygulaması
             // 
             this.KitapEkleButton.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("KitapEkleButton.Appearance.Image")));
             this.KitapEkleButton.Appearance.Options.UseImage = true;
-            this.KitapEkleButton.ImageOptions.Image = global::Kutuphane_Uygulaması.Properties.Resources.functionsmore_32x32;
+            this.KitapEkleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("KitapEkleButton.ImageOptions.Image")));
             this.KitapEkleButton.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.KitapEkleButton.ImageOptions.SvgImageSize = new System.Drawing.Size(10, 10);
             this.KitapEkleButton.Location = new System.Drawing.Point(16, 16);
             this.KitapEkleButton.Name = "KitapEkleButton";
-            this.KitapEkleButton.Size = new System.Drawing.Size(180, 60);
+            this.KitapEkleButton.Size = new System.Drawing.Size(176, 60);
             this.KitapEkleButton.StyleController = this.layoutControl1;
             this.KitapEkleButton.TabIndex = 4;
             this.KitapEkleButton.Text = "Kitap Ekle-Sil";
@@ -315,16 +345,25 @@ namespace Kutuphane_Uygulaması
             // 
             this.OgrenciEkleButton.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("OgrenciEkleButton.Appearance.Image")));
             this.OgrenciEkleButton.Appearance.Options.UseImage = true;
-            this.OgrenciEkleButton.ImageOptions.Image = global::Kutuphane_Uygulaması.Properties.Resources.contact_32x32;
+            this.OgrenciEkleButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("OgrenciEkleButton.ImageOptions.Image")));
             this.OgrenciEkleButton.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.OgrenciEkleButton.ImageOptions.SvgImageSize = new System.Drawing.Size(10, 10);
-            this.OgrenciEkleButton.Location = new System.Drawing.Point(202, 16);
+            this.OgrenciEkleButton.Location = new System.Drawing.Point(198, 16);
             this.OgrenciEkleButton.Name = "OgrenciEkleButton";
-            this.OgrenciEkleButton.Size = new System.Drawing.Size(187, 60);
+            this.OgrenciEkleButton.Size = new System.Drawing.Size(183, 60);
             this.OgrenciEkleButton.StyleController = this.layoutControl1;
             this.OgrenciEkleButton.TabIndex = 4;
             this.OgrenciEkleButton.Text = "Ogrenci Ekle";
             this.OgrenciEkleButton.Click += new System.EventHandler(this.OgrenciEkleButton_Click);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.label6;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 105);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(969, 31);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem8.TextVisible = false;
             // 
             // layoutControlGroup1
             // 
@@ -337,11 +376,13 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem6,
-            this.layoutControlItem7});
+            this.layoutControlItem7,
+            this.simpleSeparator1,
+            this.simpleSeparator2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1016, 525);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(995, 493);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -349,7 +390,7 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem1.Control = this.KitapEkleButton;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(186, 66);
+            this.layoutControlItem1.Size = new System.Drawing.Size(182, 66);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -357,9 +398,9 @@ namespace Kutuphane_Uygulaması
             // 
             this.layoutControlItem2.Control = this.OgrenciEkleButton;
             this.layoutControlItem2.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem2.Location = new System.Drawing.Point(186, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(182, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(193, 66);
+            this.layoutControlItem2.Size = new System.Drawing.Size(189, 66);
             this.layoutControlItem2.Text = "layoutControlItem1";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
@@ -367,54 +408,141 @@ namespace Kutuphane_Uygulaması
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.YazarEkleButton;
-            this.layoutControlItem3.Location = new System.Drawing.Point(379, 0);
+            this.layoutControlItem3.Location = new System.Drawing.Point(371, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(205, 66);
+            this.layoutControlItem3.Size = new System.Drawing.Size(201, 66);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.KitapTurEkleButton;
-            this.layoutControlItem4.Location = new System.Drawing.Point(776, 0);
+            this.layoutControlItem4.Location = new System.Drawing.Point(760, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(214, 66);
+            this.layoutControlItem4.Size = new System.Drawing.Size(209, 66);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.gridControl1;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 99);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 105);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(990, 400);
+            this.layoutControlItem5.Size = new System.Drawing.Size(969, 362);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.YayıneviEkleButton;
-            this.layoutControlItem6.Location = new System.Drawing.Point(584, 0);
+            this.layoutControlItem6.Location = new System.Drawing.Point(572, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(192, 66);
+            this.layoutControlItem6.Size = new System.Drawing.Size(188, 66);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.OgrenciKitapButton;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 66);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 69);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(990, 33);
+            this.layoutControlItem7.Size = new System.Drawing.Size(969, 33);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
+            // 
+            // simpleSeparator1
+            // 
+            this.simpleSeparator1.AllowHotTrack = false;
+            this.simpleSeparator1.Location = new System.Drawing.Point(0, 66);
+            this.simpleSeparator1.Name = "simpleSeparator1";
+            this.simpleSeparator1.Size = new System.Drawing.Size(969, 3);
+            // 
+            // simpleSeparator2
+            // 
+            this.simpleSeparator2.AllowHotTrack = false;
+            this.simpleSeparator2.CustomizationFormText = "simpleSeparator1";
+            this.simpleSeparator2.Location = new System.Drawing.Point(0, 102);
+            this.simpleSeparator2.Name = "simpleSeparator2";
+            this.simpleSeparator2.Size = new System.Drawing.Size(969, 3);
+            this.simpleSeparator2.Text = "simpleSeparator1";
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
+            this.popupMenu1.Manager = this.barManager1;
+            this.popupMenu1.Name = "popupMenu1";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Teslim Alındı";
+            this.barButtonItem1.Id = 0;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonAlindi_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Teslim Alınmadı";
+            this.barButtonItem2.Id = 1;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonAlinmadi_ItemClick);
+            // 
+            // barManager1
+            // 
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barButtonItem1,
+            this.barButtonItem2});
+            this.barManager1.MaxItemId = 2;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(995, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 493);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(995, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 493);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(995, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 493);
             // 
             // AnaGirisForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 525);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(995, 493);
             this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MinimumSize = new System.Drawing.Size(600, 450);
             this.Name = "AnaGirisForm";
@@ -430,6 +558,7 @@ namespace Kutuphane_Uygulaması
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -438,7 +567,12 @@ namespace Kutuphane_Uygulaması
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -475,5 +609,17 @@ namespace Kutuphane_Uygulaması
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraEditors.SimpleButton OgrenciKitapButton;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraLayout.SimpleSeparator simpleSeparator1;
+        private DevExpress.XtraLayout.SimpleSeparator simpleSeparator2;
+        private System.Windows.Forms.Label label6;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.PopupMenu popupMenu1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }

@@ -240,6 +240,12 @@
     <Compile Include="Kayit.Designer.cs">
       <DependentUpon>Kayit.cs</DependentUpon>
     </Compile>
+    <Compile Include="KitapEkleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KitapEkleForm.Designer.cs">
+      <DependentUpon>KitapEkleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="KitapTurEkleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Kayit.resx">
       <DependentUpon>Kayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KitapEkleForm.resx">
+      <DependentUpon>KitapEkleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KitapTurEkleForm.resx">
       <DependentUpon>KitapTurEkleForm.cs</DependentUpon>
@@ -351,19 +360,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\functionsmore_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\contact_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\user_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\home_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\text_32x32.png" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

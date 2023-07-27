@@ -21,8 +21,8 @@ namespace Kutuphane_Uygulaması.Data
                 StringContent stringwrap = new StringContent(strJson);
                 //Daha fazla veri vermek veya application şeklini değiştirmek istersek alttaki kodu da kullanabiliriz.
                 //HttpContent httpContent = new StringContent(strJson, System.Text.Encoding.UTF8, "application/json");
-                var res = URL.Yazar.YazarEkleDuzenle.Post<Boolean>(Body: stringwrap);
-                return true;
+                var res = URL.Yazar.YazarEkleDuzenle.Post<bool>(Body: stringwrap);
+                return res;
             }
             else
             {
@@ -41,7 +41,7 @@ namespace Kutuphane_Uygulaması.Data
         public static bool sil(EntityYazarListe id)
         {
             int ID = id.ID;
-            var res = URL.Yazar.YazarSil.Get<Boolean>(urlEk: $"?ID={ID}");
+            var res = URL.Yazar.YazarSil.Get<bool>(urlEk: $"?ID={ID}");
             if (res ==false)
             {
                 return false;

@@ -2,99 +2,56 @@
 using System.Linq;
 using System;
 using static Kutuphane_Uygulaması.Data.Degiskenler;
+using System.Text.Json;
+using System.Net.Http;
 
 namespace Kutuphane_Uygulaması.Data
 {
     public class OgrenciKitap
     {
-
         public static EntityFullKitapOgrenci kitapogrencigetir(int id)
         {
-            return null;
-            //using (KutuphaneEntities2 db = new KutuphaneEntities2())
-            //{
-            //    var data = db.KitapOgrenci.FirstOrDefault(x => x.ID == id);
-            //    if (data != null)
-            //    {
-            //        return data;
-            //    }
-            //    else
-            //    {
-            //        return null;
-            //    }
-            //}
+            var res = URL.OgrenciKitap.OgrenciKitapTekGetirDetayli.Get<EntityFullKitapOgrenci>(urlEk: $"?ID={id}");
+            return res;
         }
         public static bool sil(EntityFullKitapOgrenci y)
         {
-            return true;
-
-            //using(KutuphaneEntities2 db = new KutuphaneEntities2())
-            //{
-
-            //    var kitapogrenci= db.KitapOgrenci.FirstOrDefault(x => x.ID == y.ID);
-            //    db.KitapOgrenci.Remove(kitapogrenci);
-            //    db.SaveChanges();
-            //    return true;
-            //}
+            int ID = y.ID;
+            var res = URL.OgrenciKitap.OgrenciKitapSil.Get<bool>(urlEk: $"?ID={ID}");            
+            return res;
         }
         public static bool EkleDuzenle(EntityFullKitapOgrenci k)
         {
-            return true;
-            //try
-            //{
-            //    using (KutuphaneEntities2 db = new KutuphaneEntities2())
-            //    {
-            //        if (k.ID == 0)
-            //        {
-            //            k.KayitTarihi = DateTime.Now;
-            //            db.KitapOgrenci.Add(k);
-            //            db.SaveChanges();
-            //            return true;
-            //        }
-            //        else
-            //        {
-            //            var kitapogrenci = db.KitapOgrenci.FirstOrDefault(x => x.ID == k.ID);
-                        
-            //            kitapogrenci.OgrenciID = k.OgrenciID;
-            //            kitapogrenci.KitapID= k.KitapID;
-            //            kitapogrenci.DegisiklikTarihi = DateTime.Now;
-            //            kitapogrenci.DegisiklikYapan = k.DegisiklikYapan;
-            //            kitapogrenci.KullanıcıID = k.KullanıcıID;
-            //            kitapogrenci.TeslimTarihi = k.TeslimTarihi;
-            //            kitapogrenci.TeslimDurumu = k.TeslimDurumu;
-
-            //            db.SaveChanges();
-            //            return false;
-            //        }
-            //    }
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    return false;
-            //}
+            if (k != null)
+            {
+                string strJson = JsonSerializer.Serialize(k);
+                //Json verimizi stringContent'e çeviriyoruz 
+                StringContent stringwrap = new StringContent(strJson);
+                //Daha fazla veri vermek veya application şeklini değiştirmek istersek alttaki kodu da kullanabiliriz.
+                //HttpContent httpContent = new StringContent(strJson, System.Text.Encoding.UTF8, "application/json");
+                var res = URL.OgrenciKitap.OgrenciKitapEkleDuzenle.Post<bool>(Body: stringwrap);
+                return res;
+            }
+            else
+            {
+                return false;
+            }
         }
+
+      
+
         public List<KitapViewModel> GetKitapListesi()
         {
-            return null;
-            //using (KutuphaneEntities2 dbContext = new KutuphaneEntities2())
-            //{
-            //    var kitapListesi = dbContext.Kitap.Select(k => new KitapViewModel
-            //    {
-            //        ID=k.ID,
-            //        Adi = k.Adi,
-            //        YayinEviAdi = k.YayinEvi.Adi
-            //    }).ToList();
-
-            //    return kitapListesi;
-            //}
+            //yanlıs veriler dönüyor 
+            var res = URL.OgrenciKitap.OgrenciKitapKitapListesiGetir.Get<List<KitapViewModel>>(urlEk: $"");
+            return res;
         }
     }
     public class OKgrid { 
     
         public List<OKViewModel> GetGridDoldur()    
         {
-            var res = URL.OgrenciKitap.OkGridDoldur.Get<List<OKViewModel>>(urlEk: $"");
+            var res = URL.OgrenciKitap.OgrenciKitapListeyeEkle.Get<List<OKViewModel>>(urlEk: $"");
             return res;
         }
     }

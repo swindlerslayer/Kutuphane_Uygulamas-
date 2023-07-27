@@ -35,6 +35,11 @@ namespace Kutuphane_Uygulaması
         private void KitapTurEkleButton_Click(object sender, EventArgs e)
         {
 
+            if(textEdit1.Text == "") {
+                MessageBox.Show("Lütfen Kaydedeceğiniz Türün İsmini Giriniz");
+            }
+            else { 
+
             string kitapturadi;
             kitapturadi = textEdit1.Text;
             EntityFullKitapTuru kitapTuru = new EntityFullKitapTuru();
@@ -62,52 +67,69 @@ namespace Kutuphane_Uygulaması
             {
                 MessageBox.Show("Bu isim halihazırda kayıtlı");
             }
+                
+            }
 
         }
 
         private void KitapTurGuncelleButton_Click(object sender, EventArgs e)
         {
 
-            string kitapturuadi, kitapturuid;
-            kitapturuadi = textEdit1.Text;
-            kitapturuid = label2.Text;
-            EntityFullKitapTuru kitapturu = new EntityFullKitapTuru();
-            kitapturu.Adi = kitapturuadi;
-            kitapturu.ID = Int32.Parse(kitapturuid);
-            kitapturu.KayitTarihi = DateTime.Now;
-            kitapturu.KayitYapan = kullaniciiD;
-
-
-            bool kaydedildi = DbKitapTuru.EkleDuzenle(kitapturu);
-            if (kaydedildi)
+            if (textEdit1.Text == "")
             {
-                MessageBox.Show("Kitap türü başarıyla güncellendi");
-                gridControl1.DataSource = DbKitapTuru.ListeyeEkle();
+                MessageBox.Show("Lütfen Güncelleyeceğiniz Türün İsmini Giriniz");
             }
             else
             {
-                MessageBox.Show("Kitap türü güncellenirken bir hata oluştu");
-            }
-        }
-        private void KitapTurSilButton_Click(object sender, EventArgs e)
-        {
-            if (gridView1.GetFocusedRow() is EntityKitapTuruListe selectedkitaptur)
-            {
-                string silinecek = textEdit1.Text;
 
-                selectedkitaptur.Adi = silinecek;
+                string kitapturuadi, kitapturuid;
+                kitapturuadi = textEdit1.Text;
+                kitapturuid = label2.Text;
+                EntityFullKitapTuru kitapturu = new EntityFullKitapTuru();
+                kitapturu.Adi = kitapturuadi;
+                kitapturu.ID = Int32.Parse(kitapturuid);
+                kitapturu.KayitTarihi = DateTime.Now;
+                kitapturu.KayitYapan = kullaniciiD;
 
-                bool kaydedildi = DbKitapTuru.sil(selectedkitaptur);
+
+                bool kaydedildi = DbKitapTuru.EkleDuzenle(kitapturu);
                 if (kaydedildi)
                 {
-                    MessageBox.Show("Kitap türü başarıyla Silindi");
-
+                    MessageBox.Show("Kitap türü başarıyla güncellendi");
                     gridControl1.DataSource = DbKitapTuru.ListeyeEkle();
                 }
                 else
                 {
-                    MessageBox.Show("Kitap türü Silinemedi");
-                    gridControl1.DataSource = DbKitapTuru.ListeyeEkle();
+                    MessageBox.Show("Kitap türü güncellenirken bir hata oluştu");
+                }
+            }
+        }
+        private void KitapTurSilButton_Click(object sender, EventArgs e)
+        {
+            if (textEdit1.Text == "")
+            {
+                MessageBox.Show("Lütfen Sileceğiniz Türü seçiniz");
+            }
+            else
+            {
+                if (gridView1.GetFocusedRow() is EntityKitapTuruListe selectedkitaptur)
+                {
+                    string silinecek = textEdit1.Text;
+
+                    selectedkitaptur.Adi = silinecek;
+
+                    bool kaydedildi = DbKitapTuru.sil(selectedkitaptur);
+                    if (kaydedildi)
+                    {
+                        MessageBox.Show("Kitap türü başarıyla Silindi");
+
+                        gridControl1.DataSource = DbKitapTuru.ListeyeEkle();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kitap türü Silinemedi");
+                        gridControl1.DataSource = DbKitapTuru.ListeyeEkle();
+                    }
                 }
             }
         }

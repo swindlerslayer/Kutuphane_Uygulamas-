@@ -33,6 +33,7 @@ namespace Kutuphane_Uygulaması
         {
             var kitapListesi = ogrenciKitap.GetKitapListesi();
             var ogrenciListesi = dbogrenci.GetOgrenciListesi();
+            
             searchLookUpEdit1.Properties.DataSource = ogrenciListesi;
             searchLookUpEdit2.Properties.DataSource = kitapListesi;
             gridControl1.DataSource = okgrid.GetGridDoldur();

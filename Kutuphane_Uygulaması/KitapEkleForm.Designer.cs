@@ -1,7 +1,7 @@
 ﻿
 namespace Kutuphane_Uygulaması
 {
-    partial class GridGuncelle
+    partial class KitapEkleForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,6 @@ namespace Kutuphane_Uygulaması
         /// </summary>
         private void InitializeComponent()
         {
-            this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.label2 = new System.Windows.Forms.Label();
             this.ResimYukleButon = new DevExpress.XtraEditors.SimpleButton();
@@ -47,6 +44,9 @@ namespace Kutuphane_Uygulaması
             this.searchLookUpEdit2 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -59,8 +59,6 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
@@ -71,6 +69,8 @@ namespace Kutuphane_Uygulaması
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -84,36 +84,6 @@ namespace Kutuphane_Uygulaması
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             this.SuspendLayout();
-            // 
-            // searchLookUpEdit1
-            // 
-            this.searchLookUpEdit1.Location = new System.Drawing.Point(89, 72);
-            this.searchLookUpEdit1.Name = "searchLookUpEdit1";
-            this.searchLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.searchLookUpEdit1.Properties.DisplayMember = "Adi";
-            this.searchLookUpEdit1.Properties.ValueMember = "ID";
-            this.searchLookUpEdit1.Properties.View = this.searchLookUpEdit1View;
-            this.searchLookUpEdit1.Size = new System.Drawing.Size(407, 22);
-            this.searchLookUpEdit1.StyleController = this.layoutControl1;
-            this.searchLookUpEdit1.TabIndex = 1;
-            // 
-            // searchLookUpEdit1View
-            // 
-            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn5});
-            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
-            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Adı";
-            this.gridColumn5.FieldName = "Adi";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 0;
             // 
             // layoutControl1
             // 
@@ -135,8 +105,8 @@ namespace Kutuphane_Uygulaması
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(897, 222);
-            this.layoutControl1.TabIndex = 21;
+            this.layoutControl1.Size = new System.Drawing.Size(768, 229);
+            this.layoutControl1.TabIndex = 22;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // label2
@@ -149,9 +119,9 @@ namespace Kutuphane_Uygulaması
             // 
             // ResimYukleButon
             // 
-            this.ResimYukleButon.Location = new System.Drawing.Point(502, 184);
+            this.ResimYukleButon.Location = new System.Drawing.Point(440, 184);
             this.ResimYukleButon.Name = "ResimYukleButon";
-            this.ResimYukleButon.Size = new System.Drawing.Size(358, 27);
+            this.ResimYukleButon.Size = new System.Drawing.Size(312, 27);
             this.ResimYukleButon.StyleController = this.layoutControl1;
             this.ResimYukleButon.TabIndex = 20;
             this.ResimYukleButon.Text = "Resim Seç";
@@ -160,11 +130,11 @@ namespace Kutuphane_Uygulaması
             // pictureEdit1
             // 
             this.pictureEdit1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureEdit1.Location = new System.Drawing.Point(502, 16);
+            this.pictureEdit1.Location = new System.Drawing.Point(440, 16);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.PictureStoreMode = DevExpress.XtraEditors.Controls.PictureStoreMode.ByteArray;
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(358, 162);
+            this.pictureEdit1.Size = new System.Drawing.Size(312, 162);
             this.pictureEdit1.StyleController = this.layoutControl1;
             this.pictureEdit1.TabIndex = 13;
             // 
@@ -172,10 +142,10 @@ namespace Kutuphane_Uygulaması
             // 
             this.simpleButton1.Location = new System.Drawing.Point(16, 184);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(480, 27);
+            this.simpleButton1.Size = new System.Drawing.Size(418, 27);
             this.simpleButton1.StyleController = this.layoutControl1;
             this.simpleButton1.TabIndex = 12;
-            this.simpleButton1.Text = "Kitap Güncelle";
+            this.simpleButton1.Text = "Kitap Kaydet";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // label1
@@ -191,7 +161,7 @@ namespace Kutuphane_Uygulaması
             // 
             this.textEdit3.Location = new System.Drawing.Point(89, 156);
             this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(407, 22);
+            this.textEdit3.Size = new System.Drawing.Size(345, 22);
             this.textEdit3.StyleController = this.layoutControl1;
             this.textEdit3.TabIndex = 11;
             // 
@@ -199,7 +169,7 @@ namespace Kutuphane_Uygulaması
             // 
             this.textEdit1.Location = new System.Drawing.Point(89, 16);
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(407, 22);
+            this.textEdit1.Size = new System.Drawing.Size(345, 22);
             this.textEdit1.StyleController = this.layoutControl1;
             this.textEdit1.TabIndex = 9;
             // 
@@ -212,7 +182,7 @@ namespace Kutuphane_Uygulaması
             this.searchLookUpEdit3.Properties.DisplayMember = "AdiSoyadi";
             this.searchLookUpEdit3.Properties.ValueMember = "ID";
             this.searchLookUpEdit3.Properties.View = this.gridView2;
-            this.searchLookUpEdit3.Size = new System.Drawing.Size(407, 22);
+            this.searchLookUpEdit3.Size = new System.Drawing.Size(345, 22);
             this.searchLookUpEdit3.StyleController = this.layoutControl1;
             this.searchLookUpEdit3.TabIndex = 3;
             // 
@@ -237,7 +207,7 @@ namespace Kutuphane_Uygulaması
             // 
             this.textEdit2.Location = new System.Drawing.Point(89, 44);
             this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(407, 22);
+            this.textEdit2.Size = new System.Drawing.Size(345, 22);
             this.textEdit2.StyleController = this.layoutControl1;
             this.textEdit2.TabIndex = 10;
             // 
@@ -250,7 +220,7 @@ namespace Kutuphane_Uygulaması
             this.searchLookUpEdit2.Properties.DisplayMember = "Adi";
             this.searchLookUpEdit2.Properties.ValueMember = "ID";
             this.searchLookUpEdit2.Properties.View = this.gridView1;
-            this.searchLookUpEdit2.Size = new System.Drawing.Size(407, 22);
+            this.searchLookUpEdit2.Size = new System.Drawing.Size(345, 22);
             this.searchLookUpEdit2.StyleController = this.layoutControl1;
             this.searchLookUpEdit2.TabIndex = 2;
             // 
@@ -270,6 +240,36 @@ namespace Kutuphane_Uygulaması
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 0;
+            // 
+            // searchLookUpEdit1
+            // 
+            this.searchLookUpEdit1.Location = new System.Drawing.Point(89, 72);
+            this.searchLookUpEdit1.Name = "searchLookUpEdit1";
+            this.searchLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.searchLookUpEdit1.Properties.DisplayMember = "Adi";
+            this.searchLookUpEdit1.Properties.ValueMember = "ID";
+            this.searchLookUpEdit1.Properties.View = this.searchLookUpEdit1View;
+            this.searchLookUpEdit1.Size = new System.Drawing.Size(345, 22);
+            this.searchLookUpEdit1.StyleController = this.layoutControl1;
+            this.searchLookUpEdit1.TabIndex = 1;
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn5});
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Adı";
+            this.gridColumn5.FieldName = "Adi";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 0;
             // 
             // layoutControlItem10
             // 
@@ -306,24 +306,24 @@ namespace Kutuphane_Uygulaması
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
-            this.layoutControlGroup1.Size = new System.Drawing.Size(876, 227);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(768, 229);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.pictureEdit1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(486, 0);
+            this.layoutControlItem1.Location = new System.Drawing.Point(424, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(364, 168);
+            this.layoutControlItem1.Size = new System.Drawing.Size(318, 168);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.ResimYukleButon;
-            this.layoutControlItem2.Location = new System.Drawing.Point(486, 168);
+            this.layoutControlItem2.Location = new System.Drawing.Point(424, 168);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(364, 33);
+            this.layoutControlItem2.Size = new System.Drawing.Size(318, 35);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -332,7 +332,7 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem3.Control = this.simpleButton1;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 168);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(486, 33);
+            this.layoutControlItem3.Size = new System.Drawing.Size(424, 35);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -341,7 +341,7 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem4.Control = this.textEdit1;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(486, 28);
+            this.layoutControlItem4.Size = new System.Drawing.Size(424, 28);
             this.layoutControlItem4.Text = "Kitap Adı ";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(69, 16);
             // 
@@ -350,7 +350,7 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem5.Control = this.textEdit2;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 28);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(486, 28);
+            this.layoutControlItem5.Size = new System.Drawing.Size(424, 28);
             this.layoutControlItem5.Text = "Sayfa Sayısı";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(69, 16);
             // 
@@ -359,7 +359,7 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem6.Control = this.searchLookUpEdit1;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 56);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(486, 28);
+            this.layoutControlItem6.Size = new System.Drawing.Size(424, 28);
             this.layoutControlItem6.Text = "Türü";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(69, 16);
             // 
@@ -368,7 +368,7 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem7.Control = this.searchLookUpEdit2;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 84);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(486, 28);
+            this.layoutControlItem7.Size = new System.Drawing.Size(424, 28);
             this.layoutControlItem7.Text = "Yayınevi";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(69, 16);
             // 
@@ -377,7 +377,7 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem8.Control = this.searchLookUpEdit3;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 112);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(486, 28);
+            this.layoutControlItem8.Size = new System.Drawing.Size(424, 28);
             this.layoutControlItem8.Text = "Yazar";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(69, 16);
             // 
@@ -386,21 +386,19 @@ namespace Kutuphane_Uygulaması
             this.layoutControlItem9.Control = this.textEdit3;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 140);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(486, 28);
+            this.layoutControlItem9.Size = new System.Drawing.Size(424, 28);
             this.layoutControlItem9.Text = "Barkod";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(69, 16);
             // 
-            // GridGuncelle
+            // KitapEkleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 222);
+            this.ClientSize = new System.Drawing.Size(768, 229);
             this.Controls.Add(this.layoutControl1);
-            this.Name = "GridGuncelle";
-            this.Text = "GridGuncelle";
-            this.Load += new System.EventHandler(this.GridGuncelle_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            this.Name = "KitapEkleForm";
+            this.Text = "KitapEkleForm";
+            this.Load += new System.EventHandler(this.KitapEkleForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
@@ -411,6 +409,8 @@ namespace Kutuphane_Uygulaması
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -428,23 +428,27 @@ namespace Kutuphane_Uygulaması
         }
 
         #endregion
-        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit1;
-        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
-        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private System.Windows.Forms.Label label2;
+        private DevExpress.XtraEditors.SimpleButton ResimYukleButon;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
-        private DevExpress.XtraEditors.SimpleButton ResimYukleButon;
-        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit1;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
@@ -455,8 +459,5 @@ namespace Kutuphane_Uygulaması
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
-        private System.Windows.Forms.Label label2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
     }
 }

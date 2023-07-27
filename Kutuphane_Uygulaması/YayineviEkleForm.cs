@@ -22,84 +22,101 @@ namespace Kutuphane_Uygulaması
 
         private void YayineviEkleButton_Click(object sender, EventArgs e)
         {
-            string yayineviadi;
-            yayineviadi = textEdit1.Text;
-            EntityFullYayinevi yayinevi = new EntityFullYayinevi();
-            yayinevi.Adi = yayineviadi;
-            yayinevi.KayitTarihi = DateTime.Now;
-            yayinevi.KayitYapan = kullaniciid;
-
-
-            bool kontrol = DbYayinEvi.YK(yayinevi);
-            if (kontrol != true)
+            if (textEdit1.Text == "")
             {
-                bool kaydedildi = DbYayinEvi.EkleDuzenle(yayinevi);
-                if (kaydedildi)
-                {
-                    gridControl1.DataSource = DbYayinEvi.ListeyeEkle();
-                    MessageBox.Show("Yayinevi başarıyla kaydedildi");
-                }
-                else
-                {
-                    MessageBox.Show("Yayinevi kaydedilirken bir hata oluştu");
-                }
-
+                MessageBox.Show("Lütfen Kaydedeceğiniz Yayınevinin İsmini Giriniz");
             }
             else
             {
-                MessageBox.Show("Bu isim halihazırda kayıtlı");
+                string yayineviadi;
+                yayineviadi = textEdit1.Text;
+                EntityFullYayinevi yayinevi = new EntityFullYayinevi();
+                yayinevi.Adi = yayineviadi;
+                yayinevi.KayitTarihi = DateTime.Now;
+                yayinevi.KayitYapan = kullaniciid;
 
+
+                bool kontrol = DbYayinEvi.YK(yayinevi);
+                if (kontrol != true)
+                {
+                    bool kaydedildi = DbYayinEvi.EkleDuzenle(yayinevi);
+                    if (kaydedildi)
+                    {
+                        gridControl1.DataSource = DbYayinEvi.ListeyeEkle();
+                        MessageBox.Show("Yayinevi başarıyla kaydedildi");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Yayinevi kaydedilirken bir hata oluştu");
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Bu isim halihazırda kayıtlı");
+
+                }
             }
         }
 
 
         private void YayineviGuncelleButton_Click(object sender, EventArgs e)
         {
-
-            string yayineviadi, yayineviid;
-            yayineviadi = textEdit1.Text;
-            yayineviid = label2.Text;
-            EntityFullYayinevi yayinevi = new EntityFullYayinevi();
-            yayinevi.Adi = yayineviadi;
-            yayinevi.ID = Int32.Parse(yayineviid);
-            yayinevi.KayitTarihi = DateTime.Now;
-            yayinevi.KayitYapan = kullaniciid;
-
-
-            bool kaydedildi = DbYayinEvi.EkleDuzenle(yayinevi);
-            if (kaydedildi)
+            if (textEdit1.Text == "")
             {
-                MessageBox.Show("Yayinevi başarıyla güncellendi");
-                gridControl1.DataSource = DbYayinEvi.ListeyeEkle();
+                MessageBox.Show("Lütfen Güncelleyeceğiniz Yayınevini Listeden Seçiniz");
             }
             else
             {
-                MessageBox.Show("Yayinevi güncellenirken bir hata oluştu");
-            }
+                string yayineviadi, yayineviid;
+                yayineviadi = textEdit1.Text;
+                yayineviid = label2.Text;
+                EntityFullYayinevi yayinevi = new EntityFullYayinevi();
+                yayinevi.Adi = yayineviadi;
+                yayinevi.ID = Int32.Parse(yayineviid);
+                yayinevi.KayitTarihi = DateTime.Now;
+                yayinevi.KayitYapan = kullaniciid;
 
-        }
 
-        private void YayineviSilButton_Click(object sender, EventArgs e)
-        {
-
-
-            if (gridView1.GetFocusedRow() is EntityYayineviListe selectedYayinevi)
-            {
-                string silinecek = textEdit1.Text;
-
-                selectedYayinevi.Adi = silinecek;
-
-                bool kaydedildi = DbYayinEvi.sil(selectedYayinevi);
+                bool kaydedildi = DbYayinEvi.EkleDuzenle(yayinevi);
                 if (kaydedildi)
                 {
-                    MessageBox.Show("Yayinevi başarıyla Silindi");
-
+                    MessageBox.Show("Yayinevi başarıyla güncellendi");
                     gridControl1.DataSource = DbYayinEvi.ListeyeEkle();
                 }
                 else
                 {
-                    MessageBox.Show("Yayinevi Silinemedi");
-                    gridControl1.DataSource = DbYayinEvi.ListeyeEkle();
+                    MessageBox.Show("Yayinevi güncellenirken bir hata oluştu");
+                }
+            }
+        }
+
+        private void YayineviSilButton_Click(object sender, EventArgs e)
+        {
+            if (textEdit1.Text == "")
+            {
+                MessageBox.Show("Lütfen Sileceğiniz Yayınevini Listeden Seçiniz");
+            }
+            else
+            {
+                if (gridView1.GetFocusedRow() is EntityYayineviListe selectedYayinevi)
+                {
+                    string silinecek = textEdit1.Text;
+
+                    selectedYayinevi.Adi = silinecek;
+
+                    bool kaydedildi = DbYayinEvi.sil(selectedYayinevi);
+                    if (kaydedildi)
+                    {
+                        MessageBox.Show("Yayinevi başarıyla Silindi");
+
+                        gridControl1.DataSource = DbYayinEvi.ListeyeEkle();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Yayinevi Silinemedi");
+                        gridControl1.DataSource = DbYayinEvi.ListeyeEkle();
+                    }
                 }
             }
         }

@@ -37,10 +37,10 @@ namespace Kutuphane_Uygulaması.Data
                 StringContent stringwrap = new StringContent(strJson);
                 //Daha fazla veri vermek veya application şeklini değiştirmek istersek alttaki kodu da kullanabiliriz.
                 //HttpContent httpContent = new StringContent(strJson, System.Text.Encoding.UTF8, "application/json");
-                var res = URL.Yayinevi.YayineviEkleGuncelle.Post<Boolean>(Body: stringwrap);
-                return true;
+                var res = URL.Yayinevi.YayineviEkleGuncelle.Post<bool>(Body: stringwrap);
+                return res;
 
-             }
+            }
             else
             {
                 return false;

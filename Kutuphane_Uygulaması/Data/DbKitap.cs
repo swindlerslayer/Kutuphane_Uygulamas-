@@ -59,8 +59,8 @@ namespace Kutuphane_Uygulaması.Data
 
         public static bool sil(int id)
         {
-            var res = URL.Kitap.KitapSil.Get<EntityFullKitap>(urlEk: $"?ID={id}");
-            return true;
+            var res = URL.Kitap.KitapSil.Get<bool>(urlEk: $"?ID={id}");
+            return res;
 
         }
 
